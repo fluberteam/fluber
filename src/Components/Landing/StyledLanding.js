@@ -30,4 +30,16 @@ export const LandingPage = styled.div`
         
 
     }
+
+    @media screen and (max-width: 900px){
+
+        font-size: 2em;
+        
+    
+       
+        
+        
+    
+        
+    }
 `
