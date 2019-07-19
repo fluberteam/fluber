@@ -1,6 +1,6 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
-import miniLogo from '../../Image/noun_Airplane_9163.png'
+import miniLogo from '../../Image/smallLogoNoOutline.png'
 import largeLogo from '../../Image/fluberlogo.png'
 import '../../App.css'
 
