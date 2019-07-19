@@ -3,3 +3,39 @@
   padding: 0;
   margin: 0;
 }
+
+
+
+
+
+/* ---------------Media queries for the logo on the header--------------- */
+.largeLogo {
+  margin-left: 20px;
+  width: 150px;
+  display: block
+}
+
+.miniLogo {
+  margin-left: 20px;
+  width: 150px;
+  display: none
+}
+
+
+@media screen and (max-width: 900px) {
+  .largeLogo {
+    display: none;
+  }
+
+  .miniLogo {
+    display: block; 
+  }
+}
+
+@media screen and (max-width: 400px) {
+  .miniLogo {
+    margin-left: 10px;
+    width: 80px; 
+  }
+}
+/* -------------------------------------------------------------------- */
