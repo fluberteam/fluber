@@ -24,6 +24,7 @@ export default function header() {
 const styles = {
     width: '100%',
     height: '100px',
+    zIndex: 5,
     backgroundColor: '#0079BF',
     marginRight: '20px',
     display: 'flex',
