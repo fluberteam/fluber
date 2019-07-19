@@ -21,6 +21,7 @@
     "redux": "^4.0.4",
     "redux-promise-middleware": "^6.1.1",
     "stripe": "^7.4.0",
+    "styled-components": "^4.3.2",
     "twilio": "^3.33.1"
   },
   "scripts": {
