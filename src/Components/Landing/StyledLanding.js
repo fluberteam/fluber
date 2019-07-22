@@ -11,6 +11,8 @@ export const LandingPage = styled.div`
     font-size: 3em;
     font-family: Rockwell;
     color: #484747;
+    display: flex;
+    flex-direction: column;
 
     
     ::before {
