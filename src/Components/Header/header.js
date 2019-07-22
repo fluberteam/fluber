@@ -14,7 +14,7 @@ export default function header() {
                 <img className="miniLogo" src={miniLogo} alt="large logo" />
             </div></a>
             <div>
-                <Link style={font} to="/">Home</Link>
+                <Link style={font} to="/login">Home</Link>
                 <Link style={font} to="/search">Search</Link>
             </div>
         </div>
