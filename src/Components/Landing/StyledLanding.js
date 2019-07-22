@@ -11,6 +11,8 @@ export const LandingPage = styled.div`
     font-size: 3em;
     font-family: Rockwell;
     color: #484747;
+    display: flex;
+    flex-direction: column;
 
     
     ::before {
@@ -29,5 +31,28 @@ export const LandingPage = styled.div`
         background-size: cover;
         
 
+    }
+
+    @media screen and (max-width: 900px){
+
+        font-size: 2em;
+        
+    
+       
+        
+        
+    
+        
+    }
+    @media screen and (max-width: 500px){
+
+        font-size: 1.5em;
+        
+    
+       
+        
+        
+    
+        
     }
 `
