@@ -9,19 +9,18 @@ module.exports = {
         //store name, email, hash into table
 
         try {const db = req.app.get('db')
-        const {name, email, password, status, certnumb} = req.body
+        const {first_name, last_name, email, password, status, address1, address2, city, state, zipcode, phone, operator_num} = req.body
 
-        let users = await db.findUserByEmail(email)
+        let users = await db.auth.findUserByEmail({email})
         let user = users[0]
-
+        // console.log(1111, req.body)
         if(user) {
             return res.status(409).send('email already in db')
         }
 
         const salt = bcrypt.genSaltSync(10)
         const hash = bcrypt.hashSync(password, salt)
-
-       let response = await db.createUser(name, email, hash, isadmin, rentalid)
+       let response = await db.auth.createUser({first_name, last_name, email, hash, status, address1, address2, city, state, zipcode, phone, operator_num})
        let newUser = response[0]
 
        delete newUser.password
@@ -30,7 +29,7 @@ module.exports = {
        res.send(req.session.user)
     
         } catch (error) {
-            console.log('there was an error')
+            console.log('there was an error', error)
             res.status(500).send(error)
         }
 

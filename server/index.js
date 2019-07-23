@@ -39,7 +39,7 @@ app.listen(SERVER_PORT, () => {
 
 // Register and login endpoints
 app.post('/auth/register', AuthCtrl.register)
-app.post('/auth/login', AuthCtrl.login)
+app.get('/auth/login', AuthCtrl.login)
 app.get('/auth/logout', AuthCtrl.logout)
 app.get('/auth/currentUser', AuthCtrl.currentUser)
 app.put('/auth/updateUser/:id', AuthCtrl.updateUser)

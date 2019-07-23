@@ -11,13 +11,13 @@ city,
 state,
 zipcode,
 phone,
-operator_num,
+operator_num
 )
 values (
 ${first_name},
 ${last_name},
 ${email},
-${password},
+${hash},
 ${status},
 ${address1},
 ${address2},
