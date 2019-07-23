@@ -11,7 +11,7 @@ module.exports = {
         try {const db = req.app.get('db')
         const {first_name, last_name, email, password, status, address1, address2, city, state, zipcode, phone, operator_num} = req.body
 
-        let users = await db.auth.findUserByEmail(email)
+        let users = await db.auth.findUserByEmail({email})
         let user = users[0]
         // console.log(1111, req.body)
         if(user) {
@@ -20,7 +20,7 @@ module.exports = {
 
         const salt = bcrypt.genSaltSync(10)
         const hash = bcrypt.hashSync(password, salt)
-       let response = await db.auth.createUser(first_name, last_name, email, hash, status, address1, address2, city, state, zipcode, phone, operator_num)
+       let response = await db.auth.createUser({first_name, last_name, email, hash, status, address1, address2, city, state, zipcode, phone, operator_num})
        let newUser = response[0]
 
        delete newUser.password
