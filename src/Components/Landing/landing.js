@@ -1,8 +1,18 @@
-import React from 'react'
+import React, {useEffect} from 'react'
 import {LandingPage} from './StyledLanding'
 
+//connect redux
+import {connect} from 'react-redux'
+import {getUser } from '../../Redux/Reducers/users'
 
-export default function landing() {
+
+const Landing = props => {
+
+    const {getUser} = props
+    useEffect(() => {
+        getUser()
+    }, [getUser]) 
+
     return (
         <LandingPage>
                 <h1 style={styles.mainheading}>Flüber!</h1>
@@ -20,6 +30,17 @@ export default function landing() {
     )
 }
 
+let mapStateToProps = state => {
+    console.log(state)
+    let { data: users } = state.users
+    return {users}
+}
+
+export default connect(mapStateToProps, { getUser })(Landing)
+
+
+
+
 let styles = {
 
     tagline: {
@@ -27,7 +48,7 @@ let styles = {
         LineHeight: '30px',
         marginLeft: '100px',
         textAlign: 'left',
-        width: '100%'
+        // width: '100%'
     },
     mainheading: {
         margin: 0,
