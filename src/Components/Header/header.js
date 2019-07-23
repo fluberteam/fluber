@@ -3,9 +3,11 @@ import { Link } from 'react-router-dom';
 import miniLogo from '../../Image/smallLogoNoOutline.png'
 import largeLogo from '../../Image/fluberlogo.png'
 import '../../App.css'
+import {logout} from '../../Redux/Reducers/users'
+import {connect} from 'react-redux'
 
 
-export default function header() {
+const Header = props => {
     return (
         <div style={styles}>
             {/* Used <a> tag to link logo to Landing page -----Alma */}
@@ -16,10 +18,19 @@ export default function header() {
             <div>
                 <Link style={font} to="/login">Home</Link>
                 <Link style={font} to="/search">Search</Link>
+                {props.users && <Link style={font} onClick={props.logout} to="/">Logout</Link>}
             </div>
         </div>
     )
 }
+
+let mapStateToProps = state => {
+    console.log(state)
+    let { data: users } = state.users
+    return {users}
+}
+
+export default connect(mapStateToProps, {logout})(Header)
 
 const styles = {
     width: '100%',
