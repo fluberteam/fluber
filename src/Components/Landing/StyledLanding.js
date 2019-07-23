@@ -35,7 +35,7 @@ export const LandingPage = styled.div`
 
     @media screen and (max-width: 900px){
 
-        font-size: 2em;
+        font-size: 2.5em;
         
     
        
@@ -46,7 +46,7 @@ export const LandingPage = styled.div`
     }
     @media screen and (max-width: 500px){
 
-        font-size: 1.5em;
+        font-size: 2em;
         
     
        

@@ -9,9 +9,10 @@ export default function landing() {
                 <span style={styles.tagline}>Fly Private, Skip the Lines!</span>
                 
                 <div style={styles.paragraph}>
-                <p style={{justifyContent: 'center'}}>Flying private allows you to skip the lines at the main terminal, parking is usually free,
-                    you get on the airplane and go! Click the Search button to see if there's a flight going 
-                    where you want to go, it may cost less than you think!</p>
+                <p> Flying private allows you to skip the lines at the main terminal and parking is usually free.
+                    You just get on the airplane and go! Click the Search button to see if there's a flight going 
+                    where you want to go, it may cost less than you think!
+                </p>
                 </div>
         
         </LandingPage>
@@ -35,11 +36,11 @@ let styles = {
     },
     paragraph: {
         fontSize: '.5em',
-        marginTop: '500px',
-        textAlign: 'left',
-        width: '400px',
-        display: 'flex',
-        alignContent: 'center'
+        margin: '100px 0 0 100px',
+        // textAlign: 'left',
+        width: '35%',
+        // display: 'flex',
+        // alignItems: 'center'
 
     }
 }
