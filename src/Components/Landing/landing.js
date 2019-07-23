@@ -27,7 +27,7 @@ let styles = {
         LineHeight: '30px',
         marginLeft: '100px',
         textAlign: 'left',
-        width: '100%'
+        // width: '100%'
     },
     mainheading: {
         margin: 0,
