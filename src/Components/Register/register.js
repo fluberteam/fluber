@@ -2,6 +2,9 @@ import React, { useState } from 'react'
 import { connect } from 'react-redux'
 import { register } from '../../Redux/Reducers/users'
 import { Redirect } from 'react-router-dom'
+import { StyledInput } from '../StyledComps/StyledInput'
+import {LoginForm} from '../Login/StyledLogin'
+import largeLogo from '../../Image/fluberlogo.png'
 
 
 
@@ -26,59 +29,65 @@ const Register = props => {
     return (
        
 
-        <>
-        <div>
+        <div style={styles.div}>
+        <LoginForm>
+
         {props.users ? (props.users.status === 'a' ? <Redirect to='/admin' /> : (props.users.status === 'o' ? <Redirect to='/operator' /> : <Redirect to='/user' />)) : <Redirect to='/register' />}
-            <p><input
+            <img src={largeLogo} alt="Large Logo" style={{height: '100px'}}/>
+            <StyledInput
                 type='text'
                 name='first_name'
                 placeholder='First Name'
                 onChange={handleChange} />
-            </p>
-            <p><input
+           
+            <StyledInput
                 type='text'
                 name='last_name'
                 placeholder='Last Name'
                 onChange={handleChange} />
-            </p>
-            <p><input
+            
+            <StyledInput
                 type='email'
                 name='email'
                 placeholder='E-mail'
                 onChange={handleChange} />
-            </p>
-            <p><input
+            
+            <StyledInput
                 type='password'
                 name='password'
                 placeholder='Password'
                 onChange={handleChange} />
-            </p>
-            <p><input
+        <span style={{display: 'flex', flexDirection: 'row', justifyContent: 'space-evenly'}}>
+          <span>
+           <input
                 type='radio'
                 name='status'
                 value='u'
-                // onClick={toggleOperator}
-                onChange={handleChange}/>  Passenger 
-            </p>
-            <p><input
+                onChange={handleChange}/>Passenger
+            </span>
+            <span>
+            <input
                 type='radio'
                 name='status'
                 value='o'
                 // onClick={toggleOperator}
-                onChange={handleChange}/>  Operator 
-            </p>
+                onChange={handleChange}/>Operator 
+            </span>
+            </span>
+           
+            
             {state.status === 'o' &&
-            <p><input
+            <StyledInput
                 type='text'
                 name='operator_num'
                 placeholder='Operator Certificate Number'
                 onChange={handleChange} />
-            </p>
+            
             }
             <button onClick={handleSubmit}>Register</button>
 
+        </LoginForm>
         </div>
-        </>
     )
 }
 
@@ -90,4 +99,14 @@ const mapStateToProps = state => {
 
 export default connect(mapStateToProps, { register })(Register)
 
+let styles = {
+    div: {
+        display: 'flex',
+        height: '100vh',
+        justifyContent: 'center',
+        alignItems: 'center',
+        background: 'lightBlue',
+        paddingBottom: '150px'
 
+    }
+}
