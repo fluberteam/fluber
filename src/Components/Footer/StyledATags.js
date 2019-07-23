@@ -9,12 +9,9 @@ export const StyledATags = styled.div`
     justify-content: center;
     align-items: center;
     position: absolute;
-    bottom: 150px;
+    bottom: 10rem;
     left: calc(50vw - 20%);
-    margin-right: 200px;
     overflow-y: scroll;
-    // overflow-x: hidden;
-    // overflow-y: hidden;
     word-break: break-wrap;
     ::-webkid-scrollbar {
         display: none;
@@ -22,4 +19,10 @@ export const StyledATags = styled.div`
     padding: 20px;
     text-align: justify;
     box-shadow: 0px 3px 31px 13px rgba(0,0,0,0.7)
+
+
+    @media screen and (max-width: 500px) {
+        width: 80%;
+    }
 `
+
