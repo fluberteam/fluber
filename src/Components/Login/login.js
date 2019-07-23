@@ -17,10 +17,10 @@ const Login = props => {
     const handleSubmit = () => {
         props.login(state)
     }
-
+    console.log(props)
     return (
         <div>
-            {props.user.status === 'a' ? <Redirect to='/admin' /> : (props.user.status === 'o' ? <Redirect to='/operator' /> : <Redirect to='/user' />)}
+            {props.users ? (props.users.status === 'a' ? <Redirect to='/admin' /> : (props.users.status === 'o' ? <Redirect to='/operator' /> : <Redirect to='/user' />)) : <Redirect to='/login' />}
             <input 
                 type='email'
                 name='email'
@@ -38,8 +38,8 @@ const Login = props => {
 
 const mapStateToProps = state => {
     console.log(state)
-    let { data: user } = state.user
-    return user
+    let { data: users } = state.users
+    return {users}
 }
 
 export default connect(mapStateToProps, { login })(Login)
