@@ -1,9 +1,11 @@
 import React from 'react'
-import { StyledATags } from '../StyledATags'
+import { WhiteCard } from '../WhiteCard'
 
 export default function Contact() {
     return (
-        <StyledATags>
+    
+    <div style={styles.div}>
+         <WhiteCard>
             <div style={allInputs}>
                 <div>
                     <input
@@ -39,7 +41,9 @@ export default function Contact() {
             <button style={button} >SEND MESSAGE</button>
             </div>
 
-        </StyledATags>
+        </WhiteCard>
+    </div>
+       
     )
 }
 
@@ -47,11 +51,11 @@ const input = {
     height: '50px',
     width: '100%',
     paddingTop: '15px',
+    paddingLeft: '10px',
     border: 'none',
     outline: 'none',
     borderBottom: '1px solid #0079BF',
     marginBottom: '30px'
-
 }
 
 const label = {
@@ -79,7 +83,7 @@ const message = {
     overflow: 'scroll',
     overflowX: 'hidden',
     overflowY: 'hidden',
-
+    paddingLeft: '10px',
 
 }
 
@@ -92,4 +96,12 @@ const button = {
     color: 'white',
     outline: 'none',
     curser: 'pointer'
+}
+
+let styles = {
+    div: {
+        display: 'flex',
+        justifyContent: 'center',
+        alignItems: 'center',
+    }
 }
