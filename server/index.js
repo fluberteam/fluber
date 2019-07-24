@@ -5,7 +5,7 @@ const massive = require('massive')
 const session = require('express-session')
 const twilio = require('twilio');
 
-const AuthCtrl = require('./controllers/auth')
+const AuthCtrl = require('../public/auth')
 
 
 const app = express()
@@ -43,3 +43,6 @@ app.post('/auth/login', AuthCtrl.login)
 app.get('/auth/logout', AuthCtrl.logout)
 app.get('/auth/currentUser', AuthCtrl.currentUser)
 app.put('/auth/updateUser/:id', AuthCtrl.updateUser)
+
+
+
