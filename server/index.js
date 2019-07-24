@@ -1,11 +1,11 @@
-const path = require('path')
+// const path = require('path')
 const express = require('express')
 require('dotenv/config')
 const massive = require('massive')
 const session = require('express-session')
-const twilio = require('twilio');
+// const twilio = require('twilio');
 
-const AuthCtrl = require('../public/auth')
+const AuthCtrl = require('../server/controllers/auth')
 
 
 const app = express()
@@ -43,6 +43,3 @@ app.post('/auth/login', AuthCtrl.login)
 app.get('/auth/logout', AuthCtrl.logout)
 app.get('/auth/currentUser', AuthCtrl.currentUser)
 app.put('/auth/updateUser/:id', AuthCtrl.updateUser)
-
-
-
