@@ -5,7 +5,8 @@ const massive = require('massive')
 const session = require('express-session')
 const twilio = require('twilio');
 
-const AuthCtrl = require('../server/controllers/auth')   
+const AuthCtrl = require('../server/controllers/auth') 
+const AirplaneCtrl = require('../server/controllers/airplanes.js')  
 
 
 const app = express()
@@ -43,6 +44,12 @@ app.post('/auth/login', AuthCtrl.login)
 app.get('/auth/logout', AuthCtrl.logout)
 app.get('/auth/currentUser', AuthCtrl.currentUser)
 app.put('/auth/updateUser/:id', AuthCtrl.updateUser)
+
+// Full CRUD for operator to manage his airplanes
+app.post('/api/airplanes', AirplaneCtrl.create)//create appliance
+app.get('/api/airplanes', AirplaneCtrl.read)//read appliances
+app.put('/api/airplanes/:id', AirplaneCtrl.update)//update appliance
+app.delete('/api/airplanes/:id', AirplaneCtrl.delete)//delete appliance
 
 
 
