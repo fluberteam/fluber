@@ -5,7 +5,7 @@ export const LoginForm = styled.div`
     display: flex;
     height: 25%
     width: 20%;
-    z-index: 5;
+    z-index: 0;
     flex-direction: column;
     background: white;
     border-radius: 6px;
