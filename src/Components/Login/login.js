@@ -23,7 +23,6 @@ const Login = props => {
     const handleSubmit = () => {
         props.login(state)
     }
-    console.log(props)
     return (
 
         <div style={styles.div}>
@@ -52,7 +51,6 @@ const Login = props => {
 }
 
 const mapStateToProps = state => {
-    console.log(state)
     let { data: users } = state.users
     return {users}
 }

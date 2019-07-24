@@ -78,12 +78,12 @@ module.exports = {
 
     logout: (req, res) => {
         req.session.destroy()
-        console.log(222, req.session.user)
+        // console.log(222, req.session.user)
         res.sendStatus(200)
     }, 
 
     currentUser: (req, res) => {
-        console.log(111, req.session.user)
+        // console.log(111, req.session.user)
         res.send(req.session.user)
         
     },
