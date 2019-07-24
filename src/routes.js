@@ -7,6 +7,12 @@ import AdminDashboard from './Components/Admin/AdminDashboard';
 import OperatorDashboard from './Components/Operator/OperatorDashboard';
 import Search from './Components/Search/search';
 import UserDashboard from './Components/User/UserDashboard';
+import ListUsers from './Components/User/ListUsers';
+import ListOperators from './Components/Operator/ListOperators';
+import AvailableFlights from './Components/Flights/AvailableFlights'
+import ScheduledFlights from './Components/Flights/ScheduledFlights'
+import Payments from './Components/Payments/Payments'
+import Airplanes from './Components/Airplanes/Airplanes'
 
 export default (
     <Switch>
@@ -17,5 +23,14 @@ export default (
         <Route path="/OperatorDashboard" component={OperatorDashboard} />
         <Route path="/search" component={Search} />
         <Route path="/UserDashboard" component={UserDashboard} />
+        <Route path="/ListUsers" component={ListUsers} />
+        <Route path="/ListOperators" component={ListOperators} />
+        <Route path="/AvailableFlights" component={AvailableFlights} />
+        <Route path="/ScheduledFlights" component={ScheduledFlights} />
+        <Route path="/Payments" component={Payments} />
+        <Route path="/Airplanes" component={Airplanes} />
+
+
+
     </Switch>
 )
