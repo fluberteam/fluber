@@ -25,8 +25,9 @@ const Login = props => {
     }
     console.log(props)
     return (
-        <div id='login' style={styles.div}>
-            {props.users ? (props.users.status === 'a' ? <Redirect to='/admin' /> : (props.users.status === 'o' ? <Redirect to='/operator' /> : <Redirect to='/user' />)) : <Redirect to='/login' />}
+
+        <div style={styles.div}>
+            {props.users ? (props.users.status === 'a' ? <Redirect to='/AdminDashboard' /> : (props.users.status === 'o' ? <Redirect to='/OperatorDashboard' /> : <Redirect to='/UserDashboard' />)) : <Redirect to='/login' />}
             <LoginForm>
                 <img style={{height: '100px'}} src={largeLogo} alt='large logo' />
                 <div style={{display: 'flex', marginTop: '5px'}}>
