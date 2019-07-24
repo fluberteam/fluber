@@ -11,18 +11,23 @@ const Footer = () => {
 
     const handleContact = e => {
         let { name } = e.target
+        console.log(state)
         setState({ ...state, [name]: !state.contact })
     }
 
     const handleAbout = e => {
         let { name } = e.target
+        console.log(state)
         setState({ ...state, [name]: !state.about })
     }
 
     const handleLegal = e => {
         let { name } = e.target
+        console.log(state)
         setState({ ...state, [name]: !state.legal })
     }
+
+
 
     return (
         <StyledFooter>
@@ -35,9 +40,10 @@ const Footer = () => {
             </section>
 
             <div style={{ position: 'relative' }}>
-                {state.about === true ? <About /> : null}
-                {state.contact === true ? <Contact /> : null}
-                {state.legal === true ? <Legal /> : null}
+                {/* {state ? (state.about === true ? <About/> : (state.contact === true ? <Contact/> : (state.legal === true ? <Legal/> : null))) : null } */}
+                {state.about === true && <About />}
+                {state.contact === true && <Contact />}
+                {state.legal === true && <Legal />}
             </div>
 
             <section style={copy}>
@@ -69,7 +75,7 @@ const item = {
 
 }
 
-const  list = {
+const list = {
     display: 'flex',
     flexDirection: 'row',
     textAlign: 'center',

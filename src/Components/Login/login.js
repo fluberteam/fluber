@@ -6,6 +6,7 @@ import {StyledInput} from '../StyledComps/StyledInput'
 import { LoginForm } from './StyledLogin'
 import largeLogo from '../../Image/fluberlogo.png'
 import { Link } from 'react-router-dom'
+import '../../App.css'
 
 
 
@@ -24,18 +25,19 @@ const Login = props => {
     }
     console.log(props)
     return (
+
         <div style={styles.div}>
             {props.users ? (props.users.status === 'a' ? <Redirect to='/AdminDashboard' /> : (props.users.status === 'o' ? <Redirect to='/OperatorDashboard' /> : <Redirect to='/UserDashboard' />)) : <Redirect to='/login' />}
             <LoginForm>
                 <img style={{height: '100px'}} src={largeLogo} alt='large logo' />
-                <div style={{display: 'flex'}}>
+                <div style={{display: 'flex', marginTop: '5px'}}>
                     <StyledInput 
                         type='email'
                         name='email'
                         placeholder='Email'
                         onChange={handleChange}/>
                 </div>
-                <div style={{display: 'flex'}}>
+                <div style={{display: 'flex', marginTop: '5px', marginBottom: '5px'}}>
                     <StyledInput 
                         type='password'
                         name='password'

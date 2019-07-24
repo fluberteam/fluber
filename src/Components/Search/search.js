@@ -1,9 +1,12 @@
-import React from 'react'
+import React, { useState, useEffect } from 'react'
+import { connect } from 'react-redux'
 
-export default function search() {
+const Search = () => {
     return (
-        <div style={{height: '100vh'}}>
+        <div>
             Search
         </div>
     )
 }
+
+export default connect(null, null)(Search)
