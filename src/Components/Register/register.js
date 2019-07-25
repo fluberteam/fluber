@@ -9,7 +9,14 @@ import largeLogo from '../../Image/fluberlogo.png'
 
 
 const Register = props => {
-    let [state, setState] = useState({ first_name: '', last_name: '', email: '', password: '', status: '', operator_num: '' })
+    let [state, setState] = useState({ 
+        first_name: '', 
+        last_name: '', 
+        email: '', 
+        password: '', 
+        status: '', 
+        operator_num: '' 
+    })
 
     const handleChange = e => {
         let { name, value } = e.target
@@ -67,7 +74,6 @@ const Register = props => {
                 type='radio'
                 name='status'
                 value='o'
-                // onClick={toggleOperator}
                 onChange={handleChange}/>Operator 
             </span>
             </span>

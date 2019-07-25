@@ -1,9 +1,10 @@
 module.exports = {
-    read: (req, res) => {
+    read: async (req, res) => {
         let db = req.app.get('db')
-        db.getAirplanes().then((response) => {
-            res.send(response)
-        }).catch(err => console.log(err))
+        let allAirplanes = await db.getAirplanes()
+        res.status(200).send(allAirplanes)
+    
+       
     },
 
     create: (req, res) => {

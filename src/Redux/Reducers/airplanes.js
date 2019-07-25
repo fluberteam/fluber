@@ -5,10 +5,10 @@ const GET_AIRPLANE_PENDING = 'GET_AIRPLANE_PENDING'
 const GET_AIRPLANE_FULFILLED = 'GET_AIRPLANE_FULFILLED'
 const GET_AIRPLANE_REJECTED = 'GET_AIRPLANE_REJECTED'
 
+const CREATE_AIRPLANE = 'CREATE_AIRPLANE'
 const CREATE_AIRPLANE_PENDING = 'CREATE_AIRPLANE_PENDING'
-const CREATE_AIRPLANE_PENDING_PENDING = 'CREATE_AIRPLANE_PENDING_PENDING'
-const CREATE_AIRPLANE_PENDING_FULFILLED = 'CREATE_AIRPLANE_PENDING_FULFILLED'
-const CREATE_AIRPLANE_PENDING_REJECTED = 'CREATE_AIRPLANE_PENDING_REJECTED'
+const CREATE_AIRPLANE_FULFILLED = 'CREATE_AIRPLANE_FULFILLED'
+const CREATE_AIRPLANE_REJECTED = 'CREATE_AIRPLANE_REJECTED'
 
 const UPDATE_AIRPLANE = 'UPDATE_AIRPLANE'
 const UPDATE_AIRPLANE_PENDING = 'UPDATE_AIRPLANE_PENDING'
@@ -24,7 +24,7 @@ const DELETE_AIRPLANE_REJECTED = 'DELETE_AIRPLANE_REJECTED'
 
 const initialState = {
     loading: false,
-    data: null,
+    getAirplaneData: [],
     error: null
 }
 
@@ -33,22 +33,22 @@ export default function(state = initialState, action) {
         case GET_AIRPLANE_PENDING:
             return { ...state, loading: true }
         case GET_AIRPLANE_FULFILLED:
-            return { ...state, data: action.payload.data, loading: false }
+            return { ...state, getAirplaneData: action.payload.data, loading: false }
         case GET_AIRPLANE_REJECTED:
             return { ...state, error: action.payload, loading: false }
         
-        case CREATE_AIRPLANE_PENDING_PENDING:
+        case CREATE_AIRPLANE_PENDING:
             return { ...state, loading: true }
-        case CREATE_AIRPLANE_PENDING_FULFILLED:
-            return { ...state, data: action.payload.data, loading: false }
-        case CREATE_AIRPLANE_PENDING_REJECTED:
+        case CREATE_AIRPLANE_FULFILLED:
+            return { ...state, createAirplaneData: action.payload.data, loading: false }
+        case CREATE_AIRPLANE_REJECTED:
             return { ...state, error: action.payload, loading: false }
         
         
         case DELETE_AIRPLANE_PENDING:
             return { ...state, loading: true }
         case DELETE_AIRPLANE_FULFILLED:
-            return { ...state, data: null, loading: false }
+            return { ...state, deleteAirplaneData: null, loading: false }
         case DELETE_AIRPLANE_REJECTED:
             return { ...state, error: action.payload, loading: false}
 
@@ -56,7 +56,7 @@ export default function(state = initialState, action) {
         case UPDATE_AIRPLANE_PENDING:
             return { ...state, loading: true }
         case UPDATE_AIRPLANE_FULFILLED:
-            return { ...state, data: action.payload.data, loading: false }
+            return { ...state, upadateAirplaneData: action.payload.data, loading: false }
         case UPDATE_AIRPLANE_REJECTED:
             return { ...state, error: action.payload, loading: false}
 
@@ -67,7 +67,7 @@ export default function(state = initialState, action) {
 
 export function createAirplane(createInfo) {
     return {
-        type: CREATE_AIRPLANE_PENDING,
+        type: CREATE_AIRPLANE,
         payload: axios.post('/api/airplanes', createInfo)
     }
 }
