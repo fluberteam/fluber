@@ -1,5 +1,9 @@
 module.exports = {
-    search: async (req, res) => {
-        
+    getAll: async (req, res) => {
+        try {
+           const db = req.app.get('db') 
+        } catch (error) {
+            
+        }
     }
 }

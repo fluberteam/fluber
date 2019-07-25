@@ -11,19 +11,19 @@ const Footer = () => {
 
     const handleContact = e => {
         let { name } = e.target
-        console.log(state)
+        // console.log(state)
         setState({ ...state, [name]: !state.contact })
     }
 
     const handleAbout = e => {
         let { name } = e.target
-        console.log(state)
+        // console.log(state)
         setState({ ...state, [name]: !state.about })
     }
 
     const handleLegal = e => {
         let { name } = e.target
-        console.log(state)
+        // console.log(state)
         setState({ ...state, [name]: !state.legal })
     }
 

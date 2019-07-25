@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react'
 import { connect } from 'react-redux'
-import { search } from '../../Redux/Reducers/search'
+import search from '../../Redux/Reducers/search'
 
 
 const Search = () => {
@@ -13,7 +13,9 @@ const Search = () => {
     }
 
     const submitSearch = props => {
-        props.login(state)
+        // turn the state into a template string and pass that through to the back
+        let searchInfo = `${state.from}&${state.to}&${state.date}&${state.seats}`
+        props.login(searchInfo)
     }
 
     return (
@@ -21,12 +23,23 @@ const Search = () => {
             <input 
                 type="text"
                 name="from"
-                placeholder="City"
+                placeholder="Departure"
                 onChange={handleChange} />
-            <input name="to" />
-            <input name="date" />
-            <input name="seats" />
-
+            <input 
+                type="text"
+                name="to"
+                placeholder="Arrival"
+                onChange={handleChange} />
+            <input 
+                type="date"
+                name="date"
+                placeholder={Date()}
+                onChange={handleChange} />
+            <input
+                type="number" 
+                name="passengers"
+                placeholder="0" />
+            <button conClick={submitSearch}>Submit</button>
         </div>
     )
 }
