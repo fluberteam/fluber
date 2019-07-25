@@ -1,9 +1,9 @@
 import React from 'react'
 
-export default function OperatorDashboard() {
+export default function ListUsers() {
     return (
         <div style={styles.admin}>
-            Operator Dashboard
+            List Users
         </div>
     )
 }

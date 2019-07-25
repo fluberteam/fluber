@@ -1,12 +1,26 @@
 import React from 'react'
+import { connect } from 'react-redux'
+import { getAirplanes } from '../../Redux/Reducers/airplanes'
 
-export default function OperatorDashboard() {
+
+
+function ListAirplanes() {
     return (
         <div style={styles.admin}>
-            Operator Dashboard
+            List Airplane
         </div>
     )
 }
+
+
+const mapStateToProps = state => {
+    console.log(state)
+    let { data: users } = state.users
+    return {users}
+}
+
+export default connect(mapStateToProps, { getAirplanes })(ListAirplanes)
+
 
 let styles = {
     admin: {

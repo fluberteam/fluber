@@ -5,7 +5,14 @@ const massive = require('massive')
 const session = require('express-session')
 // const twilio = require('twilio');
 
-const AuthCtrl = require('../server/controllers/auth')
+
+
+const AuthCtrl = require('../server/controllers/auth')   
+const FlightsCtrl = require('../server/controllers/AvailableFlights')
+const AirplaneCtrl = require('../server/controllers/airplanes.js')  
+
+
+
 
 
 const app = express()
@@ -43,3 +50,16 @@ app.post('/auth/login', AuthCtrl.login)
 app.get('/auth/logout', AuthCtrl.logout)
 app.get('/auth/currentUser', AuthCtrl.currentUser)
 app.put('/auth/updateUser/:id', AuthCtrl.updateUser)
+
+// Endpoints for all of the available flights
+app.get('/flights/getFlights', FlightsCtrl.getFlights)
+app.post('/flights/createFlight', FlightsCtrl.createFlight)
+app.delete('/flights/deleteFlight/:flight_num', FlightsCtrl.deleteFlight)
+app.put('/flights/editFlight/:flight_num', FlightsCtrl.editFlight)
+
+// Full CRUD for managing airplanes
+app.post('/api/airplanes', AirplaneCtrl.create)//create airplane
+app.get('/api/airplanes', AirplaneCtrl.read)//read airplane list
+app.put('/api/airplanes/:id', AirplaneCtrl.update)//update airplane
+app.delete('/api/airplanes/:id', AirplaneCtrl.delete)//delete airplane
+

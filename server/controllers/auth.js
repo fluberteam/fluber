@@ -83,7 +83,6 @@ module.exports = {
     }, 
 
     currentUser: (req, res) => {
-        // console.log(111, req.session.user)
         res.send(req.session.user)
         
     },

@@ -1,9 +1,14 @@
-import React from 'react'
+import React from 'react';
 
-export default function OperatorDashboard() {
+export default function AvailableFlights() {
+
+    
+
+
+
     return (
         <div style={styles.admin}>
-            Operator Dashboard
+            Available Flights
         </div>
     )
 }
