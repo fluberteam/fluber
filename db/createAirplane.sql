@@ -11,4 +11,4 @@ ${refreshments},
 ${cruise_speed}
 );
 
-SELECT * FROM appliances;
+SELECT * FROM plane;

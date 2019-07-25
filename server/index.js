@@ -46,17 +46,10 @@ app.post('/auth/register', AuthCtrl.register)
 app.post('/auth/login', AuthCtrl.login)
 app.get('/auth/logout', AuthCtrl.logout)
 app.get('/auth/currentUser', AuthCtrl.currentUser)
-<<<<<<< HEAD
 app.put('/auth/updateUser/:id', AuthCtrl.updateUser)
 
-// Full CRUD for operator to manage his airplanes
-app.post('/api/airplanes', AirplaneCtrl.create)//create appliance
-app.get('/api/airplanes', AirplaneCtrl.read)//read appliances
-app.put('/api/airplanes/:id', AirplaneCtrl.update)//update appliance
-app.delete('/api/airplanes/:id', AirplaneCtrl.delete)//delete appliance
-
-
-
-=======
-app.put('/auth/updateUser/:id', AuthCtrl.updateUser)
->>>>>>> master
+// Full CRUD for managing airplanes
+app.post('/api/airplanes', AirplaneCtrl.create)//create airplane
+app.get('/api/airplanes', AirplaneCtrl.read)//read airplane list
+app.put('/api/airplanes/:id', AirplaneCtrl.update)//update airplane
+app.delete('/api/airplanes/:id', AirplaneCtrl.delete)//delete airplane

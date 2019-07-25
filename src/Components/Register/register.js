@@ -18,7 +18,6 @@ const Register = props => {
 
 
     const handleSubmit = () => {
-        // console.log(555, state)
         props.register(state)
     }
          
