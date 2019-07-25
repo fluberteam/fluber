@@ -42,20 +42,20 @@ let styles = {
     }
 }
 
-const RedX = styled.button`
-    position: absolute;
-    top: 0px;
-    right: 0px;
-    // margin: 5px;
-    background-color: red;
-    width: 20px;
-    height: 20px;
-    outline: none;
-    border: none;
-    &:hover {
-        cursor: pointer;
-    }
-`
+// const RedX = styled.button`
+//     position: absolute;
+//     top: 0px;
+//     right: 0px;
+//     // margin: 5px;
+//     background-color: red;
+//     width: 20px;
+//     height: 20px;
+//     outline: none;
+//     border: none;
+//     &:hover {
+//         cursor: pointer;
+//     }
+// `
 
 const Content = styled.div`
     padding-left: 20px;
