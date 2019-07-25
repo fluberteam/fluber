@@ -25,7 +25,7 @@ const Header = props => {
 }
 
 let mapStateToProps = state => {
-    console.log(state)
+    // console.log(state)
     let { data: users } = state.users
     return {users}
 }
