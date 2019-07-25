@@ -14,9 +14,9 @@ function AddAirplane() {
 
 
 const mapStateToProps = state => {
-    console.log(state)
-    let { data: users } = state.users
-    return {users}
+    // console.log(state.airplanes)
+    let { createAirplaneData: airplanes } = state.airplanes
+    return {airplanes}
 }
 
 export default connect(mapStateToProps, { createAirplane })(AddAirplane)

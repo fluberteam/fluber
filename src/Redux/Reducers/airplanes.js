@@ -24,7 +24,7 @@ const DELETE_AIRPLANE_REJECTED = 'DELETE_AIRPLANE_REJECTED'
 
 const initialState = {
     loading: false,
-    data: null,
+    getAirplaneData: [],
     error: null
 }
 

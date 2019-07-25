@@ -7,7 +7,7 @@ import { getAirplanes } from '../../Redux/Reducers/airplanes'
 function ListAirplanes() {
     return (
         <div style={styles.admin}>
-            Add Airplane
+            List Airplane
         </div>
     )
 }
