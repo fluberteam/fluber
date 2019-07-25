@@ -18,8 +18,8 @@ module.exports = {
         let db = req.app.get('db')
         let airplane = req.body
 
-        rentals.id = id
-        db.updatAirplane(airplane).then(response => {
+        airplane.n_number = id
+        db.updateAirplane(airplane).then(response => {
             res.send(response)
         }).catch(err => console.log(err))
     },
