@@ -1,12 +1,15 @@
-const path = require('path')
+// const path = require('path')
 const express = require('express')
 require('dotenv/config')
 const massive = require('massive')
 const session = require('express-session')
-const twilio = require('twilio');
+// const twilio = require('twilio');
+
 
 const AuthCtrl = require('../server/controllers/auth') 
 const AirplaneCtrl = require('../server/controllers/airplanes.js')  
+
+
 
 
 const app = express()
@@ -43,6 +46,7 @@ app.post('/auth/register', AuthCtrl.register)
 app.post('/auth/login', AuthCtrl.login)
 app.get('/auth/logout', AuthCtrl.logout)
 app.get('/auth/currentUser', AuthCtrl.currentUser)
+<<<<<<< HEAD
 app.put('/auth/updateUser/:id', AuthCtrl.updateUser)
 
 // Full CRUD for operator to manage his airplanes
@@ -53,3 +57,6 @@ app.delete('/api/airplanes/:id', AirplaneCtrl.delete)//delete appliance
 
 
 
+=======
+app.put('/auth/updateUser/:id', AuthCtrl.updateUser)
+>>>>>>> master
