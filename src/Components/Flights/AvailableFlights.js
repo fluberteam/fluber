@@ -1,6 +1,11 @@
-import React from 'react'
+import React from 'react';
 
 export default function AvailableFlights() {
+
+    
+
+
+
     return (
         <div style={styles.admin}>
             Available Flights

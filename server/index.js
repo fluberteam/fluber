@@ -7,6 +7,7 @@ const session = require('express-session')
 
 
 const AuthCtrl = require('../server/controllers/auth')   
+const FlightsCtrl = require('../server/controllers/AvailableFlights')
 
 
 
@@ -46,3 +47,11 @@ app.post('/auth/login', AuthCtrl.login)
 app.get('/auth/logout', AuthCtrl.logout)
 app.get('/auth/currentUser', AuthCtrl.currentUser)
 app.put('/auth/updateUser/:id', AuthCtrl.updateUser)
+
+
+// Endpoints for all of the available flights
+app.get('/flights/getFlights', FlightsCtrl.getFlights)
+app.post('/flights/createFlight', FlightsCtrl.createFlight)
+app.delete('/flights/deleteFlight/:flight_num', FlightsCtrl.deleteFlight)
+app.put('/flights/editFlight/:flight_num', FlightsCtrl.editFlight)
+
