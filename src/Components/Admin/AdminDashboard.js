@@ -9,14 +9,11 @@ export default function AdminDashboard() {
                 <Link to={'/ListUsers'}>
                 <h3><span style={styles.icon} className="fa">&#xf155; </span>  Users</h3>
                 </Link>
-                <Link to={'/ListOperators'}>
-                    <h3><span style={styles.icon} className="fa">&#xf200; </span>  Operators </h3>
-                </Link>
                 <Link to={'/AvailableFlights'}>
                     <h3><span style={styles.icon} className="fa">&#xf080; </span>  Available Flights</h3>
                 </Link>
                 <Link to={'/ScheduledFlights'}>
-                    <h3><span style={styles.icon} className="fa">&#xf0e0; </span>   Scheduled Flights With Passengers</h3>
+                    <h3><span style={styles.icon} className="fa">&#xf0e0; </span>   Scheduled Flights</h3>
                 </Link>
                 <Link to={'/Airplanes'}>
                     <h3><span style={styles.icon} className="fa">&#xf007; </span>  Airplanes</h3>
