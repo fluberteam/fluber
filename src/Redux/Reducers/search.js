@@ -26,7 +26,7 @@ export default function( state = initialState, action) {
     }
 }
 
-export function getAll(searchInfo) {
+export function firstSearch(searchInfo) {
     return {
         type: GET_ALL_SEARCH,
         payload: axios.get(`/search/all?${searchInfo}`)
