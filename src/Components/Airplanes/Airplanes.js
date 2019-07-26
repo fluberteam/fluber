@@ -1,4 +1,4 @@
-import React, { useState, useEffect  } from 'react'
+import React, { useEffect  } from 'react'
 import { connect } from 'react-redux'
 import { getAirplanes } from '../../Redux/Reducers/airplanes'
 import ListAirplanes  from './ListAirplanes'
@@ -13,9 +13,6 @@ const Airplanes = props => {
 
 
 
-    
-
-
 
     
 
@@ -24,7 +21,7 @@ const Airplanes = props => {
             
             <section className="docWrapper">
                 <section className="displayWrapper">
-                    <section className="addRentalSection">
+                    <section>
                         <AddAirplane />
                     </section>
                 </section>
@@ -44,7 +41,7 @@ const Airplanes = props => {
                                 <td style={styles.colTen}><h3>Edit/Delete</h3></td>
 
                             </tr>
-                            <table>
+                            <tbody>
                             {props.airplanes.map((airplane, index) => {
                                 return (
                                     <ListAirplanes
@@ -52,7 +49,7 @@ const Airplanes = props => {
                                         airplane={airplane} />
                                 )
                             })}
-                            </table>
+                            </tbody>
                         </div>
                     {/* } */}
 

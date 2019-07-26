@@ -1,6 +1,6 @@
 import React, {useState} from 'react'
 import { connect } from 'react-redux'
-import { getAirplanes } from '../../Redux/Reducers/airplanes'
+// import { getAirplanes } from '../../Redux/Reducers/airplanes'
 import { deleteAirplane } from '../../Redux/Reducers/airplanes'
 import EditAirplane from './EditAirplane'
 
@@ -30,7 +30,8 @@ const ListAirplanes = props => {
                     <>
                         <EditAirplane
                             airplane={airplane}
-                            toggle={toggle} />
+                            toggle={toggle}
+                            handleClick={props.handleClick} />
                     </>
                     :
                     <>
@@ -46,8 +47,8 @@ const ListAirplanes = props => {
                         <td style={styles.colNine}>{airplane.cruise_speed}</td>
 
                         <td style={styles.colTen}>
-                            <span style={styles.edit}><button onClick={toggle}className="hoveredit">&#9998;  / </button></span>
-                            <span className="fa" style={styles.edit2} onClick={() => deleteAirplane(airplane.n_number)} ><a className="hoverdelete">   &#xf014;</a></span>
+                            <span style={styles.edit}><button onClick={toggle}className="hoveredit">edit  / </button></span>
+                            <span className="fa" style={styles.edit2} onClick={() => deleteAirplane(airplane.n_number)} ><button className="hoverdelete">   delete</button></span>
                         </td>
                     </tr>
 
@@ -67,7 +68,6 @@ export default connect(null, { deleteAirplane })(ListAirplanes)
 let styles = {
     admin: {
         fontSize: 18,
-        fontFamily: 'times',
         display: 'flex',
         alignItems: 'center',
         justifyContent: 'center',
