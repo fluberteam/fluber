@@ -1,46 +1,57 @@
 import React, { useState, useEffect } from 'react'
 import { connect } from 'react-redux'
-import search from '../../Redux/Reducers/search'
+import { firstSearch } from '../../Redux/Reducers/search'
+import {StyledInput} from '../StyledComps/StyledInput'
+import {LoginForm} from '../Login/StyledLogin'
 
 
-const Search = () => {
+const Search = props => {
 
-    let [ state, setState ] = useState({from: '', to: '', date: '', seats: ''})
+    let [ state, setState ] = useState({from: '', to: '', date: '', passengers: 0})
+    let [ focus, setFocus ] = useState('text')
 
     const handleChange = (e) => {
         let { name, value } = e.target
+        // console.log(value)
         setState({ ...state, [name]: value})
     }
 
-    const submitSearch = props => {
+    const onFocus = () => {
+        setFocus('date')
+        // console.log(focus)
+    }
+
+    const submitSearch = () => {
         // turn the state into a template string and pass that through to the back
-        let searchInfo = `${state.from}&${state.to}&${state.date}&${state.seats}`
-        props.login(searchInfo)
+        let searchInfo = `depFrom=${state.from}&arriveTo=${state.to}&datePicked=${state.date}&seatAvailable=${state.passengers}`
+        props.firstSearch(searchInfo)
     }
 
     return (
-        <div>
-            <input 
+        <LoginForm>
+            <StyledInput 
                 type="text"
                 name="from"
                 placeholder="Departure"
                 onChange={handleChange} />
-            <input 
+            <StyledInput 
                 type="text"
                 name="to"
                 placeholder="Arrival"
                 onChange={handleChange} />
-            <input 
-                type="date"
+            <StyledInput
+                type={focus}
+                onFocus={onFocus}
                 name="date"
-                placeholder={Date()}
+                placeholder='Departure Date'
                 onChange={handleChange} />
-            <input
+            <StyledInput
                 type="number" 
                 name="passengers"
-                placeholder="0" />
-            <button conClick={submitSearch}>Submit</button>
-        </div>
+                placeholder="Passengers"
+                onChange={handleChange} />
+            <button onClick={submitSearch}>Submit</button>
+        </LoginForm>
     )
 }
 
@@ -49,4 +60,4 @@ const mapStateToProps = state => {
     return { search }
 }
 
-export default connect(mapStateToProps, { search })(Search)
+export default connect(mapStateToProps, { firstSearch })(Search)
