@@ -16,7 +16,7 @@ const Search = props => {
 
     const submitSearch = () => {
         // turn the state into a template string and pass that through to the back
-        let searchInfo = `dep_airport=${state.from}&arr_airport=${state.to}&departure_time=${state.date}&curr_avail_seats=${state.passengers}`
+        let searchInfo = `depFrom=${state.from}&arriveTo=${state.to}&datePicked=${state.date}&seatAvailable=${state.passengers}`
         // console.log(typeof state.passengers)
         console.log(searchInfo)
         props.firstSearch(searchInfo)

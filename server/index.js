@@ -10,6 +10,7 @@ const session = require('express-session')
 const AuthCtrl = require('../server/controllers/auth')   
 const FlightsCtrl = require('../server/controllers/AvailableFlights')
 const AirplaneCtrl = require('../server/controllers/airplanes.js')  
+const SearchCtrl = require('./controllers/search')
 
 
 
@@ -61,5 +62,8 @@ app.put('/flights/editFlight/:flight_num', FlightsCtrl.editFlight)
 app.post('/api/airplanes', AirplaneCtrl.create)//create airplane
 app.get('/api/airplanes', AirplaneCtrl.read)//read airplane list
 app.put('/api/airplanes/:id', AirplaneCtrl.update)//update airplane
-app.delete('/api/airplanes/:id', AirplaneCtrl.delete)//delete airplane
+app.delete('/api/airplanes/:id', AirplaneCtrl.delete)//delete 
+
+// Search Endpoints
+app.get('/search/all?', SearchCtrl.getAll)
 

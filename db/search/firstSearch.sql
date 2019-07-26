@@ -14,5 +14,5 @@ on o.certnumb = p.certnumber
 where
 f.dep_airport = ${depFrom}
 and f.arr_airport = ${arriveTo}
-and f.departure_time = ${date}
+and f.departure_time = ${datePicked}
 and f.curr_avail_seats >= ${seatAvailable};
