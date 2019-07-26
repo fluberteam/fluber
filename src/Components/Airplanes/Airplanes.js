@@ -1,4 +1,4 @@
-import React, { useEffect  } from 'react'
+import React, { useEffect, useState  } from 'react'
 import { connect } from 'react-redux'
 import { getAirplanes } from '../../Redux/Reducers/airplanes'
 import ListAirplanes  from './ListAirplanes'
@@ -6,15 +6,15 @@ import AddAirplane  from './AddAirplane'
 
 const Airplanes = props => {
     const {getAirplanes} = props
-    
+    const [update, setupdate] = useState(true)
+
     useEffect(() =>{
+        console.log(props)
+        if(update){
         getAirplanes()
-    },[getAirplanes])
-
-
-
-
-    
+        setupdate(false)
+        }
+        },[getAirplanes, update ])
 
 
         return (
@@ -22,7 +22,8 @@ const Airplanes = props => {
             <section className="docWrapper">
                 <section className="displayWrapper">
                     <section>
-                        <AddAirplane />
+                        <AddAirplane
+                        setupdate={setupdate} />
                     </section>
                 </section>
                 <span>
@@ -51,7 +52,8 @@ const Airplanes = props => {
                                 return (
                                     <ListAirplanes
                                         key={index}
-                                        airplane={airplane} />
+                                        airplane={airplane}
+                                        setupdate={setupdate}/>
                                 )
                             })}
                             </tbody>
