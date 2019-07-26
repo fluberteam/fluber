@@ -10,7 +10,7 @@ const AddFlight = (props) => {
 
 
     return (
-      <div>
+      <div style={styles.admin}>
           Add Flight
       </div>
     )
@@ -22,3 +22,17 @@ const mapStateToProps = state => {
 }
 
 export default connect(mapStateToProps, { createFlight })(AddFlight)
+
+
+let styles = {
+    admin: {
+        fontSize: 18,
+        fontFamily: 'times', 
+        display: 'flex',
+        alignItems: 'center',
+        justifyContent: 'center',
+        flexDirection: 'column ',
+        textDecoration: 'none',
+        fontFamily: 'Rockwell'
+    }
+}

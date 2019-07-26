@@ -25,6 +25,8 @@ const DELETE_FLIGHT_REJECTED = 'DELETE_FLIGHT_REJECTED'
 const initialState = {
     loading: false,
     getFlightData: [],
+    deleteFlightData: '',
+    updateFlightData: [],
     error: null
 }
 
@@ -56,7 +58,7 @@ export default function(state = initialState, action) {
         case UPDATE_FLIGHT_PENDING:
             return { ...state, loading: true }
         case UPDATE_FLIGHT_FULFILLED:
-            return { ...state, upadateFlightData: action.payload.data, loading: false }
+            return { ...state, updateFlightData: action.payload.data, loading: false }
         case UPDATE_FLIGHT_REJECTED:
             return { ...state, error: action.payload, loading: false}
 
@@ -89,6 +91,6 @@ export function updateFlight(id, updateInfo) {
 export function deleteFlight(id) {
     return {
         type: DELETE_FLIGHT,
-        payload: axios.delete(`'/flights/deleteFlight/${id}`)
+        payload: axios.delete(`/flights/deleteFlight/${id}`)
     }
 }

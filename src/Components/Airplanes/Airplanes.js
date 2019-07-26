@@ -69,6 +69,7 @@ const Airplanes = props => {
 //connect redux
 let mapStateToProps = state => {
     let { getAirplaneData: airplanes } = state.airplanes
+    console.log(airplanes)
     return { airplanes }
 }
 
