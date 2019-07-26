@@ -9,6 +9,7 @@ import EditAirplane from './EditAirplane'
 
 
 const ListAirplanes = props => {
+    
     const airplane = props.airplane
     const [edit, setEdit] = useState(false)
 
@@ -58,13 +59,9 @@ const ListAirplanes = props => {
 }
 
 
-const mapStateToProps = state => {
-    console.log(state)
-    let { data: users } = state.users
-    return { users }
-}
 
-export default connect(mapStateToProps, { getAirplanes, deleteAirplane })(ListAirplanes)
+
+export default connect(null, { deleteAirplane })(ListAirplanes)
 
 
 let styles = {
