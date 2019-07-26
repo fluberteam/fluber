@@ -1,11 +1,15 @@
-import React, { useState } from 'react'
+import React, { useState, useEffect } from 'react'
 import { connect } from 'react-redux'
 import { updateAirplane } from '../../Redux/Reducers/airplanes'
+
 
 const EditAirplane = props => {
 
     const airplane = props.airplane
     const toggle = props.toggle
+
+   
+  
 
     let [state, setState] = useState({
         n_number: airplane.n_number,
@@ -26,11 +30,15 @@ const EditAirplane = props => {
 
     const handleClick = (id) => {
         let updatedAirplane = { ...props.airplane, ...state }
-        console.log(111, updatedAirplane)
         props.updateAirplane(id, updatedAirplane)
-        toggle() // takes display back to original display
+        toggle(); // takes display back to original display
 
     }
+
+    useEffect(() =>{
+    
+    },[handleClick])
+
 
     return (
 
@@ -134,7 +142,6 @@ export default connect(mapStateToProps, { updateAirplane })(EditAirplane)
 let styles = {
     admin: {
         fontSize: 18,
-        fontFamily: 'times',
         display: 'flex',
         alignItems: 'center',
         justifyContent: 'center',

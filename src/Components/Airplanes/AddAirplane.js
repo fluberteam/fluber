@@ -1,13 +1,15 @@
 import React, {useState} from 'react'
 import {connect} from 'react-redux'
 import { createAirplane } from '../../Redux/Reducers/airplanes'
-import {Redirect} from 'react-router-dom'
+// import {Redirect} from 'react-router-dom'
 import { StyledInput } from '../StyledComps/StyledInput'
 import {LoginForm} from '../Login/StyledLogin'
 import largeLogo from '../../Image/fluberlogo.png'
 
 
 const AddAirplane = props => {
+
+
 
     let [state, setState] = useState({
         n_number: '',
@@ -44,6 +46,7 @@ const AddAirplane = props => {
         <div style={styles.div}>
         <LoginForm>
             <img src={largeLogo} alt="Large Logo" style={{height: '100px'}}/>
+            <h3>Add Airplane</h3>
             <StyledInput
                 type='text'
                 name='n_number'
@@ -146,12 +149,12 @@ const AddAirplane = props => {
         
         
         :
-        <button>
+        <section>
             <section>
                 <p><button style={styles.addbutton} onClick={toggle}>Add Airplane</button></p>
             </section>
         
-        </button>
+        </section>
         }
         </>
         )
@@ -171,7 +174,6 @@ export default connect(mapStateToProps, { createAirplane })(AddAirplane)
 let styles = {
     admin: {
         fontSize: 18,
-        fontFamily: 'times', 
         display: 'flex',
         alignItems: 'center',
         justifyContent: 'center',
@@ -181,6 +183,12 @@ let styles = {
     },
     addbutton: {
         border: 'none',
+        fontSize: '20px',
+        color: 'green',
+        margin: '10px 0 20px',
+        opacity: 1,
+        transition: '0.3s',
+        cursor: 'pointer'
         
     }
 }
