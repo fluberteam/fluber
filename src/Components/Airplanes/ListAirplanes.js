@@ -1,4 +1,4 @@
-import React, {useState} from 'react'
+import React, {useState, useEffect} from 'react'
 import { connect } from 'react-redux'
 // import { getAirplanes } from '../../Redux/Reducers/airplanes'
 import { deleteAirplane } from '../../Redux/Reducers/airplanes'
@@ -13,12 +13,14 @@ const ListAirplanes = props => {
     const airplane = props.airplane
     const [edit, setEdit] = useState(false)
 
+
     const toggle = () => {
         setEdit(!edit)
     }
 
     const deleteAirplane = (id) => {
         props.deleteAirplane(id)
+        props.setupdate(true)
 
     }
 
@@ -30,6 +32,7 @@ const ListAirplanes = props => {
                     <>
                         <EditAirplane
                             airplane={airplane}
+                            setupdate={props.setupdate}
                             toggle={toggle}
                             handleClick={props.handleClick} />
                     </>
