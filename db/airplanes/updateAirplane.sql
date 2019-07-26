@@ -1,5 +1,5 @@
 UPDATE plane
-SET n_number = ${n_number},
+SET 
 certnumber = ${certnumber},
 img = ${img},
 engine_id = ${engine_id},
