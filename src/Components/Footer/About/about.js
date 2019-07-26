@@ -1,15 +1,18 @@
-import React from 'react';
+import React, {useState} from 'react';
 import { WhiteCard } from '../WhiteCard';
 import styled from 'styled-components';
+// import onClickOutside from 'react-onclickoutside';
 
-export default function About() {
-
-
+const About = () => {
     // ------------ working the red X to close each component. Still not working. Alma --------------------
-
+    
+    
+    // const [isOpen, setIsOpen] = useState(false);
     // const handleClick = () => {
     //     styles.div = {display: 'none'}
     // }
+
+    // About.handleClickOutside = () => setIsOpen(false)
 
     return (
         <div style={styles.div}>
@@ -33,6 +36,17 @@ export default function About() {
         </div>
     )
 }
+
+// const clickOutsideConfig = {
+//     handleClickOutside: () => About.handleClickOutside
+// };
+// export default onClickOutside(About, clickOutsideConfig);
+
+export default About
+
+
+
+
 
 let styles = {
     div: {

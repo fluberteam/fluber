@@ -45,5 +45,20 @@ export const WhiteCard = styled.div`
         bottom: 40px;
         height: 400px;
     }
+
+    @media screen and (max-height: 775px) {
+        padding-top: 40px;
+        height: 370px;
+        bottom: 60px;
+    }
+
+    @media screen and (max-height: 600px) {
+        padding-top: 60px;
+        height: 350px;
+        bottom: 20px;
+    }
+
+    
+
     `
 

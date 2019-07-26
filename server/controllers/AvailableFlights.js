@@ -15,11 +15,9 @@ module.exports = {
         try {
             let db = req.app.get('db')
 
-            let { n_number, dep_airport, departure_time, arr_airport, arrival_time, init_avail_seats, curr_avail_seats, price, cutoff_time } = req.body
+            let flight = req.body
 
-            let newFlight = {n_number, dep_airport, departure_time, arr_airport, arrival_time, init_avail_seats, curr_avail_seats, price, cutoff_time}
-
-            let createdFlight = await db.flights.create_flight(newFlight)
+            let createdFlight = await db.flights.create_flight(flight)
 
             res.status(200).send(createdFlight)
 
