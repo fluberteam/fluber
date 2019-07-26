@@ -2,11 +2,13 @@ import React, { useState, useEffect } from 'react'
 import { connect } from 'react-redux'
 import { firstSearch } from '../../Redux/Reducers/search'
 import {StyledInput} from '../StyledComps/StyledInput'
+import {LoginForm} from '../Login/StyledLogin'
 
 
 const Search = props => {
 
     let [ state, setState ] = useState({from: '', to: '', date: '', passengers: 0})
+    let [ focus, setFocus ] = useState('text')
 
     const handleChange = (e) => {
         let { name, value } = e.target
@@ -14,16 +16,19 @@ const Search = props => {
         setState({ ...state, [name]: value})
     }
 
+    const onFocus = () => {
+        setFocus('date')
+        // console.log(focus)
+    }
+
     const submitSearch = () => {
         // turn the state into a template string and pass that through to the back
         let searchInfo = `depFrom=${state.from}&arriveTo=${state.to}&datePicked=${state.date}&seatAvailable=${state.passengers}`
-        // console.log(typeof state.passengers)
-        console.log(searchInfo)
         props.firstSearch(searchInfo)
     }
 
     return (
-        <div>
+        <LoginForm>
             <StyledInput 
                 type="text"
                 name="from"
@@ -35,17 +40,18 @@ const Search = props => {
                 placeholder="Arrival"
                 onChange={handleChange} />
             <StyledInput
-                type="date"
+                type={focus}
+                onFocus={onFocus}
                 name="date"
-                placeholder={Date()}
+                placeholder='Departure Date'
                 onChange={handleChange} />
             <StyledInput
                 type="number" 
                 name="passengers"
-                placeholder="0"
+                placeholder="Passengers"
                 onChange={handleChange} />
             <button onClick={submitSearch}>Submit</button>
-        </div>
+        </LoginForm>
     )
 }
 
