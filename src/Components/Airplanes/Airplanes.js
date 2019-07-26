@@ -6,6 +6,7 @@ import AddAirplane  from './AddAirplane'
 
 const Airplanes = props => {
     const {getAirplanes} = props
+    
     useEffect(() =>{
         getAirplanes()
     },[getAirplanes])
@@ -40,6 +41,8 @@ const Airplanes = props => {
                                 <td style={styles.colSeven}><h3>Flight Attendant</h3></td>
                                 <td style={styles.colEight}><h3>Refreshements</h3></td>
                                 <td style={styles.colNine}><h3>Cruise Speed</h3></td>
+                                <td style={styles.colTen}><h3>Edit/Delete</h3></td>
+
                             </tr>
                             <table>
                             {props.airplanes.map((airplane, index) => {
@@ -98,5 +101,15 @@ let styles = {
     },
     colNine: {
         width: 200
+    },
+    colTen: {
+        width: 200
+    },
+    displayWrapper: {
+        width: '90%', 
+        display: 'flex',
+        justifyContent: 'center',
+        flexWrap: 'wrap',
+        margin: '0 auto'
     }
 }

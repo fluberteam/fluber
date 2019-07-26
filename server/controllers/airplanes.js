@@ -1,7 +1,7 @@
 module.exports = {
     read: async (req, res) => {
         let db = req.app.get('db')
-        let allAirplanes = await db.getAirplanes()
+        let allAirplanes = await db.airplanes.getAirplanes()
         res.status(200).send(allAirplanes)
     
        
@@ -9,18 +9,19 @@ module.exports = {
 
     create: (req, res) => {
         let db = req.app.get('db')
-        db.createAirplane(req.body).then(response => {
+        db.airplanes.createAirplane(req.body).then(response => {
             res.send(response)
         }).catch(err => console.log(err))
     },
 
     update: (req, res) => {
-        let { id } = req.params
+        let { id } = req.body
         let db = req.app.get('db')
         let airplane = req.body
+        id = req.body.n_number
+       
 
-        airplane.n_number = id
-        db.updateAirplane(airplane).then(response => {
+        db.airplanes.updateAirplane(airplane).then(response => {
             res.send(response)
         }).catch(err => console.log(err))
     },
@@ -29,7 +30,7 @@ module.exports = {
         let db = req.app.get('db');
         const { id } = req.params;//get this from param on url
 
-        db.deleteAirplane([id]).then(response => {
+        db.airplanes.deleteAirplane([id]).then(response => {
             res.status(200).send(response);
         });
     }
