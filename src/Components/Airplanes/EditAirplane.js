@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react'
+import React, { useState } from 'react'
 import { connect } from 'react-redux'
 import { updateAirplane } from '../../Redux/Reducers/airplanes'
 
@@ -34,10 +34,6 @@ const EditAirplane = props => {
         toggle(); // takes display back to original display
 
     }
-
-    useEffect(() =>{
-    
-    },[handleClick])
 
 
     return (

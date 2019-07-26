@@ -16,7 +16,6 @@ export default function AvailableFlights() {
 let styles = {
     admin: {
         fontSize: 18,
-        fontFamily: 'times', 
         display: 'flex',
         alignItems: 'center',
         justifyContent: 'center',

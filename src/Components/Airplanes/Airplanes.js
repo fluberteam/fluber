@@ -28,6 +28,8 @@ const Airplanes = props => {
                 <span>
                     {/* {user && //if user is logged in, display appliances */}
                         <div className="displayWrapper">
+                            <table>
+                                <tbody>
                             <tr>
                                 <td style={styles.colOne}><h3>N-Number</h3></td>
                                 <td style={styles.colTwo}><h3>Operator ID</h3></td>
@@ -41,6 +43,9 @@ const Airplanes = props => {
                                 <td style={styles.colTen}><h3>Edit/Delete</h3></td>
 
                             </tr>
+                                </tbody>
+                            </table>
+                            <table>
                             <tbody>
                             {props.airplanes.map((airplane, index) => {
                                 return (
@@ -50,6 +55,7 @@ const Airplanes = props => {
                                 )
                             })}
                             </tbody>
+                            </table>
                         </div>
                     {/* } */}
 
