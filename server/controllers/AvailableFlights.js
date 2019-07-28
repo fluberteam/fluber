@@ -3,7 +3,6 @@ module.exports = {
         try {
             let db = req.app.get('db')
             let allFlights = await db.flights.get_flights()
-            console.log('Flights', allFlights)
             res.send(allFlights)
         } catch (error) {
             console.log('Error fetching the flights', error)
@@ -31,8 +30,9 @@ module.exports = {
         try {
             let db = req.app.get('db')
             let { flight_num } = req.params
-            const flights = await db.flights.delete_flight({ flight_num })
-            res.status(500).send(flights)
+            const flights = await db.flights.delete_flight({flight_num})
+            
+            res.status(200).send(flights)
 
         } catch (error) {
             console.log('Error deleting the flight', error)

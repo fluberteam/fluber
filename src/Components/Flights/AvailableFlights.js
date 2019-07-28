@@ -14,38 +14,49 @@ const AvailableFlights = (props) => {
 
 
     return (
-        <div style={styles.admin}>
-            <div>
-                {/* <AddFlight/> */}
-            </div>
-            {/* <> */}
-                <>
-                    <tr >
-                        <td style={styles.colOne}><h3>N-Number</h3></td>
-                        <td style={styles.colTwo}><h3>Departure Ariport</h3></td>
-                        <td style={styles.colThree}><h3>Arrival Ariport</h3></td>
-                        <td style={styles.colFour}><h3>Departure Time</h3></td>
-                        <td style={styles.colFive}><h3>Arrival Time</h3></td>
-                        <td style={styles.colSix}><h3>Initial Available Seats</h3></td>
-                        <td style={styles.colSeven}><h3>Available Seats</h3></td>
-                        <td style={styles.colEight}><h3>Price</h3></td>
-                        <td style={styles.colNine}><h3>Cutoff Time</h3></td>
-                        <td style={styles.colTen}><h3>Edit/Delete</h3></td>
+        <section style={styles.admin}>
+            <section>
+                <section>
+                    <AddFlight/>
+                </section>
+            </section>
 
-                    </tr>
+            <span>
+                <div>
                     <table>
-                        {props.flights.map((flight, index) => {
-                            return (
-                                <ListFlight
-                                    key={index}
-                                    flight={flight} />
-                            )
-                        })}
+                        <tbody>
+                            <tr >
+                                <td style={styles.colOne}><h3>N-Number</h3></td>
+                                <td style={styles.colTwo}><h3>Departure Ariport</h3></td>
+                                <td style={styles.colThree}><h3>Arrival Ariport</h3></td>
+                                <td style={styles.colFour}><h3>Departure Time</h3></td>
+                                <td style={styles.colFive}><h3>Arrival Time</h3></td>
+                                <td style={styles.colSix}><h3>Initial Available Seats</h3></td>
+                                <td style={styles.colSeven}><h3>Available Seats</h3></td>
+                                <td style={styles.colEight}><h3>Price</h3></td>
+                                <td style={styles.colNine}><h3>Cutoff Time</h3></td>
+                                <td style={styles.colTen}><h3>Edit/Delete</h3></td>
+
+                            </tr>
+                        </tbody>
+
                     </table>
-                </>
-            {/* </> */}
+                    <table>
+                        <tbody>
+                            {props.flights.map((flight, index) => {
+                                return (
+                                    <ListFlight
+                                        key={index}
+                                        flight={flight} />
+                                )
+                            })}
+                        </tbody>
+                    </table>
+
+                </div>
+            </span>
             Available Flights
-        </div>
+        </section>
     )
 }
 

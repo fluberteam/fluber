@@ -1,4 +1,4 @@
-import React, {useState} from 'react';
+import React from 'react';
 import { WhiteCard } from '../WhiteCard';
 import styled from 'styled-components';
 // import onClickOutside from 'react-onclickoutside';

@@ -48,6 +48,7 @@ export default function(state = initialState, action) {
         
         
         case DELETE_FLIGHT_PENDING:
+            console.log(state)
             return { ...state, loading: true }
         case DELETE_FLIGHT_FULFILLED:
             return { ...state, deleteFlightData: null, loading: false }
@@ -81,16 +82,16 @@ export function getFlights() {
     }
 }
 
-export function updateFlight(id, updateInfo) {
+export function updateFlight(flight_num, updateInfo) {
     return {
         type: UPDATE_FLIGHT,
-        payload: axios.put(`/flights/editFlight/${id}`, updateInfo)
+        payload: axios.put(`/flights/editFlight/${flight_num}`, updateInfo)
     }
 }
 
-export function deleteFlight(id) {
+export function deleteFlight(flight_num) {
     return {
         type: DELETE_FLIGHT,
-        payload: axios.delete(`/flights/deleteFlight/${id}`)
+        payload: axios.delete(`/flights/deleteFlight/${flight_num}`)
     }
 }

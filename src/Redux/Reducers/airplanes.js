@@ -58,7 +58,7 @@ export default function(state = initialState, action) {
         case UPDATE_AIRPLANE_PENDING:
             return { ...state, loading: true }
         case UPDATE_AIRPLANE_FULFILLED:
-            return { ...state, upadateAirplaneData: action.payload.data, loading: false }
+            return { ...state, updateAirplaneData: action.payload.data, loading: false }
         case UPDATE_AIRPLANE_REJECTED:
             return { ...state, error: action.payload, loading: false}
 

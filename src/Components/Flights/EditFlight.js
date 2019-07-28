@@ -25,7 +25,6 @@ const EditFlight = props => {
 
     const handleClick = (id) => {
         let updatedFlight = { ...props.flight, ...state }
-        console.log(1111111, id, 222222, updatedFlight)
         props.updateFlight(id, updatedFlight)
         toggle()
     }
@@ -128,7 +127,7 @@ export default connect(mapStateToProps, { updateFlight })(EditFlight)
 
 let styles = {
     admin: {
-        fontSize: 18,
+        // fontSize: 18,
         fontFamily: 'times',
         display: 'flex',
         alignItems: 'center',
