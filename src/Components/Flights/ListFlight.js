@@ -13,9 +13,8 @@ const ListFlight = (props) => {
     }
 
     const deleteFlight = (flight_num) => {
-        console.log(flight_num)
         props.deleteFlight(flight_num)
-        console.log('list flight')
+        props.setupdate(true)
     }
 
 
@@ -26,7 +25,8 @@ const ListFlight = (props) => {
                     <>
                         <EditFlight
                             flight={flight}
-                            toggle={toggle} />
+                            toggle={toggle}
+                            setupdate={props.setupdate} />
                     </>
                     :
                     <table>
