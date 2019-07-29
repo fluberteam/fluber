@@ -1,10 +1,11 @@
 import React, { useEffect, useState  } from 'react'
 import { connect } from 'react-redux'
 import { getAirplanes } from '../../Redux/Reducers/airplanes'
-import ListAirplanes  from './ListAirplanes'
-import AddAirplane  from './AddAirplane'
+import ListAirplanes from './ListAirplanes'
+import AddAirplane from './AddAirplane'
 
 const Airplanes = props => {
+
     const {getAirplanes} = props
     const [update, setupdate] = useState(true)
 
@@ -14,8 +15,7 @@ const Airplanes = props => {
         setupdate(false)
         }
         },[getAirplanes, update ])
-
-
+  
         return (
             
             <section className="docWrapper">
@@ -25,11 +25,12 @@ const Airplanes = props => {
                         setupdate={setupdate} />
                     </section>
                 </section>
-                <span>
-                    {/* {user && //if user is logged in, display appliances */}
-                        <div className="displayWrapper">
-                            <table>
-                                <tbody>
+            </section>
+            <span>
+                {/* {user && //if user is logged in, display appliances */}
+                <div className="displayWrapper">
+                    <table>
+                        <tbody>
                             <tr>
                                 <td style={styles.colOne}><h3>N-Number</h3></td>
                                 <td style={styles.colTwo}><h3>Operator ID</h3></td>
@@ -43,10 +44,10 @@ const Airplanes = props => {
                                 <td style={styles.colTen}><h3>Edit/Delete</h3></td>
 
                             </tr>
-                                </tbody>
-                            </table>
-                            <table>
-                            <tbody>
+                        </tbody>
+                    </table>
+                    <table>
+                        <tbody>
                             {props.airplanes.map((airplane, index) => {
                                 return (
                                     <ListAirplanes
@@ -55,16 +56,16 @@ const Airplanes = props => {
                                         setupdate={setupdate}/>
                                 )
                             })}
-                            </tbody>
-                            </table>
-                        </div>
-                    {/* } */}
+                        </tbody>
+                    </table>
+                </div>
+                {/* } */}
 
-                </span>
+            </span>
 
-            </section>
-        )
-    
+        </section>
+    )
+
 }
 
 
@@ -73,6 +74,7 @@ const Airplanes = props => {
 //connect redux
 let mapStateToProps = state => {
     let { getAirplaneData: airplanes } = state.airplanes
+    console.log(airplanes)
     return { airplanes }
 }
 
@@ -110,7 +112,7 @@ let styles = {
         width: 200
     },
     displayWrapper: {
-        width: '90%', 
+        width: '90%',
         display: 'flex',
         justifyContent: 'center',
         flexWrap: 'wrap',
