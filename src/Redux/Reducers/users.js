@@ -5,6 +5,11 @@ const GET_USER_PENDING = 'GET_USER_PENDING'
 const GET_USER_FULFILLED = 'GET_USER_FULFILLED'
 const GET_USER_REJECTED = 'GET_USER_REJECTED'
 
+const GET_USERS = 'GET_USERS'
+const GET_USERS_PENDING = 'GET_USERS_PENDING'
+const GET_USERS_FULFILLED = 'GET_USERS_FULFILLED'
+const GET_USERS_REJECTED = 'GET_USERS_REJECTED'
+
 const REGISTER_USER = 'REGISTER_USER'
 const REGISTER_USER_PENDING = 'REGISTER_USER_PENDING'
 const REGISTER_USER_FULFILLED = 'REGISTER_USER_FULFILLED'
@@ -25,10 +30,20 @@ const UPDATE_USER_PENDING = 'UPDATE_USER_PENDING'
 const UPDATE_USER_FULFILLED = 'UPDATE_USER_FULFILLED'
 const UPDATE_USER_REJECTED = 'UPDATE_USER_REJECTED'
 
+const DELETE_USER = 'DELETE_USER'
+const DELETE_USER_PENDING = 'DELETE_USER_PENDING'
+const DELETE_USER_FULFILLED = 'DELETE_USER_FULFILLED'
+const DELETE_USER_REJECTED = 'DELETE_USER_REJECTED'
+
+
+
 const initialState = {
     loading: false,
-    data: null,
-    error: null
+    data: [],
+    getUsersData: [],
+    updateUserData: [],
+    error: null,
+    
 }
 
 export default function(state = initialState, action) {
@@ -38,6 +53,13 @@ export default function(state = initialState, action) {
         case GET_USER_FULFILLED:
             return { ...state, data: action.payload.data, loading: false }
         case GET_USER_REJECTED:
+            return { ...state, error: action.payload, loading: false }
+
+        case GET_USERS_PENDING:
+            return { ...state, loading: true }
+        case GET_USERS_FULFILLED:
+            return { ...state, getUsersData: action.payload.data, loading: false }
+        case GET_USERS_REJECTED:
             return { ...state, error: action.payload, loading: false }
         
         case REGISTER_USER_PENDING:
@@ -64,8 +86,15 @@ export default function(state = initialState, action) {
         case UPDATE_USER_PENDING:
             return { ...state, loading: true }
         case UPDATE_USER_FULFILLED:
-            return { ...state, data: action.payload.data, loading: false }
+            return { ...state, updateUserData: action.payload.data, loading: false }
         case UPDATE_USER_REJECTED:
+            return { ...state, error: action.payload, loading: false}
+
+        case DELETE_USER_PENDING:
+            return { ...state, loading: true }
+        case DELETE_USER_FULFILLED:
+            return { ...state, data: action.payload.data, loading: false }
+        case DELETE_USER_REJECTED:
             return { ...state, error: action.payload, loading: false}
 
         default:
@@ -77,6 +106,13 @@ export function getUser() {
     return {
         type: GET_USER,
         payload: axios.get('/auth/currentUser')
+    }
+}
+
+export function getUsers() {
+    return {
+        type: GET_USERS,
+        payload: axios.get('/auth/getUsers')
     }
 }
 
@@ -105,5 +141,12 @@ export function updateUser(id, updateInfo) {
     return {
         type: UPDATE_USER,
         payload: axios.put(`/auth/updateUser/${id}`, updateInfo)
+    }
+}
+
+export function deleteUser(id, updateInfo) {
+    return {
+        type: DELETE_USER,
+        payload: axios.delete(`/auth/deleteUser/${id}`, updateInfo)
     }
 }

@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react'
+import React, { useState } from 'react'
 import { connect } from 'react-redux'
 import { updateAirplane } from '../../Redux/Reducers/airplanes'
 
@@ -8,6 +8,7 @@ const EditAirplane = props => {
     const airplane = props.airplane
     const toggle = props.toggle   
   
+    console.log('airplane test:', airplane )
 
 
     let [state, setState] = useState({

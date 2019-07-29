@@ -49,8 +49,11 @@ app.listen(SERVER_PORT, () => {
 app.post('/auth/register', AuthCtrl.register)
 app.post('/auth/login', AuthCtrl.login)
 app.get('/auth/logout', AuthCtrl.logout)
-app.get('/auth/currentUser', AuthCtrl.currentUser)
-app.put('/auth/updateUser/:id', AuthCtrl.updateUser)
+app.get('/auth/currentUser', AuthCtrl.currentUser)// get current user
+app.put('/auth/updateUser/:id', AuthCtrl.update)
+app.delete('/auth/deleteUser/:id', AuthCtrl.deleteUser)
+app.get('/auth/getUsers', AuthCtrl.getUsers) // get list of all users for Admin Dashboard
+
 
 // Endpoints for all of the available flights
 app.get('/flights/getFlights', FlightsCtrl.getFlights)
