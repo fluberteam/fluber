@@ -16,6 +16,7 @@ export const LoginForm = styled.div`
     justify-content: center;
     align-items: space-between;
     position: fixed;
+    margin: 20px;
 
 
 

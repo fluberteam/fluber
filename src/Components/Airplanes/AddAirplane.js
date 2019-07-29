@@ -5,6 +5,7 @@ import { createAirplane } from '../../Redux/Reducers/airplanes'
 import { StyledInput } from '../StyledComps/StyledInput'
 import {LoginForm} from '../Login/StyledLogin'
 import largeLogo from '../../Image/fluberlogo.png'
+import { AddButton } from '../StyledComps/AddButton';
 
 
 const AddAirplane = props => {
@@ -152,7 +153,7 @@ const AddAirplane = props => {
         :
         <section>
             <section>
-                <p><button style={styles.addbutton} onClick={toggle}>Add Airplane</button></p>
+                <AddButton onClick={toggle}>Add Airplane</AddButton>
             </section>
         
         </section>
@@ -175,23 +176,13 @@ export default connect(mapStateToProps, { createAirplane })(AddAirplane)
 let styles = {
     admin: {
         fontSize: 18,
-        display: 'flex',
-        alignItems: 'center',
-        justifyContent: 'center',
-        flexDirection: 'column ',
-        textDecoration: 'none',
+        // display: 'flex',
+        // alignItems: 'center',
+        // justifyContent: 'center',
+        // flexDirection: 'column ',
+        // textDecoration: 'none',
         fontFamily: 'Rockwell',
 
-    },
-    addbutton: {
-        border: 'none',
-        fontSize: '20px',
-        color: 'green',
-        margin: '10px 0 20px',
-        opacity: 1,
-        transition: '0.3s',
-        cursor: 'pointer'
-        
     }
 }
 

@@ -3,6 +3,7 @@ import { connect } from 'react-redux'
 // import { getAirplanes } from '../../Redux/Reducers/airplanes'
 import { deleteAirplane } from '../../Redux/Reducers/airplanes'
 import EditAirplane from './EditAirplane'
+import { StyledButton } from '../StyledComps/StyledButton';
 
 
 
@@ -48,10 +49,9 @@ const ListAirplanes = props => {
                         <td style={styles.colSeven}>{airplane.flight_attn? "true":"false"}</td>
                         <td style={styles.colEight}>{airplane.refreshments? "true":"false"}</td>
                         <td style={styles.colNine}>{airplane.cruise_speed}</td>
-
                         <td style={styles.colTen}>
-                            <span style={styles.edit}><button onClick={toggle}className="hoveredit">edit  / </button></span>
-                            <span className="fa" style={styles.edit2} onClick={() => deleteAirplane(airplane.n_number)} ><button className="hoverdelete">   delete</button></span>
+                            <StyledButton onClick={toggle}>Edit</StyledButton>
+                            <StyledButton style={{backgroundColor: 'red'}}onClick={() => deleteAirplane(airplane.n_number)} >Delete</StyledButton> 
                         </td>
                     </tr>
 

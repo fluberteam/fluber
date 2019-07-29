@@ -1,6 +1,7 @@
 import React, { useState } from 'react'
 import { connect } from 'react-redux'
 import { updateAirplane } from '../../Redux/Reducers/airplanes'
+import { StyledButton } from '../StyledComps/StyledButton';
 
 
 const EditAirplane = props => {
@@ -122,7 +123,7 @@ const EditAirplane = props => {
                 </td>
 
                 <td style={styles.colTen}>
-                    <button onClick={() => handleClick(airplane.n_number)}>Save</button>
+                    <StyledButton onClick={() => handleClick(airplane.n_number)}>Save</StyledButton>
                 </td>
         </tr >
         </>
