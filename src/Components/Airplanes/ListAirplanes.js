@@ -1,4 +1,4 @@
-import React, {useState, useEffect} from 'react'
+import React, {useState} from 'react'
 import { connect } from 'react-redux'
 // import { getAirplanes } from '../../Redux/Reducers/airplanes'
 import { deleteAirplane } from '../../Redux/Reducers/airplanes'
@@ -44,7 +44,7 @@ const ListAirplanes = props => {
                         <td style={styles.colThree}>{'image'}</td>
                         <td style={styles.colFour}>{airplane.engine_id}</td>
                         <td style={styles.colFive}>{airplane.num_seats}</td>
-                        <td style={styles.colSix}>{airplane.restroom?"true":"false"}</td>
+                        <td style={styles.colSix}>{airplane.restroom? "true":"false"}</td>
                         <td style={styles.colSeven}>{airplane.flight_attn? "true":"false"}</td>
                         <td style={styles.colEight}>{airplane.refreshments? "true":"false"}</td>
                         <td style={styles.colNine}>{airplane.cruise_speed}</td>

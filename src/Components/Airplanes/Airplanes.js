@@ -9,7 +9,6 @@ const Airplanes = props => {
     const [update, setupdate] = useState(true)
 
     useEffect(() =>{
-        console.log(props)
         if(update){
         getAirplanes()
         setupdate(false)
