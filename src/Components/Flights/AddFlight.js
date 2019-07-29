@@ -1,7 +1,6 @@
 import React, { useState } from 'react';
 import { connect } from 'react-redux';
 import { createFlight } from '../../Redux/Reducers/flights';
-import AddAirplane from '../Airplanes/AddAirplane';
 import { StyledInput } from '../StyledComps/StyledInput'
 import {LoginForm} from '../Login/StyledLogin'
 import largeLogo from '../../Image/fluberlogo.png'
