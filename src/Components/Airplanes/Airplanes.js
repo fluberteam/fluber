@@ -17,9 +17,9 @@ const Airplanes = props => {
     }, [getAirplanes, update])
 
     return (
-
+      
         <section style={styles.admin}>
-            
+
             <span>
                 {/* {user && //if user is logged in, display appliances */}
                 <div className="displayWrapper">
@@ -119,6 +119,7 @@ let styles = {
         width: '90%',
         display: 'flex',
         justifyContent: 'center',
+        alignItems: 'center',
         flexWrap: 'wrap',
         margin: '0 auto'
     }

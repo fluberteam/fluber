@@ -30,14 +30,15 @@ const Search = props => {
     }
 
     return (
-        <div style={{display: 'flex', justifyContent: 'center', alignContent: 'center', background: 'lightBlue', height: '100%'}}>
+        <div style={{display: 'flex', justifyContent: 'center', alignContent: 'center', background: 'lightBlue', height: '100%', width: '100%'}}>
             {props.search.length >= 1 ? 
                 <div>
                 {props.search.map((flight, index) => {
                     return (
                     <FoundFlights 
                         key={index}
-                        flight={flight}/>)})}
+                        flight={flight}
+                        passengers={state.passengers}/>)})}
                 </div> :
                 <LoginForm>
                     <h1>Search For Flights</h1>
