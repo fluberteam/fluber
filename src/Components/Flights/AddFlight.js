@@ -28,6 +28,7 @@ const AddFlight = (props) => {
     const handleSubmit = () => {
         props.createFlight(state)
         toggle()
+        props.setupdate(true)
     }
 
     const toggle = () => {
@@ -43,7 +44,7 @@ const AddFlight = (props) => {
 
 
             <img src={largeLogo} alt="Large Logo" style={{height: '100px'}}/>
-            <h3>Add Airplane</h3>
+            <h3>Add Flight</h3>
             <StyledInput
                 type='text'
                 name='n_number'
@@ -101,7 +102,7 @@ const AddFlight = (props) => {
                 onChange={handleChange} />
             
             
-            <button styles={styles.addbutton} onClick={handleSubmit}>Add Airplane</button>
+            <button styles={styles.addbutton} onClick={handleSubmit}>Add Flight</button>
             <button className="addbutton" onClick={toggle}>Cancel</button>
 
 

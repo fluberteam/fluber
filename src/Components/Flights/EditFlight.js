@@ -27,6 +27,7 @@ const EditFlight = props => {
         let updatedFlight = { ...props.flight, ...state }
         props.updateFlight(id, updatedFlight)
         toggle()
+        props.setupdate(true)
     }
 
     return (

@@ -38,7 +38,6 @@ const AddAirplane = props => {
 
     const toggle = () => {
         setaddAirplane(!addAirplane)
-
     }
 
 
