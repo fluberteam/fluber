@@ -1,7 +1,6 @@
 import React, { useState } from 'react';
 import { connect } from 'react-redux';
 import { createFlight } from '../../Redux/Reducers/flights';
-import AddAirplane from '../Airplanes/AddAirplane';
 import { StyledInput } from '../StyledComps/StyledInput'
 import {LoginForm} from '../Login/StyledLogin'
 import largeLogo from '../../Image/fluberlogo.png'
@@ -29,6 +28,7 @@ const AddFlight = (props) => {
     const handleSubmit = () => {
         props.createFlight(state)
         toggle()
+        props.setupdate(true)
     }
 
     const toggle = () => {
@@ -44,7 +44,7 @@ const AddFlight = (props) => {
 
 
             <img src={largeLogo} alt="Large Logo" style={{height: '100px'}}/>
-            <h3>Add Airplane</h3>
+            <h3>Add Flight</h3>
             <StyledInput
                 type='text'
                 name='n_number'
@@ -102,7 +102,7 @@ const AddFlight = (props) => {
                 onChange={handleChange} />
             
             
-            <button styles={styles.addbutton} onClick={handleSubmit}>Add Airplane</button>
+            <button styles={styles.addbutton} onClick={handleSubmit}>Add Flight</button>
             <button className="addbutton" onClick={toggle}>Cancel</button>
 
 

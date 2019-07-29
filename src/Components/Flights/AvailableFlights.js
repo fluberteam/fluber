@@ -1,4 +1,4 @@
-import React, { useEffect } from 'react';
+import React, { useState, useEffect } from 'react';
 import { connect } from 'react-redux';
 import { getFlights } from '../../Redux/Reducers/flights';
 import AddFlight from './AddFlight';
@@ -6,21 +6,22 @@ import ListFlight from './ListFlight';
 
 const AvailableFlights = (props) => {
     const { getFlights } = props
+    const [update, setupdate] = useState(true)
 
     useEffect(() => {
-        getFlights()
-    }, [getFlights])
+        if (update) {
+            getFlights()
+            setupdate(false)
+        }
+    }, [getFlights, update])
 
 
 
     return (
         <section style={styles.admin}>
-            <section>
-                <section>
-                    <AddFlight/>
-                </section>
-            </section>
 
+            <h1>Available Flights</h1>
+            <br />
             <span>
                 <div>
                     <table>
@@ -47,7 +48,8 @@ const AvailableFlights = (props) => {
                                 return (
                                     <ListFlight
                                         key={index}
-                                        flight={flight} />
+                                        flight={flight}
+                                        setupdate={setupdate} />
                                 )
                             })}
                         </tbody>
@@ -55,7 +57,12 @@ const AvailableFlights = (props) => {
 
                 </div>
             </span>
-            Available Flights
+            <section>
+                <section>
+                    <AddFlight 
+                    setupdate={setupdate}/>
+                </section>
+            </section>
         </section>
     )
 }
