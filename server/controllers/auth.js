@@ -107,6 +107,36 @@ module.exports = {
             console.log('there was an error updating', error)
             res.status(500).send(error)
         }
+    },
+
+    update: (req, res) => {
+        let { id } = req.body
+        let db = req.app.get('db')
+        let user = req.body
+        id = req.body.user_id
+
+        // console.log(111, user)
+       
+        db.auth.updateUser(user).then(response => {
+            res.send(response)
+        }).catch(err => console.log(err))
+    },
+
+
+    deleteUser: (req, res) => {
+        let db = req.app.get('db');
+        const { id } = req.params;//get this from param on url
+        db.auth.deleteUser(id).then(response => {
+            res.status(200).send(response);
+        });
+    },
+
+    getUsers: async (req, res) => {
+        let db = req.app.get('db')
+        let allUsers = await db.auth.getUsers()
+        res.status(200).send(allUsers)
+    
+       
     }
  
 

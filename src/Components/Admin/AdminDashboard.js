@@ -6,7 +6,7 @@ export default function AdminDashboard() {
     return (
         <div style={styles.admin} className="reports">
                 <h2>Admin Dashboard</h2><br></br>
-                <Link to={'/ListUsers'}>
+                <Link to={'/Users'}>
                 <h3><span style={styles.icon} className="fa">&#xf155; </span>  Users</h3>
                 </Link>
                 <Link to={'/AvailableFlights'}>
