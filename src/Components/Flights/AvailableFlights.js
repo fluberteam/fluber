@@ -75,12 +75,7 @@ export default connect(mapStateToProps, { getFlights })(AvailableFlights)
 let styles = {
     admin: {
         fontSize: 18,
-        // fontFamily: 'times',
-        // display: 'flex',
-        // alignItems: 'center',
-        // justifyContent: 'center',
-        // flexDirection: 'column ',
-        // textDecoration: 'none',
+        marginTop: 40,
         fontFamily: 'Rockwell'
     },
     colOne: {
