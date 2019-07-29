@@ -24,7 +24,6 @@ const Airplanes = props => {
                     <AddAirplane
                         setupdate={setupdate} />
                 </section>
-            </section>
             <span>
                 {/* {user && //if user is logged in, display appliances */}
                 <div className="displayWrapper">
