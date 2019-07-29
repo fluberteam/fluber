@@ -3,6 +3,7 @@ import { connect } from 'react-redux';
 // import { getFlights } from '../../Redux/Reducers/flights';
 import { deleteFlight } from '../../Redux/Reducers/flights';
 import EditFlight from './EditFlight';
+import {StyledButton} from '../StyledComps/StyledButton';
 
 const ListFlight = (props) => {
     const flight = props.flight
@@ -43,8 +44,8 @@ const ListFlight = (props) => {
                                 <td style={styles.colNine}>{flight.cutoff_time}</td>
 
                                 <td style={styles.colTen}>
-                                    <span style={styles.edit}><button onClick={toggle} className="hoveredit">Edit </button></span>
-                                    <span className="fa" style={styles.edit2} onClick={() => deleteFlight(flight.flight_num)} ><button className="hoverdelete">   Delete</button></span>
+                                   <StyledButton onClick={toggle}>Edit </StyledButton>
+                                   <StyledButton onClick={() => deleteFlight(flight.flight_num)} style={{backgroundColor: 'red'}}>Delete</StyledButton>
                                 </td>
                             </tr>
                         </tbody>
@@ -72,34 +73,34 @@ let styles = {
         fontFamily: 'Rockwell'
     },
     colOne: {
-        width: 150
+        width: 150,
     },
     colTwo: {
-        width: 150
+        width: 150,
     },
     colThree: {
         width: 100,
     },
     colFour: {
-        width: 150
+        width: 200,
     },
     colFive: {
-        width: 150
+        width: 150,
     },
     colSix: {
-        width: 100
+        width: 100,
     },
     colSeven: {
-        width: 200
+        width: 100,
     },
     colEight: {
-        width: 150
+        width: 100,
     },
     colNine: {
-        width: 200
+        width: 137,
     },
     colTen: {
-        width: 200
-    }
+        width: 200,
+    },
 }
 

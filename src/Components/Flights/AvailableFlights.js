@@ -19,11 +19,8 @@ const AvailableFlights = (props) => {
 
     return (
         <section style={styles.admin}>
-
-            <h1>Available Flights</h1>
-            <br />
             <span>
-                <div>
+                <div  className="displayWrapper">
                     <table>
                         <tbody>
                             <tr >
@@ -32,8 +29,8 @@ const AvailableFlights = (props) => {
                                 <td style={styles.colThree}><h3>Arrival Ariport</h3></td>
                                 <td style={styles.colFour}><h3>Departure Time</h3></td>
                                 <td style={styles.colFive}><h3>Arrival Time</h3></td>
-                                <td style={styles.colSix}><h3>Initial Available Seats</h3></td>
-                                <td style={styles.colSeven}><h3>Available Seats</h3></td>
+                                <td style={styles.colSix}><h3>Initial Seats</h3></td>
+                                <td style={styles.colSeven}><h3>Current Seats</h3></td>
                                 <td style={styles.colEight}><h3>Price</h3></td>
                                 <td style={styles.colNine}><h3>Cutoff Time</h3></td>
                                 <td style={styles.colTen}><h3>Edit/Delete</h3></td>
@@ -57,7 +54,7 @@ const AvailableFlights = (props) => {
 
                 </div>
             </span>
-            <section>
+            <section className="displayWrapper">
                 <section>
                     <AddFlight 
                     setupdate={setupdate}/>
@@ -78,43 +75,43 @@ export default connect(mapStateToProps, { getFlights })(AvailableFlights)
 let styles = {
     admin: {
         fontSize: 18,
-        fontFamily: 'times',
-        display: 'flex',
-        alignItems: 'center',
-        justifyContent: 'center',
-        flexDirection: 'column ',
-        textDecoration: 'none',
+        // fontFamily: 'times',
+        // display: 'flex',
+        // alignItems: 'center',
+        // justifyContent: 'center',
+        // flexDirection: 'column ',
+        // textDecoration: 'none',
         fontFamily: 'Rockwell'
     },
     colOne: {
-        width: 150
+        width: 150,
     },
     colTwo: {
-        width: 150
+        width: 150,
     },
     colThree: {
         width: 100,
     },
     colFour: {
-        width: 150
+        width: 200,
     },
     colFive: {
-        width: 150
+        width: 150,
     },
     colSix: {
-        width: 100
+        width: 100,
     },
     colSeven: {
-        width: 200
+        width: 100,
     },
     colEight: {
-        width: 150
+        width: 100,
     },
     colNine: {
-        width: 200
+        width: 150,
     },
     colTen: {
-        width: 200
+        width: 200,
     },
     displayWrapper: {
         width: '90%',

@@ -18,12 +18,8 @@ const Airplanes = props => {
 
     return (
 
-        <section className="docWrapper">
-            <section className="displayWrapper">
-                <section>
-                    <AddAirplane
-                        setupdate={setupdate} />
-                </section>
+        <section style={styles.admin}>
+            
             <span>
                 {/* {user && //if user is logged in, display appliances */}
                 <div className="displayWrapper">
@@ -60,7 +56,12 @@ const Airplanes = props => {
                 {/* } */}
 
             </span>
-
+            <section className="displayWrapper">
+                <section>
+                    <AddAirplane
+                        setupdate={setupdate} />
+                </section>
+            </section>
         </section>
     )
 
@@ -79,6 +80,11 @@ let mapStateToProps = state => {
 export default connect(mapStateToProps, { getAirplanes })(Airplanes)
 
 let styles = {
+    admin: {
+        fontSize: 18,
+        fontFamily: 'Rockwell',
+        marginTop: 40,
+    },
     colOne: {
         width: 150
     },
