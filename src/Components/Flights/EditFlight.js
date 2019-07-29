@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import { connect } from 'react-redux';
 import { updateFlight } from '../../Redux/Reducers/flights';
+import { StyledButton } from '../StyledComps/StyledButton';
 
 const EditFlight = props => {
     const flight = props.flight
@@ -58,7 +59,7 @@ const EditFlight = props => {
                 <td style={styles.colFour}>
                     <input
                         style={styles.colFour}
-                        type="text"
+                        type="datetime-local"
                         name="departure_time"
                         placeholder="Departure Time"
                         onChange={handleChange}
@@ -67,7 +68,7 @@ const EditFlight = props => {
                 <td style={styles.colFive}>
                     <input
                         style={styles.colFive}
-                        type="text"
+                        type="datetime-local"
                         name="arrival_time"
                         placeholder="Arrival Time"
                         onChange={handleChange}
@@ -103,7 +104,7 @@ const EditFlight = props => {
                 <td style={styles.colNine}>
                     <input
                         style={styles.colNine}
-                        type="text"
+                        type="time"
                         name="cutoff_time"
                         placeholder="Cutoff Time"
                         onChange={handleChange}
@@ -111,7 +112,7 @@ const EditFlight = props => {
                 </td>
 
                 <td style={styles.colTen}>
-                    <button onClick={() => handleClick(flight.flight_num)}>Save</button>
+                    <StyledButton onClick={() => handleClick(flight.flight_num)}>Save</StyledButton>
                 </td>
             </tr >
         </tbody>
@@ -138,34 +139,34 @@ let styles = {
         fontFamily: 'Rockwell'
     },
     colOne: {
-        width: 150
+        width: 150,
     },
     colTwo: {
-        width: 150
+        width: 150,
     },
     colThree: {
         width: 100,
     },
     colFour: {
-        width: 150
+        width: 200,
     },
     colFive: {
-        width: 75
+        width: 150,
     },
     colSix: {
-        width: 100
+        width: 100,
     },
     colSeven: {
-        width: 200
+        width: 100,
     },
     colEight: {
-        width: 150
+        width: 100,
     },
     colNine: {
-        width: 200
+        width: 150,
     },
     colTen: {
-        width: 200
-    }
+        width: 200,
+    },
 }
 

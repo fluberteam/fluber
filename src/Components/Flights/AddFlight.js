@@ -2,10 +2,14 @@ import React, { useState } from 'react';
 import { connect } from 'react-redux';
 import { createFlight } from '../../Redux/Reducers/flights';
 import { StyledInput } from '../StyledComps/StyledInput'
-import {LoginForm} from '../Login/StyledLogin'
+import { LoginForm } from '../Login/StyledLogin'
 import largeLogo from '../../Image/fluberlogo.png'
+import { AddButton } from '../StyledComps/AddButton';
 
 const AddFlight = (props) => {
+    let [depart, setDepart] = useState('text')
+    let [arrive, setArrive] = useState('text')
+
     let [state, setState] = useState({
         n_number: '',
         dep_airport: '',
@@ -21,7 +25,7 @@ const AddFlight = (props) => {
     const [addFlight, setAddFlight] = useState(false)
 
     const handleChange = e => {
-        let {name, value} = e.target
+        let { name, value } = e.target
         setState({ ...state, [name]: value })
     }
 
@@ -35,90 +39,103 @@ const AddFlight = (props) => {
         setAddFlight(!addFlight)
     }
 
+    const onDepart = () => {
+        setDepart('datetime-local')
+        console.log(depart)
+    }
+
+    const onArrive = () => {
+        setArrive('datetime-local')
+        console.log(arrive)
+    }
+
     return (
-      <>
-        {addFlight ? 
-        <div>
-            <LoginForm>
+        <>
+            {addFlight ?
+                <div>
+                    <LoginForm>
 
 
 
-            <img src={largeLogo} alt="Large Logo" style={{height: '100px'}}/>
-            <h3>Add Flight</h3>
-            <StyledInput
-                type='text'
-                name='n_number'
-                placeholder='N-Number'
-                onChange={handleChange} />
-           
-            <StyledInput
-                type='text'
-                name='dep_airport'
-                placeholder='Departure Airport'
-                onChange={handleChange} />
-            
-            <StyledInput
-                type='text'
-                name='arr_airport'
-                placeholder='Arrival Airport'
-                onChange={handleChange} />
-            
-            <StyledInput
-                type='text'
-                name='departure_time'
-                placeholder='Departure Time'
-                onChange={handleChange}/>
-                
-            <StyledInput
-                type='text'
-                name='arrival_time'
-                placeholder='Arrival Time'
-                onChange={handleChange} />
-            
-           <StyledInput
-                type='text'
-                name="init_avail_seats"
-                placeholder='Initial Available Seats'
-                onChange={handleChange}
-           />
-           
-            <StyledInput
-                type='text'
-                name='curr_avail_seats'
-                placeholder='Current Available Seats'
-                onChange={handleChange} />
+                        <img src={largeLogo} alt="Large Logo" style={{ height: '100px' }} />
+                        <h3>Add Flight</h3>
+                        <StyledInput
+                            type='text'
+                            name='n_number'
+                            placeholder='N-Number'
+                            onChange={handleChange} />
 
-            <StyledInput
-                type='text'
-                name='price'
-                placeholder='Price'
-                autocomplete="off"
-                onChange={handleChange} />
+                        <StyledInput
+                            type='text'
+                            name='dep_airport'
+                            placeholder='Departure Airport'
+                            onChange={handleChange} />
 
-            <StyledInput
-                type='text'
-                name='cutoff_time'
-                placeholder='Cutoff Time'
-                onChange={handleChange} />
-            
-            
-            <button styles={styles.addbutton} onClick={handleSubmit}>Add Flight</button>
-            <button className="addbutton" onClick={toggle}>Cancel</button>
+                        <StyledInput
+                            type='text'
+                            name='arr_airport'
+                            placeholder='Arrival Airport'
+                            onChange={handleChange} />
 
+                        <StyledInput
+                            type={depart}
+                            onFocus={onDepart}
+                            name='departure_time'
+                            placeholder='Departure Time'
+                            onChange={handleChange} />
+
+                        <StyledInput
+                            type={arrive}
+                            onFocus={onArrive}
+                            name='arrival_time'
+                            placeholder='Arrival Time'
+                            onChange={handleChange} />
+
+                        <StyledInput
+                            type='text'
+                            name="init_avail_seats"
+                            placeholder='Initial Available Seats'
+                            onChange={handleChange}
+                        />
+
+                        <StyledInput
+                            type='text'
+                            name='curr_avail_seats'
+                            placeholder='Current Available Seats'
+                            onChange={handleChange} />
+
+                        <StyledInput
+                            type='text'
+                            name='price'
+                            placeholder='Price'
+                            autocomplete="off"
+                            onChange={handleChange} />
+
+                        <StyledInput
+                            type='text'
+                            name='cutoff_time'
+                            placeholder='Cutoff Time'
+                            onChange={handleChange}
+                            defaultValue='2' />
 
 
+                        <button styles={styles.addbutton} onClick={handleSubmit}>Add Flight</button>
+                        <button className="addbutton" onClick={toggle}>Cancel</button>
 
 
-            </LoginForm>
-        </div>
-        
-        :
-        <section>
-            <section>
-                <p><button style={styles.addbutton} onClick={toggle}>Add Flight</button></p>
-            </section>
-        </section>}
-      </>
+
+
+
+                    </LoginForm>
+                </div>
+
+                :
+                <section>
+                    <section>
+                        <AddButton onClick={toggle}>Add Flight</AddButton>
+                    </section>
+                </section>}
+        </>
     )
 }
 
@@ -133,7 +150,7 @@ export default connect(mapStateToProps, { createFlight })(AddFlight)
 let styles = {
     admin: {
         fontSize: 18,
-        fontFamily: 'times', 
+        fontFamily: 'times',
         display: 'flex',
         alignItems: 'center',
         justifyContent: 'center',
@@ -149,6 +166,7 @@ let styles = {
         opacity: 1,
         transition: '0.3s',
         cursor: 'pointer',
-        padding: '10px'
+        padding: '10px',
+        background: 'none',
     }
 }
