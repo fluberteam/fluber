@@ -55,7 +55,7 @@ const ListUsers = props => {
 
 
                         <td style={styles.Thirteen}>
-                            <span style={styles.edit}><button onClick={toggle}className="hoveredit">edit  / </button></span>
+                            <span style={styles.edit}><button onClick={toggle}className="hoveredit">edit     / </button></span>
                             <span className="fa" style={styles.edit2} onClick={() => deleteUser(users.user_id)} ><button className="hoverdelete">   delete</button></span>
                         </td>
                     </tr>
