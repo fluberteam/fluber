@@ -57,7 +57,7 @@ const EditUser = props => {
                         name="first_name"
                         placeholder="First Name"
                         onChange={handleChange}
-                        value={state.first_name} />
+                        value={users.first_name} />
                 </td>
                 <td style={styles.colTwo}>
                     <input
