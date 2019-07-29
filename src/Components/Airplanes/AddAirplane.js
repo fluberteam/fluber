@@ -9,7 +9,7 @@ import largeLogo from '../../Image/fluberlogo.png'
 
 const AddAirplane = props => {
 
-
+    // useEffect( () => {}, [props.airplane])
 
     let [state, setState] = useState({
         n_number: '',
@@ -33,10 +33,12 @@ const AddAirplane = props => {
     const handleSubmit = () => {
         props.createAirplane(state)
         toggle()
+        props.setupdate(true)
     }
 
     const toggle = () => {
         setaddAirplane(!addAirplane)
+
     }
 
 
@@ -179,7 +181,8 @@ let styles = {
         justifyContent: 'center',
         flexDirection: 'column ',
         textDecoration: 'none',
-        fontFamily: 'Rockwell'
+        fontFamily: 'Rockwell',
+
     },
     addbutton: {
         border: 'none',

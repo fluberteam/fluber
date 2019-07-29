@@ -13,12 +13,14 @@ const ListAirplanes = props => {
     const airplane = props.airplane
     const [edit, setEdit] = useState(false)
 
+
     const toggle = () => {
         setEdit(!edit)
     }
 
     const deleteAirplane = (id) => {
         props.deleteAirplane(id)
+        props.setupdate(true)
 
     }
 
@@ -30,6 +32,7 @@ const ListAirplanes = props => {
                     <>
                         <EditAirplane
                             airplane={airplane}
+                            setupdate={props.setupdate}
                             toggle={toggle}
                             handleClick={props.handleClick} />
                     </>
@@ -41,7 +44,7 @@ const ListAirplanes = props => {
                         <td style={styles.colThree}>{'image'}</td>
                         <td style={styles.colFour}>{airplane.engine_id}</td>
                         <td style={styles.colFive}>{airplane.num_seats}</td>
-                        <td style={styles.colSix}>{airplane.restroom?"true":"false"}</td>
+                        <td style={styles.colSix}>{airplane.restroom? "true":"false"}</td>
                         <td style={styles.colSeven}>{airplane.flight_attn? "true":"false"}</td>
                         <td style={styles.colEight}>{airplane.refreshments? "true":"false"}</td>
                         <td style={styles.colNine}>{airplane.cruise_speed}</td>

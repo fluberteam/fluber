@@ -6,10 +6,10 @@ import { updateAirplane } from '../../Redux/Reducers/airplanes'
 const EditAirplane = props => {
 
     const airplane = props.airplane
-    const toggle = props.toggle
-
-   
+    const toggle = props.toggle   
   
+    console.log('airplane test:', airplane )
+
 
     let [state, setState] = useState({
         n_number: airplane.n_number,
@@ -28,11 +28,13 @@ const EditAirplane = props => {
         setState({ ...state, [name]: value })
     }
 
+    
     const handleClick = (id) => {
         let updatedAirplane = { ...props.airplane, ...state }
         props.updateAirplane(id, updatedAirplane)
         toggle(); // takes display back to original display
-
+        props.setupdate(true)
+  
     }
 
 
@@ -128,7 +130,6 @@ const EditAirplane = props => {
 }
 
 const mapStateToProps = state => {
-    console.log(state)
     let { data: users } = state.users
     return { users }
 }
