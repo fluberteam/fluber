@@ -1,19 +1,19 @@
 import React, { useState, useEffect } from 'react';
 import { connect } from 'react-redux';
-import { getFlights } from '../../Redux/Reducers/flights';
+import { getFlightsOperator } from '../../Redux/Reducers/flights';
 import AddFlight from './AddFlight';
 import ListFlight from './ListFlight';
 
-const ListFlightsByOperator = (props) => {
-    const { getFlights } = props
+const AvailableFlightsOperator = (props) => {
+    const { getFlightsOperator } = props
     const [update, setupdate] = useState(true)
 
     useEffect(() => {
         if (update) {
-            getFlights()
+            getFlightsOperator()
             setupdate(false)
         }
-    }, [getFlights, update])
+    }, [getFlightsOperator, update])
 
 
 
@@ -28,8 +28,8 @@ const ListFlightsByOperator = (props) => {
                         <tbody>
                             <tr >
                                 <td style={styles.colOne}><h3>N-Number</h3></td>
-                                <td style={styles.colTwo}><h3>Departure Ariport</h3></td>
-                                <td style={styles.colThree}><h3>Arrival Ariport</h3></td>
+                                <td style={styles.colTwo}><h3>Departure Airport</h3></td>
+                                <td style={styles.colThree}><h3>Arrival Airport</h3></td>
                                 <td style={styles.colFour}><h3>Departure Time</h3></td>
                                 <td style={styles.colFive}><h3>Arrival Time</h3></td>
                                 <td style={styles.colSix}><h3>Initial Available Seats</h3></td>
@@ -74,7 +74,7 @@ const mapStateToProps = state => {
     return { flights, user }
 }
 
-export default connect(mapStateToProps, { getFlights })(ListFlightsByOperator)
+export default connect(mapStateToProps, { getFlightsOperator })(AvailableFlightsOperator)
 
 let styles = {
     admin: {

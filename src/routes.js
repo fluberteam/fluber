@@ -12,6 +12,7 @@ import AvailableFlightsByOperator from './Components/Flights/AvailableFlightsByO
 import ScheduledFlights from './Components/Flights/ScheduledFlights'
 import Payments from './Components/Payments/Payments'
 import Airplanes from './Components/Airplanes/Airplanes'
+import AirplanesByOperator from './Components/Airplanes/AirplanesByOperator'
 import Users from './Components/User/Users'
 
 export default (
@@ -28,6 +29,7 @@ export default (
         <Route path="/AvailableFlightsByOperator" component={AvailableFlightsByOperator} />
         <Route path="/Payments" component={Payments} />
         <Route path="/Airplanes" component={Airplanes} />
+        <Route path="/AirplanesByOperator" component={AirplanesByOperator} />
         <Route path="/Users" component={Users} />
 
 

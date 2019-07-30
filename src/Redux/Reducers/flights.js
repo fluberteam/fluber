@@ -82,6 +82,13 @@ export function getFlights() {
     }
 }
 
+export function getFlightsOperator() {
+    return {
+        type: GET_FLIGHT,
+        payload: axios.get('/flights/getFlightsOperator')
+    }
+}
+
 export function updateFlight(flight_num, updateInfo) {
     return {
         type: UPDATE_FLIGHT,

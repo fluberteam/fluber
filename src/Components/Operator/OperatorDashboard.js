@@ -6,10 +6,10 @@ export default function OperatorDashboard() {
     return (
         <div style={styles.admin} className="reports">
                 <h2>Operator Dashboard</h2><br></br>
-                <Link to={'/ScheduledFlights'}>
+                <Link to={'/AvailableFlightsByOperator'}>
                     <h3><span style={styles.icon} className="fa">&#xf0e0; </span>   Scheduled Flights</h3>
                 </Link>
-                <Link to={'/Airplanes'}>
+                <Link to={'/AirplanesByOperator'}>
                     <h3><span style={styles.icon} className="fa">&#xf007; </span>  Airplanes</h3>
                 </Link>
                 <Link to={'/Payments'}>
