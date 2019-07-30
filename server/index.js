@@ -11,7 +11,7 @@ const AuthCtrl = require('../server/controllers/auth')
 const FlightsCtrl = require('../server/controllers/AvailableFlights')
 const AirplaneCtrl = require('../server/controllers/airplanes.js')  
 const SearchCtrl = require('./controllers/search')
-
+const PayCtrl = require('./controllers/pay')
 
 
 
@@ -69,4 +69,7 @@ app.delete('/api/airplanes/:id', AirplaneCtrl.delete)//delete
 
 // Search Endpoints
 app.get('/search/all?', SearchCtrl.getAll)
+
+// Pay Endpoints
+app.post('/api/pay', PayCtrl.pay)
 
