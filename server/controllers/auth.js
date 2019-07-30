@@ -110,13 +110,13 @@ module.exports = {
     },
 
     update: (req, res) => {
-        let { id } = req.body
+        let { id } = req.params
         let db = req.app.get('db')
         let user = req.body
-        id = req.body.user_id
-
-        // console.log(111, user)
+        
+        console.log(444, user)
        
+
         db.auth.updateUser(user).then(response => {
             res.send(response)
         }).catch(err => console.log(err))

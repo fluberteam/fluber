@@ -13,5 +13,3 @@ phone = ${phone},
 operator_num = ${operator_num}
 WHERE user_id = ${user_id};
 
-SELECT * FROM users
-ORDER BY last_name

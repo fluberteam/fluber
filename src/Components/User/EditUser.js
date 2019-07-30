@@ -6,19 +6,20 @@ import { updateUser } from '../../Redux/Reducers/users'
 
 const EditUser = props => {
 
-    const users = props.users
+    const users = props.EditUsers
     const toggle = props.toggle 
     
-    console.log('user test:', users )
+  
 
     let [state, setState] = useState({
+        user_id: users.user_id,
         first_name: users.first_name,
         last_name: users.last_name,
         email: users.email,
         password: users.password,
         status: users.status,
-        address1: users.address1,
-        address2: users.address2,
+        address1: '',
+        address2: '',
         city: users.city,
         state: users.state,
         zipcode: users.zipcode,
@@ -26,6 +27,8 @@ const EditUser = props => {
         operator_num: users.operator_num
 
     })
+
+    // console.log('user test:', state )
 
 
     const handleChange = e => {
@@ -36,6 +39,7 @@ const EditUser = props => {
     
     const handleClick = (id) => {
         let updatedUser = { ...props.users, ...state }
+        // console.log(333, id, updatedUser)
         props.updateUser(id, updatedUser)
         toggle(); // takes display back to original display
         props.setupdate(true)
@@ -57,7 +61,7 @@ const EditUser = props => {
                         name="first_name"
                         placeholder="First Name"
                         onChange={handleChange}
-                        value={users.first_name} />
+                        value={state.first_name} />
                 </td>
                 <td style={styles.colTwo}>
                     <input
