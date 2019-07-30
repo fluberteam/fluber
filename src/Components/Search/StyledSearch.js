@@ -1,10 +1,10 @@
 import styled from 'styled-components'
 
-export const LoginForm = styled.div`
+export const StyledSearch = styled.div`
 
     display: flex;
     height: 25%
-    width: 20%;
+    width: content;
     z-index: 0;
     flex-direction: column;
     background: white;
@@ -15,16 +15,6 @@ export const LoginForm = styled.div`
     height: auto;
     justify-content: center;
     align-items: space-between;
-    position: fixed;
-    margin: 20px;
 
-
-
-    @media screen and (max-width: 900px){
-        width: 40%;
-    }
-    @media screen and (max-width: 500px){
-        width: 50%;
-    }
 
 `

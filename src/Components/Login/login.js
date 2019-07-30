@@ -29,21 +29,23 @@ const Login = props => {
             {props.users ? (props.users.status === 'a' ? <Redirect to='/AdminDashboard' /> : (props.users.status === 'o' ? <Redirect to='/OperatorDashboard' /> : <Redirect to='/UserDashboard' />)) : <Redirect to='/login' />}
             <LoginForm>
                 <img style={{height: '100px'}} src={largeLogo} alt='large logo' />
-                <div style={{display: 'flex', marginTop: '5px'}}>
+                <div  style={{display: 'flex', marginTop: '5px'}}>
                     <StyledInput 
                         type='email'
                         name='email'
+                        className="test-email"
                         placeholder='Email'
                         onChange={handleChange}/>
                 </div>
-                <div style={{display: 'flex', marginTop: '5px', marginBottom: '5px'}}>
+                <div  style={{display: 'flex', marginTop: '5px', marginBottom: '5px'}}>
                     <StyledInput 
                         type='password'
                         name='password'
+                        className="test-password"
                         placeholder='Password'
                         onChange={handleChange}/>
                 </div>
-                <button onClick={handleSubmit}>Login</button>
+                <button className="test-login" onClick={handleSubmit}>Login</button>
                 <Link style={styles.register} to='/register'>Register</Link>
             </LoginForm>
         </div>
