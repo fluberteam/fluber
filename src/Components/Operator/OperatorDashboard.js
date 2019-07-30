@@ -1,40 +1,29 @@
 import React from 'react'
 import { Link } from 'react-router-dom';
-
+import { AdminIcon, AdminDiv } from '../Admin/StyledAdmin';
 
 export default function OperatorDashboard() {
     return (
-        <div style={styles.admin} className="reports">
-                <h2>Operator Dashboard</h2><br></br>
+        <AdminDiv className="reports">
+                <h1 style={title}>Operator Dashboard</h1><br></br>
                 <Link to={'/AvailableFlightsByOperator'}>
-                    <h3><span style={styles.icon} className="fa">&#xf0e0; </span>   Scheduled Flights</h3>
+                    <AdminIcon className="fa">&#xf0e0; Scheduled Flights</AdminIcon>   
                 </Link>
                 <Link to={'/AirplanesByOperator'}>
-                    <h3><span style={styles.icon} className="fa">&#xf007; </span>  Airplanes</h3>
+                    <AdminIcon className="fa">&#xf007; Airplanes</AdminIcon>
                 </Link>
                 <Link to={'/Payments'}>
-                    <h3><span style={styles.icon} className="fa">&#xf155; </span>  Payment List</h3>
+                    <AdminIcon className="fa">&#xf155; Payment List</AdminIcon>  
                 </Link>
                 
                 
                 
                 
-            </div>
+            </AdminDiv>
     )
 }
 
-let styles = {
-    admin: {
-        fontSize: 18,
-        display: 'flex',
-        alignItems: 'center',
-        justifyContent: 'center',
-        flexDirection: 'column ',
-        textDecoration: 'none',
-        fontFamily: ''
-    },
-    icon: {
-        fontSize: '25px',
-        textDecoration: 'none'
-    }
+const title = {
+    marginTop: 40,
+
 }

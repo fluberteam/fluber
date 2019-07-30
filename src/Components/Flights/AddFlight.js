@@ -1,10 +1,11 @@
 import React, { useState } from 'react';
 import { connect } from 'react-redux';
 import { createFlight } from '../../Redux/Reducers/flights';
-import { StyledInput } from '../StyledComps/StyledInput'
-import { LoginForm } from '../Login/StyledLogin'
-import largeLogo from '../../Image/fluberlogo.png'
+import { AddFlightInput } from './StyledAddFlight';
+import largeLogo from '../../Image/fluberlogo.png';
 import { AddButton } from '../StyledComps/AddButton';
+import { AddForm } from './StyledAddFlight';
+import { FormButton } from './StyledAddFlight';
 
 const AddFlight = (props) => {
     let [depart, setDepart] = useState('text')
@@ -30,6 +31,11 @@ const AddFlight = (props) => {
     }
 
     const handleSubmit = () => {
+        // if(state.n_number === ''){
+        //     return (
+                
+        //     )
+        // }
         props.createFlight(state)
         toggle()
         props.setupdate(true)
@@ -53,34 +59,39 @@ const AddFlight = (props) => {
         <>
             {addFlight ?
                 <div>
-                    <LoginForm>
+                    {/* <LoginForm> */}
+                    <AddForm>
 
 
 
                         <img src={largeLogo} alt="Large Logo" style={{ height: '100px' }} />
-                        <h3>Add Flight</h3>
-                        <StyledInput
+                        <h3 style={title}>Add Flight</h3>
+                        <AddFlightInput
+                            autoComplete="off"
                             type='text'
                             name='n_number'
                             placeholder='N-Number'
                             required
                             onChange={handleChange} />
 
-                        <StyledInput
+                        <AddFlightInput
+                            autoComplete="off"
                             type='text'
                             name='dep_airport'
                             placeholder='Departure Airport'
                             required
                             onChange={handleChange} />
 
-                        <StyledInput
+                        <AddFlightInput
+                            autoComplete="off"
                             type='text'
                             name='arr_airport'
                             placeholder='Arrival Airport'
                             required
                             onChange={handleChange} />
 
-                        <StyledInput
+                        <AddFlightInput
+                            autoComplete="off"
                             type={depart}
                             onFocus={onDepart}
                             name='departure_time'
@@ -88,7 +99,8 @@ const AddFlight = (props) => {
                             required
                             onChange={handleChange} />
 
-                        <StyledInput
+                        <AddFlightInput
+                            autoComplete="off"
                             type={arrive}
                             onFocus={onArrive}
                             name='arrival_time'
@@ -96,7 +108,8 @@ const AddFlight = (props) => {
                             required
                             onChange={handleChange} />
 
-                        <StyledInput
+                        <AddFlightInput
+                            autoComplete="off"
                             type='text'
                             name="init_avail_seats"
                             placeholder='Initial Available Seats'
@@ -104,14 +117,16 @@ const AddFlight = (props) => {
                             onChange={handleChange}
                         />
 
-                        <StyledInput
+                        <AddFlightInput
+                            autoComplete="off"
                             type='text'
                             name='curr_avail_seats'
                             placeholder='Current Available Seats'
                             required
                             onChange={handleChange} />
 
-                        <StyledInput
+                        <AddFlightInput
+                            autoComplete="off"
                             type='text'
                             name='price'
                             placeholder='Price'
@@ -119,7 +134,8 @@ const AddFlight = (props) => {
                             autocomplete="off"
                             onChange={handleChange} />
 
-                        <StyledInput
+                        <AddFlightInput
+                            autoComplete="off"
                             type='text'
                             name='cutoff_time'
                             placeholder='Cutoff Time'
@@ -127,14 +143,15 @@ const AddFlight = (props) => {
                             onChange={handleChange} />
 
 
-                        <button styles={styles.addbutton} onClick={handleSubmit}>Add Flight</button>
-                        <button className="addbutton" onClick={toggle}>Cancel</button>
+                        <FormButton onClick={handleSubmit}>Add Flight</FormButton>
+                        <FormButton onClick={toggle}>Cancel</FormButton>
 
 
 
 
+                    </AddForm>
 
-                    </LoginForm>
+                    {/* </LoginForm> */}
                 </div>
 
                 :
@@ -154,27 +171,7 @@ const mapStateToProps = state => {
 
 export default connect(mapStateToProps, { createFlight })(AddFlight)
 
-
-let styles = {
-    admin: {
-        fontSize: 18,
-        fontFamily: 'times',
-        display: 'flex',
-        alignItems: 'center',
-        justifyContent: 'center',
-        flexDirection: 'column ',
-        textDecoration: 'none',
-        fontFamily: 'Rockwell'
-    },
-    addbutton: {
-        border: 'none',
-        fontSize: '20px',
-        color: 'green',
-        margin: '10px 0 20px',
-        opacity: 1,
-        transition: '0.3s',
-        cursor: 'pointer',
-        padding: '10px',
-        background: 'none',
-    }
+const title = {
+    color: '#0079BF',
+    fontFamily: 'Rockwell'
 }
