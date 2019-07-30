@@ -3,7 +3,7 @@ import {connect} from 'react-redux'
 import { createAirplane } from '../../Redux/Reducers/airplanes'
 // import {Redirect} from 'react-router-dom'
 import { StyledInput } from '../StyledComps/StyledInput'
-import {LoginForm} from '../Login/StyledLogin'
+import {AddForm} from './StyledAddAirplane'
 import largeLogo from '../../Image/fluberlogo.png'
 import { AddButton } from '../StyledComps/AddButton';
 
@@ -46,7 +46,9 @@ const AddAirplane = props => {
         <>
         {addAirplane?
         <div style={styles.div}>
-        <LoginForm>
+
+       <AddForm>
+            
             <img src={largeLogo} alt="Large Logo" style={{height: '100px'}}/>
             <h3>Add Airplane</h3>
             <StyledInput
@@ -145,8 +147,7 @@ const AddAirplane = props => {
             <button onClick={handleSubmit}>Add Airplane</button>
             <button className="addbutton" onClick={toggle}>Cancel</button>
 
-
-        </LoginForm>
+            </AddForm>
         </div>
         
         
@@ -182,6 +183,12 @@ let styles = {
         // flexDirection: 'column ',
         // textDecoration: 'none',
         fontFamily: 'Rockwell',
+
+        div: {
+            zIndex: 16,
+            position: 'absolute'
+
+        }
 
     }
 }
