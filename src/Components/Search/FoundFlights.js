@@ -4,6 +4,7 @@ import {StyledSearch} from './StyledSearch'
 import Moment from 'react-moment'
 
 
+
 const FoundFlights =props => {
     const flight = props.flight
     const passengers = props.passengers
