@@ -48,7 +48,6 @@ export default function(state = initialState, action) {
         
         
         case DELETE_FLIGHT_PENDING:
-            console.log(state)
             return { ...state, loading: true }
         case DELETE_FLIGHT_FULFILLED:
             return { ...state, deleteFlightData: null, loading: false }

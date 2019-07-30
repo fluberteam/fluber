@@ -4,6 +4,7 @@ import { connect } from 'react-redux';
 import { deleteFlight } from '../../Redux/Reducers/flights';
 import EditFlight from './EditFlight';
 import {StyledButton} from '../StyledComps/StyledButton';
+import Moment from 'react-moment';
 
 const ListFlight = (props) => {
     const flight = props.flight
@@ -17,6 +18,8 @@ const ListFlight = (props) => {
         props.deleteFlight(flight_num)
         props.setupdate(true)
     }
+
+
 
 
     return (
@@ -36,11 +39,11 @@ const ListFlight = (props) => {
                                 <td style={styles.colOne}>{flight.n_number}</td>
                                 <td style={styles.colTwo}>{flight.dep_airport}</td>
                                 <td style={styles.colThree}>{flight.arr_airport}</td>
-                                <td style={styles.colFour}>{flight.departure_time}</td>
-                                <td style={styles.colFive}>{flight.arrival_time}</td>
+                                <td style={styles.colFour}><Moment format="LLL">{flight.departure_time}</Moment></td>
+                                <td style={styles.colFive}><Moment format="LLL">{flight.arrival_time}</Moment></td>
                                 <td style={styles.colSix}>{flight.init_avail_seats}</td>
                                 <td style={styles.colSeven}>{flight.curr_avail_seats}</td>
-                                <td style={styles.colEight}>{flight.price}</td>
+                                <td style={styles.colEight}>$ {flight.price}</td>
                                 <td style={styles.colNine}>{flight.cutoff_time}</td>
 
                                 <td style={styles.colTen}>
@@ -82,10 +85,10 @@ let styles = {
         width: 100,
     },
     colFour: {
-        width: 200,
+        width: 275,
     },
     colFive: {
-        width: 150,
+        width: 275,
     },
     colSix: {
         width: 100,
@@ -97,7 +100,7 @@ let styles = {
         width: 100,
     },
     colNine: {
-        width: 137,
+        width: 100,
     },
     colTen: {
         width: 200,

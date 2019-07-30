@@ -63,18 +63,21 @@ const AddFlight = (props) => {
                             type='text'
                             name='n_number'
                             placeholder='N-Number'
+                            required
                             onChange={handleChange} />
 
                         <StyledInput
                             type='text'
                             name='dep_airport'
                             placeholder='Departure Airport'
+                            required
                             onChange={handleChange} />
 
                         <StyledInput
                             type='text'
                             name='arr_airport'
                             placeholder='Arrival Airport'
+                            required
                             onChange={handleChange} />
 
                         <StyledInput
@@ -82,6 +85,7 @@ const AddFlight = (props) => {
                             onFocus={onDepart}
                             name='departure_time'
                             placeholder='Departure Time'
+                            required
                             onChange={handleChange} />
 
                         <StyledInput
@@ -89,12 +93,14 @@ const AddFlight = (props) => {
                             onFocus={onArrive}
                             name='arrival_time'
                             placeholder='Arrival Time'
+                            required
                             onChange={handleChange} />
 
                         <StyledInput
                             type='text'
                             name="init_avail_seats"
                             placeholder='Initial Available Seats'
+                            required
                             onChange={handleChange}
                         />
 
@@ -102,12 +108,14 @@ const AddFlight = (props) => {
                             type='text'
                             name='curr_avail_seats'
                             placeholder='Current Available Seats'
+                            required
                             onChange={handleChange} />
 
                         <StyledInput
                             type='text'
                             name='price'
                             placeholder='Price'
+                            required
                             autocomplete="off"
                             onChange={handleChange} />
 
@@ -115,8 +123,8 @@ const AddFlight = (props) => {
                             type='text'
                             name='cutoff_time'
                             placeholder='Cutoff Time'
-                            onChange={handleChange}
-                            defaultValue='2' />
+                            required
+                            onChange={handleChange} />
 
 
                         <button styles={styles.addbutton} onClick={handleSubmit}>Add Flight</button>
