@@ -1,23 +1,16 @@
 import React from 'react'
+import { AdminIcon, AdminDiv } from '../Admin/StyledAdmin';
 
 export default function UserDashboard() {
     return (
-        <div style={styles.admin}>
-            User DashBoard
-        </div>
+        <AdminDiv >
+                <h1 style={title}>User Dashboard</h1><br></br>
+        </AdminDiv>
     )
 }
 
-let styles = {
-    admin: {
-        fontSize: 18,
-        display: 'flex',
-        alignItems: 'center',
-        justifyContent: 'center',
-        flexDirection: 'column ',
-        textDecoration: 'none',
-        fontFamily: 'Rockwell'
-    }
-}
+const title = {
+    marginTop: 40,
 
+}
 

@@ -1,44 +1,31 @@
-import React from 'react'
+import React from 'react';
 import { Link } from 'react-router-dom';
-
+import { AdminIcon, AdminDiv } from './StyledAdmin';
 
 export default function AdminDashboard() {
     return (
-        <div style={styles.admin} className="reports">
-                <h2>Admin Dashboard</h2><br></br>
+        <AdminDiv className="reports">
+                <h1 style={title}>Admin Dashboard</h1><br></br>
                 <Link className="test-users" to={'/Users'}>
-                <h3><span  style={styles.icon} className="fa">&#xf155; </span>  Users</h3>
+                <AdminIcon className="fa">&#xf0c0; Users</AdminIcon>
                 </Link>
                 <Link className="test-available-flights" to={'/AvailableFlights'}>
-                    <h3><span style={styles.icon} className="fa">&#xf080; </span>  Available Flights</h3>
+                    <AdminIcon className="fa">&#xf0f2; Available Flights</AdminIcon>
                 </Link>
                 <Link  className="test-scheduled-flights"  to={'/ScheduledFlights'}>
-                    <h3><span style={styles.icon} className="fa">&#xf0e0; </span>   Scheduled Flights</h3>
+                    <AdminIcon className="fa">&#xf145; Scheduled Flights</AdminIcon>
                 </Link>
                 <Link className="test-airplanes" to={'/Airplanes'}>
-                    <h3><span style={styles.icon} className="fa">&#xf007; </span>  Airplanes</h3>
+                    <AdminIcon className="fa">&#xf072; Airplanes</AdminIcon>
                 </Link>
                 <Link className="test-payments" to={'/Payments'}>
-                    <h3><span style={styles.icon} className="fa">&#xf155; </span>  Payment List</h3>
+                    <AdminIcon className="fa">&#xf155; Payment List</AdminIcon>
                 </Link>
-                
-                
-            </div>
+            </AdminDiv>
     )
 }
 
-let styles = {
-    admin: {
-        fontSize: 18,
-        display: 'flex',
-        alignItems: 'center',
-        justifyContent: 'center',
-        flexDirection: 'column ',
-        textDecoration: 'none',
-        fontFamily: ''
-    },
-    icon: {
-        fontSize: '25px',
-        textDecoration: 'none'
-    }
+const title = {
+    marginTop: 40,
+
 }

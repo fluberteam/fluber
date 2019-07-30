@@ -58,6 +58,5 @@
   "proxy": "http://localhost:5020",
   "devDependencies": {
     "cypress": "^3.4.1"
-
   }
 }
