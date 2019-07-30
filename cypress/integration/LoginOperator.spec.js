@@ -15,10 +15,10 @@ describe('My First Tests', function() {
         cy.url().should('include', '/login')
     }),
 
-    it('Finds Login user field and Types in an email for an admin user', () => {
+    it('Finds Login user field and Types in an email for an operator user', () => {
         cy.get('.test-email')
-        .type('henry@ford.com')
-        .should('have.value', 'henry@ford.com')
+        .type('thippy@aol.com')
+        .should('have.value', 'thippy@aol.com')
     })
 
     it('Finds the password field and types in password', () => {
