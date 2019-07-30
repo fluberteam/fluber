@@ -4,6 +4,7 @@ import {StyledSearch} from './StyledSearch'
 import Moment from 'react-moment'
 
 
+
 const FoundFlights =props => {
     const flight = props.flight
     const passengers = props.passengers
@@ -28,7 +29,7 @@ const FoundFlights =props => {
                     <p><b>Price: </b> {flight.price}</p>
                     <button>Purchase</button>
                 </div>
-                {console.log(flight)}
+                {/* {console.log(flight)} */}
             </StyledSearch>
         </div>
     )
