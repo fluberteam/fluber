@@ -17,6 +17,7 @@ const AvailableFlights = (props) => {
 
 
 
+
     return (
         <section style={styles.admin}>
             <span>
@@ -44,7 +45,7 @@ const AvailableFlights = (props) => {
                             {props.flights.map((flight, index) => {
                                 return (
                                     <ListFlight
-                                        key={index}
+                                        key={flight.flight_num}
                                         flight={flight}
                                         setupdate={setupdate} />
                                 )
@@ -75,12 +76,7 @@ export default connect(mapStateToProps, { getFlights })(AvailableFlights)
 let styles = {
     admin: {
         fontSize: 18,
-        // fontFamily: 'times',
-        // display: 'flex',
-        // alignItems: 'center',
-        // justifyContent: 'center',
-        // flexDirection: 'column ',
-        // textDecoration: 'none',
+        marginTop: 40,
         fontFamily: 'Rockwell'
     },
     colOne: {
@@ -93,10 +89,10 @@ let styles = {
         width: 100,
     },
     colFour: {
-        width: 200,
+        width: 275,
     },
     colFive: {
-        width: 150,
+        width: 275,
     },
     colSix: {
         width: 100,
@@ -108,7 +104,7 @@ let styles = {
         width: 100,
     },
     colNine: {
-        width: 150,
+        width: 100,
     },
     colTen: {
         width: 200,

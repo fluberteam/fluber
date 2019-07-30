@@ -1,6 +1,7 @@
 import React, { useState } from 'react'
 import { connect } from 'react-redux'
 import { updateUser } from '../../Redux/Reducers/users'
+import { StyledButton } from '../StyledComps/StyledButton';
 
 
 
@@ -146,7 +147,7 @@ const EditUser = props => {
                 </td>
 
                 <td style={styles.colThirteen}>
-                    <button onClick={() => handleClick(users.user_id)}>Save</button>
+                    <StyledButton onClick={() => handleClick(users.user_id)}>Save</StyledButton>
                 </td>
         </tr >
         </>
