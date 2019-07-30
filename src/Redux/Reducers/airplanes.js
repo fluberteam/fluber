@@ -81,6 +81,13 @@ export function getAirplanes() {
     }
 }
 
+export function getAirplanesByOperator() {
+    return {
+        type: GET_AIRPLANE,
+        payload: axios.get('/api/airplanesByOperator')
+    }
+}
+
 export function updateAirplane(id, updateInfo) {
     return {
         type: UPDATE_AIRPLANE,

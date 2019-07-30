@@ -48,7 +48,6 @@ export default function(state = initialState, action) {
         
         
         case DELETE_FLIGHT_PENDING:
-            console.log(state)
             return { ...state, loading: true }
         case DELETE_FLIGHT_FULFILLED:
             return { ...state, deleteFlightData: null, loading: false }
@@ -79,6 +78,13 @@ export function getFlights() {
     return {
         type: GET_FLIGHT,
         payload: axios.get('/flights/getFlights')
+    }
+}
+
+export function getFlightsOperator() {
+    return {
+        type: GET_FLIGHT,
+        payload: axios.get('/flights/getFlightsOperator')
     }
 }
 

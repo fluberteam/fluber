@@ -45,7 +45,7 @@ const EditFlight = props => {
                         name="dep_airport"
                         placeholder="Departure Airport"
                         onChange={handleChange}
-                        value={state.dep_airport} />
+                        value={state.dep_airport}/>
                 </td>
                 <td style={styles.colThree}>
                     <input
@@ -104,7 +104,7 @@ const EditFlight = props => {
                 <td style={styles.colNine}>
                     <input
                         style={styles.colNine}
-                        type="time"
+                        type="text"
                         name="cutoff_time"
                         placeholder="Cutoff Time"
                         onChange={handleChange}
@@ -148,10 +148,10 @@ let styles = {
         width: 100,
     },
     colFour: {
-        width: 200,
+        width: 275,
     },
     colFive: {
-        width: 150,
+        width: 275,
     },
     colSix: {
         width: 100,
@@ -163,7 +163,7 @@ let styles = {
         width: 100,
     },
     colNine: {
-        width: 150,
+        width: 100,
     },
     colTen: {
         width: 200,

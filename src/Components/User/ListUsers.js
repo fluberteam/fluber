@@ -2,7 +2,7 @@ import React, {useState} from 'react'
 import { connect } from 'react-redux'
 import { deleteUser } from '../../Redux/Reducers/users'
 import EditUser from './EditUser'
-
+import { StyledButton } from '../StyledComps/StyledButton';
 
 
 
@@ -32,7 +32,7 @@ const ListUsers = props => {
                edit  ?
                     <>
                         <EditUser
-                            users={users}
+                            EditUsers={props.user}
                             setupdate={props.setupdate}
                             toggle={toggle}
                             handleclick={props.handleClick}/>
@@ -55,8 +55,8 @@ const ListUsers = props => {
 
 
                         <td style={styles.Thirteen}>
-                            <span style={styles.edit}><button onClick={toggle}className="hoveredit">edit     / </button></span>
-                            <span className="fa" style={styles.edit2} onClick={() => deleteUser(users.user_id)} ><button className="hoverdelete">   delete</button></span>
+                            <StyledButton onClick={toggle}className="hoveredit">Edit</StyledButton>
+                            <StyledButton onClick={() => deleteUser(users.user_id)} style={{backgroundColor: 'red'}}>Delete</StyledButton>
                         </td>
                     </tr>
 

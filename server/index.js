@@ -57,6 +57,7 @@ app.get('/auth/getUsers', AuthCtrl.getUsers) // get list of all users for Admin 
 
 // Endpoints for all of the available flights
 app.get('/flights/getFlights', FlightsCtrl.getFlights)
+app.get('/flights/getFlightsOperator', FlightsCtrl.getFlightsOperator)
 app.post('/flights/createFlight', FlightsCtrl.createFlight)
 app.delete('/flights/deleteFlight/:flight_num', FlightsCtrl.deleteFlight)
 app.put('/flights/editFlight/:flight_num', FlightsCtrl.editFlight)
@@ -64,6 +65,7 @@ app.put('/flights/editFlight/:flight_num', FlightsCtrl.editFlight)
 // Full CRUD for managing airplanes
 app.post('/api/airplanes', AirplaneCtrl.create)//create airplane
 app.get('/api/airplanes', AirplaneCtrl.read)//read airplane list
+app.get('/api/airplanesByOperator', AirplaneCtrl.readOperator)//read airplane list
 app.put('/api/airplanes/:id', AirplaneCtrl.update)//update airplane
 app.delete('/api/airplanes/:id', AirplaneCtrl.delete)//delete 
 

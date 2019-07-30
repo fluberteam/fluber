@@ -7,6 +7,15 @@ module.exports = {
        
     },
 
+    readOperator: async (req, res) => {
+        let db = req.app.get('db')
+        let user = req.session.user.operator_num
+        let operatorAirplanes = await db.airplanes.getAirplanesByOperator({user})
+        res.status(200).send(operatorAirplanes)
+    
+       
+    },
+
     create: (req, res) => {
         let db = req.app.get('db')
         db.airplanes.createAirplane(req.body).then(response => {
