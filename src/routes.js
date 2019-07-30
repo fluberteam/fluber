@@ -8,6 +8,7 @@ import OperatorDashboard from './Components/Operator/OperatorDashboard';
 import Search from './Components/Search/search';
 import UserDashboard from './Components/User/UserDashboard';
 import AvailableFlights from './Components/Flights/AvailableFlights'
+import AvailableFlightsByOperator from './Components/Flights/AvailableFlightsByOperator'
 import ScheduledFlights from './Components/Flights/ScheduledFlights'
 import Payments from './Components/Payments/Payments'
 import Airplanes from './Components/Airplanes/Airplanes'
@@ -24,6 +25,7 @@ export default (
         <Route path="/UserDashboard" component={UserDashboard} />
         <Route path="/AvailableFlights" component={AvailableFlights} />
         <Route path="/ScheduledFlights" component={ScheduledFlights} />
+        <Route path="/AvailableFlightsByOperator" component={AvailableFlightsByOperator} />
         <Route path="/Payments" component={Payments} />
         <Route path="/Airplanes" component={Airplanes} />
         <Route path="/Users" component={Users} />
