@@ -32,7 +32,7 @@ const ListUsers = props => {
                edit  ?
                     <>
                         <EditUser
-                            users={users}
+                            EditUsers={props.user}
                             setupdate={props.setupdate}
                             toggle={toggle}
                             handleclick={props.handleClick}/>

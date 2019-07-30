@@ -10,6 +10,20 @@ module.exports = {
         }
     },
 
+    getFlightsOperator: async (req, res) => {
+        console.log('getflightsoper from controller', req.session)
+        try {
+            let db = req.app.get('db')
+            let user = req.session.user.operator_num
+            console.log(user.operator_num)
+            let allFlights = await db.flights.get_flights_by_operator({user})
+            res.send(allFlights)
+        } catch (error) {
+            console.log('Error fetching the flights', error)
+            res.status(500).send(error)
+        }
+    },
+
     createFlight: async (req, res) => {
         try {
             let db = req.app.get('db')
