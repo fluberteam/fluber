@@ -3,6 +3,7 @@ import { connect } from 'react-redux';
 import { getFlights } from '../../Redux/Reducers/flights';
 import AddFlight from './AddFlight';
 import ListFlight from './ListFlight';
+import { Title } from '../Admin/StyledAdmin';
 
 const AvailableFlights = (props) => {
     const { getFlights } = props
@@ -19,6 +20,7 @@ const AvailableFlights = (props) => {
 
 
     return (
+        <div>
         <section style={styles.admin}>
             <span>
                 <div  className="displayWrapper">
@@ -55,6 +57,7 @@ const AvailableFlights = (props) => {
 
                 </div>
             </span>
+
             <section className="displayWrapper">
                 <section>
                     <AddFlight 
@@ -62,6 +65,7 @@ const AvailableFlights = (props) => {
                 </section>
             </section>
         </section>
+        </div>
     )
 }
 
@@ -76,7 +80,7 @@ export default connect(mapStateToProps, { getFlights })(AvailableFlights)
 let styles = {
     admin: {
         fontSize: 18,
-        marginTop: 40,
+        marginTop: 20,
         fontFamily: 'Rockwell'
     },
     colOne: {
