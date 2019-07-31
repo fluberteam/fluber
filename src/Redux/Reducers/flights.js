@@ -88,6 +88,20 @@ export function getFlightsOperator() {
     }
 }
 
+export function currFlightsByUser() {
+    return {
+        type: GET_FLIGHT,
+        payload: axios.get('/flights/currFlightsByUser')
+    }
+}
+
+export function pastFlightsByUser() {
+    return {
+        type: GET_FLIGHT,
+        payload: axios.get('/flights/pastFlightsByUser')
+    }
+}
+
 export function updateFlight(flight_num, updateInfo) {
     return {
         type: UPDATE_FLIGHT,

@@ -10,6 +10,7 @@ export const AddButton = styled.button`
     padding: 10px;
     background: none;
     border: 1px solid green;
+    font-family: Rockwell;
 
 
 
