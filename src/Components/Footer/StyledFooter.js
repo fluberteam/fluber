@@ -8,5 +8,6 @@ export const StyledFooter = styled.div`
     position: fixed;
     bottom: 0;
     box-shadow: 0 30px 40px rgba(0,0,0,.1);
+    z-index: 0;
     // margin-bottom: 20px;
 `
