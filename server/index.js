@@ -58,6 +58,8 @@ app.get('/auth/getUsers', AuthCtrl.getUsers) // get list of all users for Admin 
 // Endpoints for all of the available flights
 app.get('/flights/getFlights', FlightsCtrl.getFlights)
 app.get('/flights/getFlightsOperator', FlightsCtrl.getFlightsOperator)
+app.get('/flights/pastFlightsByUser', FlightsCtrl.pastFlightsByUser)
+app.get('/flights/currFlightsByUser', FlightsCtrl.currFlightsByUser)
 app.post('/flights/createFlight', FlightsCtrl.createFlight)
 app.delete('/flights/deleteFlight/:flight_num', FlightsCtrl.deleteFlight)
 app.put('/flights/editFlight/:flight_num', FlightsCtrl.editFlight)

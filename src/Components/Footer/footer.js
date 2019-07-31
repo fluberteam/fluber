@@ -56,7 +56,8 @@ export default Footer
 const styles = {
     width: '100%',
     display: 'flex',
-    justifyContent: 'center'
+    justifyContent: 'center',
+    zIndex: -1
 }
 
 const copy = {

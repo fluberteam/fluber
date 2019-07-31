@@ -1,39 +1,39 @@
 import React, { useState, useEffect } from 'react';
 import { connect } from 'react-redux';
-import { getFlights } from '../../Redux/Reducers/flights';
+import { currFlightsByUser } from '../../Redux/Reducers/flights';
 import AddFlight from './AddFlight';
 import ListFlight from './ListFlight';
-import { Title } from '../Admin/StyledAdmin';
 
-const AvailableFlights = (props) => {
-    const { getFlights } = props
+const CurrFlightsUser = (props) => {
+    const { currFlightsByUser } = props
     const [update, setupdate] = useState(true)
 
     useEffect(() => {
         if (update) {
-            getFlights()
+            currFlightsByUser()
             setupdate(false)
         }
-    }, [getFlights, update])
-
+    }, [currFlightsByUser, update])
 
 
 
     return (
-        <div>
         <section style={styles.admin}>
+
+            <h1>Currently Booked Flights</h1>
+            <br />
             <span>
-                <div  className="displayWrapper">
+                <div>
                     <table>
                         <tbody>
                             <tr >
                                 <td style={styles.colOne}><h3>N-Number</h3></td>
-                                <td style={styles.colTwo}><h3>Departure Ariport</h3></td>
-                                <td style={styles.colThree}><h3>Arrival Ariport</h3></td>
+                                <td style={styles.colTwo}><h3>Departure Airport</h3></td>
+                                <td style={styles.colThree}><h3>Arrival Airport</h3></td>
                                 <td style={styles.colFour}><h3>Departure Time</h3></td>
                                 <td style={styles.colFive}><h3>Arrival Time</h3></td>
-                                <td style={styles.colSix}><h3>Initial Seats</h3></td>
-                                <td style={styles.colSeven}><h3>Current Seats</h3></td>
+                                <td style={styles.colSix}><h3>Initial Available Seats</h3></td>
+                                <td style={styles.colSeven}><h3>Available Seats</h3></td>
                                 <td style={styles.colEight}><h3>Price</h3></td>
                                 <td style={styles.colNine}><h3>Cutoff Time</h3></td>
                                 <td style={styles.colTen}><h3>Edit/Delete</h3></td>
@@ -47,7 +47,7 @@ const AvailableFlights = (props) => {
                             {props.flights.map((flight, index) => {
                                 return (
                                     <ListFlight
-                                        key={flight.flight_num}
+                                        key={index}
                                         flight={flight}
                                         setupdate={setupdate} />
                                 )
@@ -57,61 +57,65 @@ const AvailableFlights = (props) => {
 
                 </div>
             </span>
-
-            <section className="displayWrapper">
+            {/* <section>
                 <section>
                     <AddFlight 
                     setupdate={setupdate}/>
                 </section>
-            </section>
+            </section> */}
         </section>
-        </div>
     )
 }
 
 const mapStateToProps = state => {
     let { getFlightData: flights } = state.flights
-    console.log(flights)
-    return { flights }
+    let {user} = state.users
+    console.log(flights,state)
+    return { flights, user }
 }
 
-export default connect(mapStateToProps, { getFlights })(AvailableFlights)
+export default connect(mapStateToProps, { currFlightsByUser })(CurrFlightsUser)
 
 let styles = {
     admin: {
         fontSize: 18,
-        marginTop: 20,
+        fontFamily: 'times',
+        display: 'flex',
+        alignItems: 'center',
+        justifyContent: 'center',
+        flexDirection: 'column ',
+        textDecoration: 'none',
         fontFamily: 'Rockwell'
     },
     colOne: {
-        width: 150,
+        width: 150
     },
     colTwo: {
-        width: 150,
+        width: 150
     },
     colThree: {
         width: 100,
     },
     colFour: {
-        width: 275,
+        width: 150
     },
     colFive: {
-        width: 275,
+        width: 150
     },
     colSix: {
-        width: 100,
+        width: 100
     },
     colSeven: {
-        width: 100,
+        width: 200
     },
     colEight: {
-        width: 100,
+        width: 150
     },
     colNine: {
-        width: 100,
+        width: 200
     },
     colTen: {
-        width: 200,
+        width: 200
     },
     displayWrapper: {
         width: '90%',

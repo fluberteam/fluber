@@ -24,6 +24,34 @@ module.exports = {
         }
     },
 
+    currFlightsByUser: async (req, res) => {
+        console.log('currflightsuser from controller', req.session)
+        try {
+            let db = req.app.get('db')
+            let user = req.session.user.user_id
+            console.log(user.user_id)
+            let allFlights = await db.flights.curr_flights_by_user({user})
+            res.send(allFlights)
+        } catch (error) {
+            console.log('Error fetching the flights', error)
+            res.status(500).send(error)
+        }
+    },
+
+    pastFlightsByUser: async (req, res) => {
+        console.log('pastflightsuser from controller', req.session)
+        try {
+            let db = req.app.get('db')
+            let user = req.session.user.user_id
+            console.log(user.user_id)
+            let allFlights = await db.flights.past_flights_by_user({user})
+            res.send(allFlights)
+        } catch (error) {
+            console.log('Error fetching the flights', error)
+            res.status(500).send(error)
+        }
+    },
+
     createFlight: async (req, res) => {
         try {
             let db = req.app.get('db')
