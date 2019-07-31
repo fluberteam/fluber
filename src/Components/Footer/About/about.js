@@ -91,7 +91,7 @@ let styles = {
 //     }
 // `
 
-const Content = styled.div`
+export const Content = styled.div`
     padding-left: 20px;
     padding-right: 20px;
     padding-top: 80px;
