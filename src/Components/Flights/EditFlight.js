@@ -32,7 +32,7 @@ const EditFlight = props => {
     }
 
     return (
-        <tbody>
+        <>
             <tr>
                 <td style={styles.colOne}>
                     {state.n_number}
@@ -115,7 +115,7 @@ const EditFlight = props => {
                     <StyledButton onClick={() => handleClick(flight.flight_num)}>Save</StyledButton>
                 </td>
             </tr >
-        </tbody>
+        </>
     )
 }
 
