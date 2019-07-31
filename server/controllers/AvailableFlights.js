@@ -53,6 +53,7 @@ module.exports = {
     },
 
     createFlight: async (req, res) => {
+        
         try {
             let db = req.app.get('db')
 

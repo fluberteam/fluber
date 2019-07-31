@@ -33,8 +33,7 @@ const ListFlight = (props) => {
                             setupdate={props.setupdate} />
                     </>
                     :
-                    <table>
-                        <tbody>
+                        <>
                             <tr>
                                 <td style={styles.colOne}>{flight.n_number}</td>
                                 <td style={styles.colTwo}>{flight.dep_airport}</td>
@@ -51,8 +50,7 @@ const ListFlight = (props) => {
                                    <StyledButton onClick={() => deleteFlight(flight.flight_num)} style={{backgroundColor: 'red'}}>Delete</StyledButton>
                                 </td>
                             </tr>
-                        </tbody>
-                    </table>
+                        </>
 
             }
         </>
@@ -67,7 +65,6 @@ export default connect(null, { deleteFlight })(ListFlight)
 let styles = {
     admin: {
         fontSize: 18,
-        fontFamily: 'times',
         display: 'flex',
         alignItems: 'center',
         justifyContent: 'center',

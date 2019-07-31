@@ -32,7 +32,7 @@ const EditFlight = props => {
     }
 
     return (
-        <tbody>
+        <>
             <tr>
                 <td style={styles.colOne}>
                     {state.n_number}
@@ -115,7 +115,7 @@ const EditFlight = props => {
                     <StyledButton onClick={() => handleClick(flight.flight_num)}>Save</StyledButton>
                 </td>
             </tr >
-        </tbody>
+        </>
     )
 }
 
@@ -130,7 +130,6 @@ export default connect(mapStateToProps, { updateFlight })(EditFlight)
 let styles = {
     admin: {
         // fontSize: 18,
-        fontFamily: 'times',
         display: 'flex',
         alignItems: 'center',
         justifyContent: 'center',

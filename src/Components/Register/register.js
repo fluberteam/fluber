@@ -2,9 +2,8 @@ import React, { useState } from 'react'
 import { connect } from 'react-redux'
 import { register } from '../../Redux/Reducers/users'
 import { Redirect } from 'react-router-dom'
-import { StyledInput } from '../StyledComps/StyledInput'
-import {LoginForm} from '../Login/StyledLogin'
 import largeLogo from '../../Image/fluberlogo.png'
+import { FormButton, AddFlightInput, AddForm } from '../Flights/StyledAddFlight';
 
 
 
@@ -34,29 +33,29 @@ const Register = props => {
        
 
         <div style={styles.div}>
-        <LoginForm>
+        <AddForm>
 
-        {props.users ? (props.users.status === 'a' ? <Redirect to='/admin' /> : (props.users.status === 'o' ? <Redirect to='/OperatorDashboard' /> : <Redirect to='/user' />)) : <Redirect to='/register' />}
+        {props.users ? (props.users.status === 'a' ? <Redirect to='/admin' /> : (props.users.status === 'o' ? <Redirect to='/OperatorDashboard' /> : <Redirect to='/UserDashboard' />)) : <Redirect to='/register' />}
             <img src={largeLogo} alt="Large Logo" style={{height: '100px'}}/>
-            <StyledInput
+            <AddFlightInput
                 type='text'
                 name='first_name'
                 placeholder='First Name'
                 onChange={handleChange} />
            
-            <StyledInput
+            <AddFlightInput
                 type='text'
                 name='last_name'
                 placeholder='Last Name'
                 onChange={handleChange} />
             
-            <StyledInput
+            <AddFlightInput
                 type='email'
                 name='email'
                 placeholder='E-mail'
                 onChange={handleChange} />
             
-            <StyledInput
+            <AddFlightInput
                 type='password'
                 name='password'
                 placeholder='Password'
@@ -80,16 +79,16 @@ const Register = props => {
            
             
             {state.status === 'o' &&
-            <StyledInput
+            <AddFlightInput
                 type='text'
                 name='operator_num'
                 placeholder='Operator Certificate Number'
                 onChange={handleChange} />
             
             }
-            <button onClick={handleSubmit}>Register</button>
+            <FormButton style={{marginTop: '15px'}} onClick={handleSubmit}>Register</FormButton>
 
-        </LoginForm>
+        </AddForm>
         </div>
     )
 }

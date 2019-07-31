@@ -11,7 +11,7 @@ export const AddButton = styled.button`
     background: none;
     border: 1px solid green;
     font-family: Rockwell;
-
+    margin-bottom: 45px;
 
 
     &:hover {
