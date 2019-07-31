@@ -6,6 +6,7 @@ import axios from 'axios';
 import icon from '../../Image/flubericon.png'
 import { postUserPurchase } from '../../Redux/Reducers/search'
 import { getUser } from '../../Redux/Reducers/users'
+import { FormButton } from '../Flights/StyledAddFlight';
 
 const Purchase = props => {
     const getUser = props.getUser
@@ -48,7 +49,7 @@ const Purchase = props => {
             token={onToken}
             allowRememberMe={true}
             >
-            <button>Purchase Flight</button>
+            <FormButton style={{width: '200px', fontSize: '20px'}}>Purchase Flight</FormButton>
         </StripeCheckout>
     )
 }
