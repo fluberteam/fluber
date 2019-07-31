@@ -1,4 +1,4 @@
-const stripe = require('stripe')(process.env.STRIPE_SECRET)
+const stripe = require('stripe')(process.env.REACT_APP_STRIPE_SECRET_KEY)
 
 module.exports = {
     pay: (req, res) => {
