@@ -11,5 +11,19 @@ module.exports = {
             console.log('error getting searched flights', error)
             res.status(500).send(error)
         }
+    },
+    postPurchaseUser: async (req, res) => {
+        try {
+            
+        } catch (error) {
+            
+        }
+    },
+    postPurchaseOper: async (req, res) => {
+        try {
+            
+        } catch (error) {
+            
+        }
     }
 }
