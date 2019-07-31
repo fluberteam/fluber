@@ -25,7 +25,7 @@ let styles = {
         justifyContent: 'center',
         flexDirection: 'column ',
         textDecoration: 'none',
-        fontFamily: 'Rockwell'
+        fontFamily: 'Rockwell'// font used in entire application
     }
  }
 

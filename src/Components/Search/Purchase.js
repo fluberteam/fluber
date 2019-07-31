@@ -1,12 +1,23 @@
-import React, { useState } from 'react'
+import React, { useState, useEffect } from 'react'
 import { connect } from 'react-redux'
 import StripeCheckout from 'react-stripe-checkout'
 import axios from 'axios';
 // import the function to post the purchase to the user and one for posting to operator
-import icon from '../../../public/flubericon.png'
+import icon from '../../Image/flubericon.png'
+import { postUserPurchase } from '../../Redux/Reducers/search'
+import { getUser } from '../../Redux/Reducers/users'
 
 const Purchase = props => {
-    const [state, /*setState*/] = useState({amount: +props.story[0].price})
+    const getUser = props.getUser
+    useEffect(() => {
+        getUser()
+    }, [])
+
+    const passengers = props.seatsRequested
+    const flight = props.flight
+    const [state, /*setState*/] = useState({amount: +flight.price})
+
+    
     // const onOpened = () => {
 
     // }
@@ -14,37 +25,38 @@ const Purchase = props => {
     // const onClosed = () => {
 
     // }
-
+    console.log(props.user)
     const onToken = (token) => {
         let {amount} = state
-        amount *= 100
+        amount = (amount * 100)
         token.card = void 0
         axios.post('/api/pay', {token, amount: amount })
         .then(response => {
             alert('Payment received')
-            
+            props.postUserPurchase(props.user.user_id, flight.flight_num, passengers)
         })
     }
 
     return (
         <StripeCheckout
-            name="PYPS"
-            description="Book Purchase"
+            name="Flüber"
+            description="Flight Purchase"
             image={icon}
-            amount={state.amount * 100}
+            amount={(state.amount * 100)* +passengers}
             currency="USD"
-            stripeKey={process.env.REACT_APP_STRIPE_SECRET_KEY}
+            stripeKey='pk_test_x5vjaaQpKdS5Sls9jZzANZ9m009FMA3zDJ'
             token={onToken}
             allowRememberMe={true}
             >
-            <button style={{backgroundColor: 'white', border: 'none'}}><img src={icon} alt='dollar' style={{height: 30}}/></button>
+            <button>Purchase Flight</button>
         </StripeCheckout>
     )
 }
 
 let mapStateToProps = state => {
-    let { data: user } = state.user
+    // console.log(state)
+    let { data: user } = state.users
     return { user }
 }
 
-export default connect(mapStateToProps, {  })(Purchase)
+export default connect(mapStateToProps, { postUserPurchase, getUser })(Purchase)
