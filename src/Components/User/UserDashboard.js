@@ -1,11 +1,18 @@
 import React from 'react'
-import { AdminIcon, AdminDiv, Title } from '../Admin/StyledAdmin';
+
+import { Link } from 'react-router-dom'
 
 export default function UserDashboard() {
     return (
-        <AdminDiv >
-                <Title>User Dashboard</Title><br></br>
-        </AdminDiv>
+        <div style={styles.admin} className="reports">
+                <h2>User Dashboard</h2><br></br>
+                <Link to={'/CurrFlightsUser'}>
+                    <h3><span style={styles.icon} className="fa">&#xf0e0; </span>   Current Itenirary</h3>
+                </Link>
+                <Link to={'/PastFlightsUser'}>
+                    <h3><span style={styles.icon} className="fa">&#xf0e0; </span>   Past Bookings</h3>
+                </Link>
+            </div>
     )
 }
 

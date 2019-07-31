@@ -9,6 +9,8 @@ import Search from './Components/Search/search';
 import UserDashboard from './Components/User/UserDashboard';
 import AvailableFlights from './Components/Flights/AvailableFlights'
 import AvailableFlightsByOperator from './Components/Flights/AvailableFlightsByOperator'
+import CurrFlightsUser from './Components/Flights/CurrFlightsUser'
+import PastFlightsUser from './Components/Flights/PastFlightsUser'
 import ScheduledFlights from './Components/Flights/ScheduledFlights'
 import Payments from './Components/Payments/Payments'
 import Airplanes from './Components/Airplanes/Airplanes'
@@ -27,6 +29,8 @@ export default (
         <Route path="/AvailableFlights" component={AvailableFlights} />
         <Route path="/ScheduledFlights" component={ScheduledFlights} />
         <Route path="/AvailableFlightsByOperator" component={AvailableFlightsByOperator} />
+        <Route path="/CurrFlightsUser" component={CurrFlightsUser} />
+        <Route path="/PastFlightsUser" component={PastFlightsUser} />
         <Route path="/Payments" component={Payments} />
         <Route path="/Airplanes" component={Airplanes} />
         <Route path="/AirplanesByOperator" component={AirplanesByOperator} />
