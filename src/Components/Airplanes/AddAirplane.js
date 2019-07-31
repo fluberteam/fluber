@@ -49,7 +49,7 @@ const AddAirplane = props => {
 
        <AddForm>
             
-            <img src={largeLogo} alt="Large Logo" style={{height: '100px'}}/>
+            <img src={largeLogo} alt="Large Logo" style={{height: '150px'}}/>
             <AddFlightInput
                 type='text'
                 name='n_number'
@@ -84,9 +84,13 @@ const AddAirplane = props => {
                 placeholder='Number of Seats'
                 onChange={handleChange} />
             
-            <span style={{display: 'flex', flexDirection: 'row', justifyContent: 'space-evenly'}}>
+
+
+            <div style={styles.checkbox}>
           <span>
               <span>Restroom?</span>
+              </span>
+              <span>
            <input
                 type='radio'
                 name='restroom'
@@ -100,10 +104,15 @@ const AddAirplane = props => {
                 value='false'
                 onChange={handleChange}/>No 
             </span>
-            </span>
-            <span style={{display: 'flex', flexDirection: 'row', justifyContent: 'space-evenly'}}>
+            </div>
+
+
+
+            <span style={styles.checkbox}>
           <span>
               <span>Flight Attendant?   </span>
+              </span>
+              <span>
            <input
                 type='radio'
                 name='flight_attn'
@@ -118,15 +127,22 @@ const AddAirplane = props => {
                 onChange={handleChange}/>No 
             </span>
             </span>
-            <span style={{display: 'flex', flexDirection: 'row', justifyContent: 'space-evenly'}}>
+
+
+
+            <span style={styles.checkbox}>
           <span>
               <span>Refreshments?</span>
+              </span>
+              <span>
+                  
            <input
                 type='radio'
                 name='refreshments'
                 value='true'
                 onChange={handleChange}/>Yes
             </span>
+
             <span>
             <input
                 type='radio'
@@ -136,6 +152,7 @@ const AddAirplane = props => {
             </span>
             </span>
            
+
             <AddFlightInput
                 type='text'
                 name='cruise_speed'
@@ -186,9 +203,15 @@ let styles = {
         div: {
             zIndex: 16,
             position: 'absolute'
-
         }
 
+    },
+    checkbox: {
+        display: 'flex', 
+        flexDirection: 'row', 
+        justifyContent: 'space-around', 
+        margin: '5px',
+        // border: '2px solid black'
     }
 }
 
