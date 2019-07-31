@@ -121,6 +121,8 @@ let styles = {
         justifyContent: 'center',
         alignItems: 'center',
         flexWrap: 'wrap',
-        margin: '0 auto'
+        margin: '0 auto',
+        height: '100%',
+        zIndex: 15
     }
 }

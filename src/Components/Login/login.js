@@ -3,7 +3,8 @@ import { connect } from 'react-redux'
 import { login } from '../../Redux/Reducers/users' 
 import { Redirect } from 'react-router-dom'
 import {StyledInput} from '../StyledComps/StyledInput'
-import { LoginForm } from './StyledLogin'
+// import { LoginForm } from './StyledLogin'
+import { AddFlightInput, AddForm, FormButton, Selector } from '../Flights/StyledAddFlight'
 import largeLogo from '../../Image/fluberlogo.png'
 import { Link } from 'react-router-dom'
 import '../../App.css'
@@ -27,10 +28,10 @@ const Login = props => {
 
         <div style={styles.div}>
             {props.users ? (props.users.status === 'a' ? <Redirect to='/AdminDashboard' /> : (props.users.status === 'o' ? <Redirect to='/OperatorDashboard' /> : <Redirect to='/UserDashboard' />)) : <Redirect to='/login' />}
-            <LoginForm>
+            <AddForm>
                 <img style={{height: '100px'}} src={largeLogo} alt='large logo' />
                 <div  style={{display: 'flex', marginTop: '5px'}}>
-                    <StyledInput 
+                    <AddFlightInput 
                         type='email'
                         name='email'
                         className="test-email"
@@ -38,16 +39,16 @@ const Login = props => {
                         onChange={handleChange}/>
                 </div>
                 <div  style={{display: 'flex', marginTop: '5px', marginBottom: '5px'}}>
-                    <StyledInput 
+                    <AddFlightInput 
                         type='password'
                         name='password'
                         className="test-password"
                         placeholder='Password'
                         onChange={handleChange}/>
                 </div>
-                <button className="test-login" onClick={handleSubmit}>Login</button>
-                <Link style={styles.register} to='/register'>Register</Link>
-            </LoginForm>
+                <FormButton onClick={handleSubmit}>Login</FormButton>
+                <Link to='/register'><FormButton>Register</FormButton></Link>
+            </AddForm>
         </div>
     )
 }
@@ -67,12 +68,5 @@ let styles = {
         alignItems: 'center',
         background: 'lightBlue',
         paddingBottom: '150px'
-    },
-    register: {
-        textDecoration: 'none',
-        fontSize: '1.3em',
-        color: 'black',
-        display: 'flex',
-        justifyContent: 'center'
     }
 }
