@@ -99,7 +99,7 @@ let styles = {
         width: 75
     },
     colSix: {
-        width: 75
+        width: 150
     },
     colSeven: {
         width: 200
