@@ -27,7 +27,7 @@ const Login = props => {
         <div style={styles.div}>
             {props.users ? (props.users.status === 'a' ? <Redirect to='/AdminDashboard' /> : (props.users.status === 'o' ? <Redirect to='/OperatorDashboard' /> : <Redirect to='/UserDashboard' />)) : <Redirect to='/login' />}
             <AddForm>
-                <img style={{height: '100px'}} src={largeLogo} alt='large logo' />
+                <img style={{height: '200px'}} src={largeLogo} alt='large logo' />
                 <div  style={{display: 'flex', marginTop: '5px'}}>
                     <AddFlightInput 
                         type='email'

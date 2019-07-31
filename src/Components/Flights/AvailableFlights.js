@@ -71,7 +71,6 @@ const AvailableFlights = (props) => {
 
 const mapStateToProps = state => {
     let { getFlightData: flights } = state.flights
-    console.log(flights)
     return { flights }
 }
 
