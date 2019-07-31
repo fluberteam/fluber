@@ -4,7 +4,7 @@ export const AddForm = styled.div`
 
     display: flex;
     height: 25%
-    width: 20%;
+    width: 30%;
     z-index: 0;
     flex-direction: column;
     background: white;

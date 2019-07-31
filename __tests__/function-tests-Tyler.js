@@ -15,7 +15,7 @@ describe('Tests airplane functions',() => {
         expect(typeof functions.create).toBe('function')
     });
 
-    const admin ={
+    const admin = {
         fontSize: 18,
         display: 'flex',
         alignItems: 'center',
@@ -35,3 +35,5 @@ describe('Tests airplane functions',() => {
         })
     })
 })
+
+

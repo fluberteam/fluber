@@ -10,7 +10,7 @@ const EditUser = props => {
     const users = props.EditUsers
     const toggle = props.toggle 
     
-  
+   console.log(3333, users.address1)
 
     let [state, setState] = useState({
         user_id: users.user_id,
@@ -19,7 +19,7 @@ const EditUser = props => {
         email: users.email,
         password: users.password,
         status: users.status,
-        address1: '',
+        address1: users.address1,
         address2: '',
         city: users.city,
         state: users.state,
@@ -29,7 +29,6 @@ const EditUser = props => {
 
     })
 
-    // console.log('user test:', state )
 
 
     const handleChange = e => {

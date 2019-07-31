@@ -3,6 +3,7 @@ import { connect } from 'react-redux';
 import { pastFlightsByUser } from '../../Redux/Reducers/flights';
 import AddFlight from './AddFlight';
 import ListFlight from './ListFlight';
+import { Title } from '../Admin/StyledAdmin';
 
 const PastFlightsUser = (props) => {
     const { pastFlightsByUser } = props
@@ -20,7 +21,7 @@ const PastFlightsUser = (props) => {
     return (
         <section style={styles.admin}>
 
-            <h1>Past Bookings</h1>
+            <Title>Past Bookings</Title>
             <br />
             <span>
                 <div>
@@ -79,7 +80,6 @@ export default connect(mapStateToProps, { pastFlightsByUser })(PastFlightsUser)
 let styles = {
     admin: {
         fontSize: 18,
-        fontFamily: 'times',
         display: 'flex',
         alignItems: 'center',
         justifyContent: 'center',

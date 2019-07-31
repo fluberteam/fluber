@@ -9,30 +9,32 @@ const Footer = () => {
     let [state, setState] = useState({ about: false, contact: false, legal: false })
     // let [ showAbout, setShowAbout ] = useState(false)
 
-    const handleContact = e => {
+    const handleSwitch = e => {
         let { name } = e.target
-        setState({ ...state, [name]: !state.contact })
+        let switches = {legal: false, contact: false, about: false}
+        switch(name){
+            case 'legal': 
+                delete switches.legal
+                break;
+            case 'contact': 
+                delete switches.contact
+                break;
+            case 'about': 
+                delete switches.about
+                break;
+        } 
+        console.log(switches)
+        setState({ ...state, ...switches, [name]: !state[name] })
     }
-
-    const handleAbout = e => {
-        let { name } = e.target
-        setState({ ...state, [name]: !state.about })
-    }
-
-    const handleLegal = e => {
-        let { name } = e.target
-        setState({ ...state, [name]: !state.legal })
-    }
-
 
 
     return (
         <StyledFooter>
             <section style={styles} >
                 <ul style={list}>
-                    <li style={item} ><Button name="about" onClick={handleAbout} >About</Button></li>
-                    <li style={item}><Button name="contact" onClick={handleContact} >Contact</Button></li>
-                    <li style={item}><Button name="legal" onClick={handleLegal} >Legal</Button></li>
+                    <li style={item} ><Button name="about" onClick={handleSwitch} >About</Button></li>
+                    <li style={item}><Button name="contact" onClick={handleSwitch} >Contact</Button></li>
+                    <li style={item}><Button name="legal" onClick={handleSwitch} >Legal</Button></li>
                 </ul>
             </section>
 
