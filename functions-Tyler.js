@@ -1,4 +1,5 @@
 let id = 'someString'
+let edit = false
 
 module.exports = {
    

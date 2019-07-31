@@ -3,23 +3,35 @@ const functions = require('../functions-Tyler')
 
 describe('Tests airplane functions',() => {
     
-    it('should be a function',() => {
+    it('deleteAirplane should be a function',() => {
         expect(typeof functions.deleteAirplane).toBe('function')
     });
 
-    it('should have parameter of string', () => {
-        expect(id).toBeInstanceOf(String)
-    })
-
-    it('should be a function', () => {
+    it('toggle should be a function',() => {
         expect(typeof functions.toggle).toBe('function')
-    })
+    });
 
-    it('should contain setEdit', () => {
-        expect(functions.toggle).toContain('setEdit(!edit)')
-    })
+    it('create should be a function',() => {
+        expect(typeof functions.create).toBe('function')
+    });
 
-    it('it should have a parameter of req and res', () => {
-        expect(functions.create(req, res)).toBe('req, res')
+    const admin ={
+        fontSize: 18,
+        display: 'flex',
+        alignItems: 'center',
+        justifyContent: 'center',
+        flexDirection: 'column ',
+        textDecoration: 'none',
+        fontFamily: 'Rockwell'
+    }
+
+    describe('testing admin object', () => {
+        test('if fontFamily is Rockwell', () => {
+            expect(admin.fontFamily).toBe('Rockwell')
+        })
+
+        test('to see if display is flex', () => {
+            expect(admin.display).toBe('flex')
+        })
     })
 })
