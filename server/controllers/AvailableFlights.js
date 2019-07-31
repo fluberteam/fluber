@@ -58,7 +58,6 @@ module.exports = {
             let db = req.app.get('db')
 
             let flight = req.body
-            console.log(flight)
 
             let createdFlight = await db.flights.create_flight(flight)
             res.status(200).send(createdFlight)
