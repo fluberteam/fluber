@@ -16,5 +16,15 @@ export default function UserDashboard() {
     )
 }
 
-
+let styles = {
+    admin: {
+        fontSize: 18,
+        display: 'flex',
+        alignItems: 'center',
+        justifyContent: 'center',
+        flexDirection: 'column ',
+        textDecoration: 'none',
+        fontFamily: 'Rockwell'
+    }
+ }
 

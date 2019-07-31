@@ -2,6 +2,7 @@ import React from 'react'
 import { connect } from 'react-redux'
 import {StyledSearch} from './StyledSearch'
 import Moment from 'react-moment'
+import Purchase from './Purchase'
 
 
 
@@ -27,7 +28,9 @@ const FoundFlights =props => {
                 </div>
                 <div style={{display: 'flex', justifyContent: 'space-between'}}>
                     <p><b>Price: </b> {flight.price}</p>
-                    <button>Purchase</button>
+                    <Purchase 
+                        flight={flight}
+                        seatsRequested={passengers}/>
                 </div>
                 {/* {console.log(flight)} */}
             </StyledSearch>

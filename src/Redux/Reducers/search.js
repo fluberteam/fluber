@@ -36,6 +36,21 @@ export default function( state = initialState, action) {
         case GET_ALL_SEARCH_REJECTED:
             return { ...state, error: action.payload, loading: false }
         
+        case POST_USER_PURCHASE_PENDING:
+            return { ...state, loading: true }
+        case POST_USER_PURCHASE_FULFILLED:
+            return { ...state, postUserData: action.payload.data, loading: false }
+        case POST_USER_PURCHASE_REJECTED:
+            return { ...state, error: action.payload }
+
+        case POST_OPER_PURCHASE_PENDING:
+            return { ...state, loading: true }
+        case POST_OPER_PURCHASE_FULFILLED:
+            return { ...state, postOperData: action.payload.data, loading: false }
+        case POST_OPER_PURCHASE_REJECTED:
+            return { ...state, error: action.payload, loading: false }
+        
+        
         default:
             return state
     }
@@ -55,10 +70,10 @@ export function clearSearch() {
     }
 }
 
-export function PostUserPurchase(user_id, flight_num) {
+export function postUserPurchase(user_id, flight_num, passengers) {
     return {
         type: POST_USER_PURCHASE,
-        payload: axios.get(`/purchases/users/${user_id}`, flight_num)
+        payload: axios.get(`/purchases/users/${user_id}`, {flight_num, passengers})
     }
 }
 // the arguments for PostOperPurchase needs to include the user who is flying with them, how many are in their party and the flight number
