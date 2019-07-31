@@ -36,7 +36,7 @@ const Register = props => {
         <div style={styles.div}>
         <LoginForm>
 
-        {props.users ? (props.users.status === 'a' ? <Redirect to='/admin' /> : (props.users.status === 'o' ? <Redirect to='/OperatorDashboard' /> : <Redirect to='/user' />)) : <Redirect to='/register' />}
+        {props.users ? (props.users.status === 'a' ? <Redirect to='/admin' /> : (props.users.status === 'o' ? <Redirect to='/OperatorDashboard' /> : <Redirect to='/UserDashboard' />)) : <Redirect to='/register' />}
             <img src={largeLogo} alt="Large Logo" style={{height: '100px'}}/>
             <StyledInput
                 type='text'

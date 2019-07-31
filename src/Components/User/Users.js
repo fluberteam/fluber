@@ -20,8 +20,7 @@ const Users = props => {
             <section className="docWrapper">
                 <section className="displayWrapper">
                     <section>
-                        {/* <AddAirplane */}
-                        {/* setupdate={setupdate} /> */}
+                       
                     </section>
                 </section>
                 <span>
