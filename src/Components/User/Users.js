@@ -17,7 +17,7 @@ const Users = props => {
         // let users = props.users
 
         return (
-            <section className="docWrapper">
+            <section style={styles.admin}>
                 <section className="displayWrapper">
                     <section>
                        
@@ -81,6 +81,11 @@ let mapStateToProps = state => {
 export default connect(mapStateToProps, { getUsers })(Users)
 
 let styles = {
+    admin: {
+        fontSize: 18,
+        marginTop: 20,
+        fontFamily: 'Rockwell'
+    },
     colOne: {
         width: 100
     },
