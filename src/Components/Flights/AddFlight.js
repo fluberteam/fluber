@@ -1,11 +1,11 @@
 import React, { useState } from 'react';
 import { connect } from 'react-redux';
 import { createFlight } from '../../Redux/Reducers/flights';
-import { AddFlightInput } from './StyledAddFlight';
+import { AddForm, AddFlightInput, FormButton } from './StyledAddFlight';
 import largeLogo from '../../Image/fluberlogo.png';
 import { AddButton } from '../StyledComps/AddButton';
-import { AddForm } from './StyledAddFlight';
-import { FormButton } from './StyledAddFlight';
+import { } from './StyledAddFlight';
+import { Title } from '../Admin/StyledAdmin';
 
 const AddFlight = (props) => {
     let [depart, setDepart] = useState('text')
@@ -65,7 +65,6 @@ const AddFlight = (props) => {
 
 
                         <img src={largeLogo} alt="Large Logo" style={{ height: '100px' }} />
-                        <h3 style={title}>Add Flight</h3>
                         <AddFlightInput
                             autoComplete="off"
                             type='text'
@@ -170,8 +169,3 @@ const mapStateToProps = state => {
 }
 
 export default connect(mapStateToProps, { createFlight })(AddFlight)
-
-const title = {
-    color: '#0079BF',
-    fontFamily: 'Rockwell'
-}

@@ -57,13 +57,24 @@ export const FormButton = styled.button`
     outline: none;
     border: none;
     width: 98%;
-    height: 25px;
+    height: 30px;
     background-color: #0079BF;
     color: white;
     font-family: Rockwell;
-    font-size: 16px;
+    font-size: 18px;
 
     &:hover {
         cursor: pointer;
     }
+`
+
+export const Selector = styled.select`
+    width: 98%;
+    height: 30px;
+    border: 2px solid #0079BF;
+    border-radius: 15px;
+    outline: none;
+    font-size: 16px;
+    font-family: Rockwell;
+    margin-top: 10px;
 `

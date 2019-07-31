@@ -1,11 +1,11 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
-import { AdminIcon, AdminDiv } from './StyledAdmin';
+import { AdminIcon, AdminDiv, Title } from './StyledAdmin';
 
 export default function AdminDashboard() {
     return (
         <AdminDiv className="reports">
-                <h1 style={title}>Admin Dashboard</h1><br></br>
+                <Title>Admin Dashboard</Title><br></br>
                 <Link className="test-users" to={'/Users'}>
                 <AdminIcon className="fa">&#xf0c0; Users</AdminIcon>
                 </Link>
@@ -23,9 +23,4 @@ export default function AdminDashboard() {
                 </Link>
             </AdminDiv>
     )
-}
-
-const title = {
-    marginTop: 40,
-
 }

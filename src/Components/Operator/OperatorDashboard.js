@@ -1,11 +1,11 @@
 import React from 'react'
 import { Link } from 'react-router-dom';
-import { AdminIcon, AdminDiv } from '../Admin/StyledAdmin';
+import { AdminIcon, AdminDiv, Title } from '../Admin/StyledAdmin';
 
 export default function OperatorDashboard() {
     return (
         <AdminDiv className="reports">
-                <h1 style={title}>Operator Dashboard</h1><br></br>
+                <Title>Operator Dashboard</Title><br></br>
                 <Link to={'/AvailableFlightsByOperator'}>
                     <AdminIcon className="fa">&#xf0e0; Scheduled Flights</AdminIcon>   
                 </Link>
@@ -21,9 +21,4 @@ export default function OperatorDashboard() {
                 
             </AdminDiv>
     )
-}
-
-const title = {
-    marginTop: 40,
-
 }

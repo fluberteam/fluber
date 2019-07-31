@@ -2,8 +2,8 @@ import React, {useState} from 'react'
 import {connect} from 'react-redux'
 import { createAirplane } from '../../Redux/Reducers/airplanes'
 // import {Redirect} from 'react-router-dom'
-import { StyledInput } from '../StyledComps/StyledInput'
-import {AddForm} from './StyledAddAirplane'
+// import { StyledInput } from '../StyledComps/StyledInput'
+import { AddFlightInput, AddForm, FormButton, Selector } from '../Flights/StyledAddFlight'
 import largeLogo from '../../Image/fluberlogo.png'
 import { AddButton } from '../StyledComps/AddButton';
 
@@ -50,26 +50,25 @@ const AddAirplane = props => {
        <AddForm>
             
             <img src={largeLogo} alt="Large Logo" style={{height: '100px'}}/>
-            <h3>Add Airplane</h3>
-            <StyledInput
+            <AddFlightInput
                 type='text'
                 name='n_number'
                 placeholder='N-Number'
                 onChange={handleChange} />
            
-            <StyledInput
+            <AddFlightInput
                 type='text'
                 name='certnumber'
                 placeholder='Operator Number'
                 onChange={handleChange} />
             
-            <StyledInput
+            <AddFlightInput
                 type='text'
                 name='img'
                 placeholder='Image'
                 onChange={handleChange} />
             
-            <select
+            <Selector
                 type='text'
                 name='engine_id'
                 onChange={handleChange}>
@@ -77,9 +76,9 @@ const AddAirplane = props => {
                 <option value="SE">SE Turboprop</option>
                 <option value="ME">ME Turboprop</option>
                 <option value="TJ">Turbojet</option>
-            </select>
+            </Selector>
 
-            <StyledInput
+            <AddFlightInput
                 type='text'
                 name='num_seats'
                 placeholder='Number of Seats'
@@ -87,7 +86,7 @@ const AddAirplane = props => {
             
             <span style={{display: 'flex', flexDirection: 'row', justifyContent: 'space-evenly'}}>
           <span>
-              <span>Restroom?   </span>
+              <span>Restroom?</span>
            <input
                 type='radio'
                 name='restroom'
@@ -121,7 +120,7 @@ const AddAirplane = props => {
             </span>
             <span style={{display: 'flex', flexDirection: 'row', justifyContent: 'space-evenly'}}>
           <span>
-              <span>Refreshments?   </span>
+              <span>Refreshments?</span>
            <input
                 type='radio'
                 name='refreshments'
@@ -137,15 +136,15 @@ const AddAirplane = props => {
             </span>
             </span>
            
-            <StyledInput
+            <AddFlightInput
                 type='text'
                 name='cruise_speed'
                 placeholder='Cruise Speed'
                 onChange={handleChange} />
             
             
-            <button onClick={handleSubmit}>Add Airplane</button>
-            <button className="addbutton" onClick={toggle}>Cancel</button>
+            <FormButton onClick={handleSubmit}>Add Airplane</FormButton>
+            <FormButton onClick={toggle}>Cancel</FormButton>
 
             </AddForm>
         </div>
