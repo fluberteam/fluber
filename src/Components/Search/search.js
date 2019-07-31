@@ -1,6 +1,6 @@
-import React, { useState } from 'react'
+import React, { useState, useEffect } from 'react'
 import { connect } from 'react-redux'
-import { firstSearch } from '../../Redux/Reducers/search'
+import { firstSearch, clearSearch } from '../../Redux/Reducers/search'
 import {StyledInput} from '../StyledComps/StyledInput'
 import {LoginForm} from '../Login/StyledLogin'
 import FoundFlights from './FoundFlights'
@@ -10,11 +10,19 @@ const Search = props => {
 
     let [ state, setState ] = useState({from: '', to: '', date: '', passengers: 0})
     let [ focus, setFocus ] = useState('text')
+    let clearSearch = props.clearSearch
+    useEffect(() => {
+        
+    }, [clearSearch])
 
     const handleChange = (e) => {
         let { name, value } = e.target
         // console.log(value)
         setState({ ...state, [name]: value})
+    }
+
+    const handleClear = () => {
+        props.clearSearch()
     }
 
     const onFocus = () => {
@@ -33,12 +41,14 @@ const Search = props => {
         <div style={{display: 'flex', justifyContent: 'center', alignContent: 'center', background: 'lightBlue', height: '100%', width: '100%'}}>
             {props.search.length >= 1 ? 
                 <div>
+                    <button onClick={handleClear}>Clear Search</button>
                 {props.search.map((flight, index) => {
                     return (
                     <FoundFlights 
                         key={index}
                         flight={flight}
-                        passengers={state.passengers}/>)})}
+                        passengers={state.passengers}
+                        clear={handleClear}/>)})}
                 </div> :
                 <LoginForm>
                     <h1>Search For Flights</h1>
@@ -76,4 +86,4 @@ const mapStateToProps = state => {
     return { search }
 }
 
-export default connect(mapStateToProps, { firstSearch })(Search)
+export default connect(mapStateToProps, { firstSearch, clearSearch })(Search)

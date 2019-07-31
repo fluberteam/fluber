@@ -23,7 +23,7 @@
     "react-stripe-checkout": "^2.6.3",
     "redux": "^4.0.4",
     "redux-promise-middleware": "^6.1.1",
-    "stripe": "^7.4.0",
+    "stripe": "^7.5.0",
     "styled-components": "^4.3.2",
     "twilio": "^3.33.1"
   },
@@ -58,6 +58,6 @@
   "proxy": "http://localhost:5020",
   "devDependencies": {
     "cypress": "^3.4.1"
-  
+
   }
 }

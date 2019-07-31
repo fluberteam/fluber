@@ -6,6 +6,8 @@ const GET_ALL_SEARCH_PENDING = 'GET_ALL_SEARCH_PENDING'
 const GET_ALL_SEARCH_FULFILLED = 'GET_ALL_SEARCH_FULFILLED'
 const GET_ALL_SEARCH_REJECTED = 'GET_ALL_SEARCH_REJECTED'
 
+const CLEAR_SEARCH_FIELD = 'CLEAR_SEARCH_FIELD'
+
 const initialState = {
     loading: false,
     searchData: [],
@@ -30,5 +32,12 @@ export function firstSearch(searchInfo) {
     return {
         type: GET_ALL_SEARCH,
         payload: axios.get(`/search/all?${searchInfo}`)
+    }
+}
+
+export function clearSearch() {
+    return {
+        type: CLEAR_SEARCH_FIELD,
+        payload: []
     }
 }
