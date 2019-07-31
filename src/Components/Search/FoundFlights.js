@@ -29,7 +29,7 @@ const FoundFlights =props => {
                     <p><b>Price: </b> {flight.price}</p>
                     <button>Purchase</button>
                 </div>
-                {console.log(flight)}
+                {/* {console.log(flight)} */}
             </StyledSearch>
         </div>
     )
