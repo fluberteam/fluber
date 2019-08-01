@@ -28,9 +28,7 @@ massive(CONNECTION_STRING).then(db => {
 app.use(express.json())
 
 //information to point to hosting server
-// app.use( express.static( `${__dirname}/../build` ) );
-
-
+app.use( express.static( `${__dirname}/../build` ) );
 
 app.use(session({
     secret: SESSION_SECRET,
