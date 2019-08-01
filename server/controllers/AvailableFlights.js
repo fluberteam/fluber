@@ -15,7 +15,7 @@ module.exports = {
         try {
             let db = req.app.get('db')
             let user = req.session.user.operator_num
-            console.log(user.operator_num)
+            // console.log(user.operator_num)
             let allFlights = await db.flights.get_flights_by_operator({user})
             res.send(allFlights)
         } catch (error) {
@@ -25,11 +25,11 @@ module.exports = {
     },
 
     currFlightsByUser: async (req, res) => {
-        console.log('currflightsuser from controller', req.session)
+        // console.log('currflightsuser from controller', req.session)
         try {
             let db = req.app.get('db')
             let user = req.session.user.user_id
-            console.log(user.user_id)
+            // console.log(user.user_id)
             let allFlights = await db.flights.curr_flights_by_user({user})
             res.send(allFlights)
         } catch (error) {
@@ -39,11 +39,11 @@ module.exports = {
     },
 
     pastFlightsByUser: async (req, res) => {
-        console.log('pastflightsuser from controller', req.session)
+        // console.log('pastflightsuser from controller', req.session)
         try {
             let db = req.app.get('db')
             let user = req.session.user.user_id
-            console.log(user.user_id)
+            // console.log(user.user_id)
             let allFlights = await db.flights.past_flights_by_user({user})
             res.send(allFlights)
         } catch (error) {
@@ -58,7 +58,7 @@ module.exports = {
             let db = req.app.get('db')
 
             let flight = req.body
-            console.log(flight)
+            // console.log(flight)
 
             let createdFlight = await db.flights.create_flight(flight)
             res.status(200).send(createdFlight)

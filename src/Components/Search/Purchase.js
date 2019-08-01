@@ -25,15 +25,17 @@ const Purchase = props => {
     // const onClosed = () => {
 
     // }
-    console.log(props.user)
+    // console.log(props.user)
     const onToken = (token) => {
         let {amount} = state
-        amount = (amount * 100)
+        amount = (amount * 100) * +passengers
         token.card = void 0
         axios.post('/api/pay', {token, amount: amount })
         .then(response => {
             alert('Payment received')
-            props.postUserPurchase(props.user.user_id, flight.flight_num, passengers)
+            let flightInfo = {flight_num: flight.flight_num, num_seats: passengers}
+            props.postUserPurchase(props.user.user_id, flightInfo)
+
         })
     }
 

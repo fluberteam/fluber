@@ -70,10 +70,10 @@ export function clearSearch() {
     }
 }
 
-export function postUserPurchase(user_id, flight_num, passengers) {
+export function postUserPurchase(user_id, flightInfo) {
     return {
         type: POST_USER_PURCHASE,
-        payload: axios.get(`/purchases/users/${user_id}`, {flight_num, passengers})
+        payload: axios.post(`/purchases/users/${user_id}`, flightInfo)
     }
 }
 // the arguments for PostOperPurchase needs to include the user who is flying with them, how many are in their party and the flight number
