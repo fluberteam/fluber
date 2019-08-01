@@ -78,5 +78,5 @@ app.get('/search/all?', SearchCtrl.getAll)
 app.post('/api/pay', PayCtrl.pay)
 
 // Post Purchase Endpoints
-app.post('purchases/users/:id', SearchCtrl.postPurchaseUser)
+app.post('/purchases/users/:user_id', SearchCtrl.postPurchaseUser)
 

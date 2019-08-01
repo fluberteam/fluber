@@ -17,6 +17,7 @@ const Search = props => {
     useEffect(() => {
 
     }, [clearSearch])
+    // console.log(state)
 
     const handleChange = (e) => {
         let { name, value } = e.target
@@ -37,6 +38,7 @@ const Search = props => {
         // turn the state into a template string and pass that through to the back
         let searchInfo = `depFrom=${state.from}&arriveTo=${state.to}&datePicked=${state.date}&seatAvailable=${state.passengers}`
         props.firstSearch(searchInfo)
+        
 
     }
 
