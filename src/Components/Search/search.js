@@ -46,7 +46,7 @@ const Search = props => {
         <AdminDiv>
             {props.search.length >= 1 ?
                 <AdminDiv>
-                    <button onClick={handleClear}>Clear Search</button>
+                    <FormButton style={{margin: '20px', fontSize: '20px', width: '300px', height: '40px', backgroundColor: 'red'}} onClick={handleClear}>Clear Search</FormButton>
                     {props.search.map((flight, index) => {
                         return (
                             <FoundFlights

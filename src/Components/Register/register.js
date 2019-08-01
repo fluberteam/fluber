@@ -36,7 +36,7 @@ const Register = props => {
         <AddForm>
 
         {props.users ? (props.users.status === 'a' ? <Redirect to='/admin' /> : (props.users.status === 'o' ? <Redirect to='/OperatorDashboard' /> : <Redirect to='/UserDashboard' />)) : <Redirect to='/register' />}
-            <img src={largeLogo} alt="Large Logo" style={{height: '100px'}}/>
+            <img src={largeLogo} alt="Large Logo" style={{height: '150px'}}/>
             <AddFlightInput
                 type='text'
                 name='first_name'

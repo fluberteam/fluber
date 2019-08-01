@@ -5,7 +5,6 @@ import { AddForm, AddFlightInput, FormButton } from './StyledAddFlight';
 import largeLogo from '../../Image/fluberlogo.png';
 import { AddButton } from '../StyledComps/AddButton';
 import { } from './StyledAddFlight';
-import { Title } from '../Admin/StyledAdmin';
 
 const AddFlight = (props) => {
     let [depart, setDepart] = useState('text')
@@ -31,11 +30,6 @@ const AddFlight = (props) => {
     }
 
     const handleSubmit = () => {
-        // if(state.n_number === ''){
-        //     return (
-                
-        //     )
-        // }
         props.createFlight(state)
         toggle()
         props.setupdate(true)
@@ -64,7 +58,7 @@ const AddFlight = (props) => {
 
 
 
-                        <img src={largeLogo} alt="Large Logo" style={{ height: '100px' }} />
+                        <img src={largeLogo} alt="Large Logo" style={{ height: '150px' }} />
                         <AddFlightInput
                             autoComplete="off"
                             type='text'

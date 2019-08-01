@@ -22,6 +22,8 @@ const Footer = () => {
             case 'about': 
                 delete switches.about
                 break;
+            default: 
+                break;
         } 
         console.log(switches)
         setState({ ...state, ...switches, [name]: !state[name] })
