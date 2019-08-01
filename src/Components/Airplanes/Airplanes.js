@@ -26,21 +26,21 @@ const Airplanes = props => {
                     <table>
                         <tbody>
                             <tr>
-                                <td style={styles.colOne}><h3>N-Number</h3></td>
-                                <td style={styles.colTwo}><h3>Operator ID</h3></td>
-                                <td style={styles.colThree}><h3>Image </h3></td>
-                                <td style={styles.colFour}><h3>Engine Type</h3></td>
-                                <td style={styles.colFive}><h3>Seats</h3></td>
-                                <td style={styles.colSix}><h3>Restroom</h3></td>
-                                <td style={styles.colSeven}><h3>Flight Attendant</h3></td>
-                                <td style={styles.colEight}><h3>Refreshements</h3></td>
-                                <td style={styles.colNine}><h3>Cruise Speed</h3></td>
-                                <td style={styles.colTen}><h3>Edit/Delete</h3></td>
+                                <th style={styles.colOne}><h3>N-Number</h3></th>
+                                <th style={styles.colTwo}><h3>Operator ID</h3></th>
+                                <th style={styles.colThree}><h3>Image </h3></th>
+                                <th style={styles.colFour}><h3>Engine Type</h3></th>
+                                <th style={styles.colFive}><h3>Seats</h3></th>
+                                <th style={styles.colSix}><h3>Restroom</h3></th>
+                                <th style={styles.colSeven}><h3>Flight Attendant</h3></th>
+                                <th style={styles.colEight}><h3>Refreshements</h3></th>
+                                <th style={styles.colNine}><h3>Cruise Speed</h3></th>
+                                <th style={styles.colTen}><h3>Edit/Delete</h3></th>
 
                             </tr>
                         </tbody>
                     </table>
-                    <table>
+                    <table className="lines"> 
                         <tbody>
                             {props.airplanes.map((airplane, index) => {
                                 return (
@@ -73,7 +73,7 @@ const Airplanes = props => {
 //connect redux
 let mapStateToProps = state => {
     let { getAirplaneData: airplanes } = state.airplanes
-    console.log(airplanes)
+    // console.log(airplanes)
     return { airplanes }
 }
 
