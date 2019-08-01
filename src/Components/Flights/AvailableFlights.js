@@ -3,7 +3,6 @@ import { connect } from 'react-redux';
 import { getFlights } from '../../Redux/Reducers/flights';
 import AddFlight from './AddFlight';
 import ListFlight from './ListFlight';
-import { Title } from '../Admin/StyledAdmin';
 
 const AvailableFlights = (props) => {
     const { getFlights } = props
@@ -44,7 +43,7 @@ const AvailableFlights = (props) => {
                     </table>
                     <table>
                         <tbody>
-                            {props.flights.map((flight, index) => {
+                            {props.flights.map((flight) => {
                                 return (
                                     <ListFlight
                                         key={flight.flight_num}
