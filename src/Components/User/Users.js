@@ -29,24 +29,24 @@ const Users = props => {
                             <table>
                                 <tbody>
                             <tr>
-                                <td style={styles.colOne}><h4>First Name</h4></td>
-                                <td style={styles.colTwo}><h4>Last Name</h4></td>
-                                <td style={styles.colThree}><h4>E-mail </h4></td>
-                                {/* <td style={styles.colFour}><h4>Password</h4></td> */}
-                                <td style={styles.colFive}><h4>Status</h4></td>
-                                <td style={styles.colSix}><h4>Address</h4></td>
-                                {/* <td style={styles.colSeven}><h4></h4></td> */}
-                                <td style={styles.colEight}><h4>City</h4></td>
-                                <td style={styles.colNine}><h4>State</h4></td>
-                                <td style={styles.colTen}><h4>Zip Code</h4></td>
-                                <td style={styles.colEleven}><h4>Phone</h4></td>
-                                <td style={styles.colTwelve}><h4>Operator Number</h4></td>
-                                <td style={styles.colThirteen}><h4>Edit/Delete</h4></td>
+                                <th style={styles.colOne}><h4>First Name</h4></th>
+                                <th style={styles.colTwo}><h4>Last Name</h4></th>
+                                <th style={styles.colThree}><h4>E-mail </h4></th>
+                                {/* <th style={styles.colFour}><h4>Password</h4></th> */}
+                                <th style={styles.colFive}><h4>Status</h4></th>
+                                <th style={styles.colSix}><h4>Address</h4></th>
+                                {/* <th style={styles.colSeven}><h4></h4></th> */}
+                                <th style={styles.colEight}><h4>City</h4></th>
+                                <th style={styles.colNine}><h4>State</h4></th>
+                                <th style={styles.colTen}><h4>Zip Code</h4></th>
+                                <th style={styles.colEleven}><h4>Phone</h4></th>
+                                <th style={styles.colTwelve}><h4>Operator Number</h4></th>
+                                <th style={styles.colThirteen}><h4>Edit/Delete</h4></th>
 
                             </tr>
                                 </tbody>
                             </table>
-                            <table>
+                            <table className="lines">
                             <tbody>
                             {props.users.map((user, index) => {
                                 return (

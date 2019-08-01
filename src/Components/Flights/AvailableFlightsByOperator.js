@@ -42,7 +42,7 @@ const AvailableFlightsOperator = (props) => {
                         </tbody>
 
                     </table>
-                    <table>
+                    <table className="lines">
                         <tbody>
                             {props.flights.map((flight, index) => {
                                 return (

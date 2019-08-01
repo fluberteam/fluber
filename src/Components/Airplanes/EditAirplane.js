@@ -9,7 +9,7 @@ const EditAirplane = props => {
     const airplane = props.airplane
     const toggle = props.toggle   
   
-    console.log('airplane test:', airplane )
+    // console.log('airplane test:', airplane )
 
 
     let [state, setState] = useState({

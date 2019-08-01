@@ -28,22 +28,22 @@ const CurrFlightsUser = (props) => {
                     <table>
                         <tbody>
                             <tr >
-                                <td style={styles.colOne}><h3>N-Number</h3></td>
-                                <td style={styles.colTwo}><h3>Departure Airport</h3></td>
-                                <td style={styles.colThree}><h3>Arrival Airport</h3></td>
-                                <td style={styles.colFour}><h3>Departure Time</h3></td>
-                                <td style={styles.colFive}><h3>Arrival Time</h3></td>
-                                <td style={styles.colSix}><h3>Initial Available Seats</h3></td>
-                                <td style={styles.colSeven}><h3>Available Seats</h3></td>
-                                <td style={styles.colEight}><h3>Price</h3></td>
-                                <td style={styles.colNine}><h3>Cutoff Time</h3></td>
-                                <td style={styles.colTen}><h3>Edit/Delete</h3></td>
+                                <th style={styles.colOne}><h3>N-Number</h3></th>
+                                <th style={styles.colTwo}><h3>Departure Airport</h3></th>
+                                <th style={styles.colThree}><h3>Arrival Airport</h3></th>
+                                <th style={styles.colFour}><h3>Departure Time</h3></th>
+                                <th style={styles.colFive}><h3>Arrival Time</h3></th>
+                                <th style={styles.colSix}><h3>Initial Available Seats</h3></th>
+                                <th style={styles.colSeven}><h3>Available Seats</h3></th>
+                                <th style={styles.colEight}><h3>Price</h3></th>
+                                <th style={styles.colNine}><h3>Cutoff Time</h3></th>
+                                <th style={styles.colTen}><h3>Edit/Delete</h3></th>
 
                             </tr>
                         </tbody>
 
                     </table>
-                    <table>
+                    <table className="lines">
                         <tbody>
                             {props.flights.map((flight, index) => {
                                 return (
@@ -88,34 +88,34 @@ let styles = {
         fontFamily: 'Rockwell'
     },
     colOne: {
-        width: 150
+        width: 150,
     },
     colTwo: {
-        width: 150
+        width: 150,
     },
     colThree: {
         width: 100,
     },
     colFour: {
-        width: 150
+        width: 275,
     },
     colFive: {
-        width: 150
+        width: 275,
     },
     colSix: {
-        width: 100
+        width: 100,
     },
     colSeven: {
-        width: 200
+        width: 100,
     },
     colEight: {
-        width: 150
+        width: 100,
     },
     colNine: {
-        width: 200
+        width: 100,
     },
     colTen: {
-        width: 200
+        width: 200,
     },
     displayWrapper: {
         width: '90%',

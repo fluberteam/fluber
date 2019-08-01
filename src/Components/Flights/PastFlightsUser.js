@@ -43,7 +43,7 @@ const PastFlightsUser = (props) => {
                         </tbody>
 
                     </table>
-                    <table>
+                    <table className="lines">
                         <tbody>
                             {props.flights.map((flight, index) => {
                                 return (
@@ -88,34 +88,34 @@ let styles = {
         fontFamily: 'Rockwell'
     },
     colOne: {
-        width: 150
+        width: 150,
     },
     colTwo: {
-        width: 150
+        width: 150,
     },
     colThree: {
         width: 100,
     },
     colFour: {
-        width: 150
+        width: 275,
     },
     colFive: {
-        width: 150
+        width: 275,
     },
     colSix: {
-        width: 100
+        width: 100,
     },
     colSeven: {
-        width: 200
+        width: 100,
     },
     colEight: {
-        width: 150
+        width: 100,
     },
     colNine: {
-        width: 200
+        width: 100,
     },
     colTen: {
-        width: 200
+        width: 200,
     },
     displayWrapper: {
         width: '90%',

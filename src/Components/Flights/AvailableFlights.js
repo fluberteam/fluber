@@ -27,22 +27,22 @@ const AvailableFlights = (props) => {
                     <table>
                         <tbody>
                             <tr >
-                                <td style={styles.colOne}><h3>N-Number</h3></td>
-                                <td style={styles.colTwo}><h3>Departure Ariport</h3></td>
-                                <td style={styles.colThree}><h3>Arrival Ariport</h3></td>
-                                <td style={styles.colFour}><h3>Departure Time</h3></td>
-                                <td style={styles.colFive}><h3>Arrival Time</h3></td>
-                                <td style={styles.colSix}><h3>Initial Seats</h3></td>
-                                <td style={styles.colSeven}><h3>Current Seats</h3></td>
-                                <td style={styles.colEight}><h3>Price</h3></td>
-                                <td style={styles.colNine}><h3>Cutoff Time</h3></td>
-                                <td style={styles.colTen}><h3>Edit/Delete</h3></td>
+                                <th style={styles.colOne}><h3>N-Number</h3></th>
+                                <th style={styles.colTwo}><h3>Departure Ariport</h3></th>
+                                <th style={styles.colThree}><h3>Arrival Ariport</h3></th>
+                                <th style={styles.colFour}><h3>Departure Time</h3></th>
+                                <th style={styles.colFive}><h3>Arrival Time</h3></th>
+                                <th style={styles.colSix}><h3>Initial Seats</h3></th>
+                                <th style={styles.colSeven}><h3>Current Seats</h3></th>
+                                <th style={styles.colEight}><h3>Price</h3></th>
+                                <th style={styles.colNine}><h3>Cutoff Time</h3></th>
+                                <th style={styles.colTen}><h3>Edit/Delete</h3></th>
 
                             </tr>
                         </tbody>
 
                     </table>
-                    <table>
+                    <table className="lines">
                         <tbody>
                             {props.flights.map((flight, index) => {
                                 return (
